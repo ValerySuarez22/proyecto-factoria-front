@@ -1,0 +1,62 @@
+/* Estilos para la imagen de fondo en el body */
+body {
+    background-image: url('../../assets/images/fondologin.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Estilos para el contenedor principal */
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+}
+
+/* Estilos para el contenedor del formulario */
+.login-form-container {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+}
+
+/* Estilos para el título del formulario */
+.login-form-container h2 {
+    margin-top: 0;
+}
+
+/* Estilos para los campos del formulario */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Estilos para el botón del formulario */
+button[type="submit"] {
+    background-color: orange;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: salmon;
+}
