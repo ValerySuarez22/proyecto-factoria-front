@@ -15,7 +15,6 @@ const MyCalendar = props => (
       startAccessor="start"
       endAccessor="end"
       style={{ height: 500 }}
-      className='calendar-color'
     />
   </div>
 );
