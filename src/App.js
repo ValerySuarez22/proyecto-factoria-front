@@ -21,7 +21,7 @@ function App() {
   return (
     <div>
       <header >
-       {/* <Navbar /> */}
+      <Navbar />
        <Login />
        <HighForm />
        <Calendar localizer={localizer} events={events} />

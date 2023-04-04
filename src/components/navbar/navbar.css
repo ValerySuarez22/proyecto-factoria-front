@@ -1,6 +1,6 @@
-.content-navbar {
+.navbar {
     height: 90vh;
-    width: 130px;
+    width: 160px;
     position: fixed;
     top: 50%;
     left: 10%;
@@ -16,28 +16,28 @@
     overflow-y: auto;
     box-shadow: 5px 0px 5px rgba(0, 0, 0, 0.2);
     border-radius: 20px;
-}
-
-.logo {
-    width: 80%;
-    margin-bottom: 30px;
-}
-
-.buttons {
-    display: flex;
-    flex-direction: column;
-}
-
-.btn {
-    background-color: #ff7f50;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    margin-bottom: 10px;
-    cursor: pointer;
+  }
+  
+  .navbar-link {
+    font-size: 1.2rem;
     text-decoration: none;
-}
-
-.btn:hover {
-    background-color: salmon;
-}
+    color: white;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+  }
+  
+  /* El selector .navbar-link:hover debe estar en el mismo nivel que .navbar-link */
+  .navbar-link:hover {
+    background-color: #130B2B !important;
+  }
+  
+  .navbar-link-active {
+    background-color: #130B2B !important;
+  }
+  
+  .logo {
+    width: 100%;
+  }
+  
