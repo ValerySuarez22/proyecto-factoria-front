@@ -13,7 +13,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    position: relative;
+    /* position: relative; */
 }
 
 /* Estilos para el contenedor del formulario */

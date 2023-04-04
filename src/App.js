@@ -1,18 +1,26 @@
-import Navbar from './components/navbar/Navbar';
-import Login from './views/login/Login';
-import HighForm from './components/highForm/HighForm';
+import Router from "./router/router";
 import './App.css';
 
 function App() {
-  return (
-    <div>
-      <header >
-       {/* <Navbar /> */}
-       <Login />
-       <HighForm />
-      </header>
-    </div>
-  );
+  // axiosInterceptor;
+   return (
+      <>
+         <div className="App">
+            <Router />
+         </div>
+         {/* <Footer /> */}
+      </>
+   );
 }
+//   return (
+//     <div>
+//       <header >
+//        <Navbar />
+//        <Login />
+//        <HighForm />
+//       </header>
+//     </div>
+//   );
+// }
 
 export default App;

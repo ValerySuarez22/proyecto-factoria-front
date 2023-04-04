@@ -1,0 +1,1 @@
+import HighForm from './components/highForm/HighForm';
