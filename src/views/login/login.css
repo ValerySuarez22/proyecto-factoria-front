@@ -3,7 +3,8 @@ body {
     background-image: url('../../assets/images/fondologin.png');
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    /* background-position: center; */
+    /* width: 80%; */
 }
 
 /* Estilos para el contenedor principal */
