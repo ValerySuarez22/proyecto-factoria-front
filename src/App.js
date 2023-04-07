@@ -1,26 +1,17 @@
 import Router from "./router/router";
-import './App.css';
+import Login from '../src/views/login/Login'
+import "./App.css";
 
 function App() {
   // axiosInterceptor;
-   return (
-      <>
-         <div className="App">
-            <Router />
-         </div>
-         {/* <Footer /> */}
-      </>
-   );
+  return (
+    <>
+      <div>
+        {/* <Router /> */}
+        <Login/> 
+      </div>
+    </>
+  );
 }
-//   return (
-//     <div>
-//       <header >
-//        <Navbar />
-//        <Login />
-//        <HighForm />
-//       </header>
-//     </div>
-//   );
-// }
 
 export default App;
