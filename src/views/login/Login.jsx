@@ -1,15 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import "../login/login.css";
-
-
+import "../../views/login/login.css";
 
 function Login(props) {
   return (
-    <div className='color'>
-      <div className="login-page">
-      <div className="background-image"></div>
-      <div className="login-form-container">
+    <div className='container-login'>
+        <div className="login-page">
+            <div className="login-form-container">
         <h2>Iniciar sesión</h2>
         <form onSubmit={props.onSubmit}>
           <div className="form-group">
@@ -23,7 +20,7 @@ function Login(props) {
           <button type="submit">Iniciar sesión</button>
         </form>
       </div>
-    </div>
+     </div>
     </div>
     
   );

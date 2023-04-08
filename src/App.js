@@ -1,18 +1,16 @@
-import React, { useState } from 'react';
-import Navbar from './components/navbar/Navbar';
-import Login from './views/login/Login';
-import HighForm from './components/highForm/HighForm';
-import './App.css';
+import Router from "./router/router";
+import Login from '../src/views/login/Login'
+import "./App.css";
 
-
+function App() {
+  // axiosInterceptor;
   return (
-    <div>
-      <header >
-       {/* <Navbar /> */}
-       <Login />
-       <HighForm />
-      </header>
-    </div>
+    <>
+      <div>
+        {/* <Router /> */}
+        <Login/> 
+      </div>
+    </>
   );
 }
 
