@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React from "react";
 import "./cards.css";
 import picture from "../../assets/images/auri.png";
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
-const Cards = () => {
-  const [user, setUser] = useState([
+function Cards() {
+  [
     {
     "id": 1,
     "name": "dsfs",
@@ -55,40 +54,25 @@ const Cards = () => {
     "photo": "fjg",
     "status": 1
     }
-    ])
-  // useEffect(() =>{
-  //   fetch("http://127.0.0.1:8000/api/employee")
-  //   .then(respuesta => respuesta.json())
-  //   .then(data => setUser( data))
-
-  // },[]);
-  
-  const link = () => {
-    
-
-  }
+    ]
+     // aqui entre los parentesis tiene que ir el objeto trabajador
   return (
-  // {user.map((obj,index) => 
-  
-  <div className="cardContainer" onClick={link} style={{cursor:'pointer'}}> 
+    <div className="cardContainer">
       <div className="cardLeft">
         <div className="frame">
           <img className="picture" src={picture} alt="" />
-          
+          // remplazar el nombre trabajador por el nombre correcto y borrar
+          comillas
         </div>
       </div>
       <div className="cardRight">
-        {user.length > 0 && `${user[0].name} -- ${user[0].email}`}
-      {/* {<Link to = "../"> */}
-        {/* {<p> */}
-        {/* {{obj.name} {obj.lastname}  */}
-        {/* {</p> */}
-        {/* {</Link> */}
+        <p>
+          {"trabajador.nombre"}// remplazar el nombre trabajador por el nombre
+          correcto y borrar comillas
+        </p>
       </div>
     </div>
-    
-  //)
   );
 }
 
-export default Cards
+export default Cards;

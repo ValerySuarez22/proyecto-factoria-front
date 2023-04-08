@@ -2,4 +2,15 @@
 // allows you to do things like:
 // expect(element).toHaveTextContent(/react/i)
 // learn more: https://github.com/testing-library/jest-dom
-import '@testing-library/jest-dom';
+// {import '@testing-library/jest-dom';
+import React from 'react';
+import { render } from '@testing-library/react';
+import Cards from './Cards';
+
+test('renders worker name', () => {
+    const worker = { nombre: 'Juan' };
+    const { getByText } = render(<Cards worker={worker} />);
+    const workerName = getByText(worker.nombre);
+    expect(workerName).toBeInTheDocument();
+  });
+  
