@@ -29,27 +29,28 @@
 
 
 import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import Login from './views/Login';
 
-import HRHome from '../views/humanResources/home';
-import HRRegister from '../views/humanResources/register';
-import HREmployees from '../views/humanResources/employees';
-import HRTeam from '../views/humanResources/team';
+import Login from '../views/login/Login.jsx';
 
-import RespHome from '../views/responsibles/home';
-import RespEmployees from '../views/responsibles/employees';
-import RespEvaluations from '../views/responsibles/evaluations';
+import HRHome from '../views/humanResources/home/Home.jsx';
+import HRRegister from '../views/humanResources/register/Register.jsx';
+import HREmployees from '../views/humanResources/employees/Employees.jsx';
+import HRTeam from '../views/humanResources/team/Team.jsx';
 
-import EmplHome from '../views/employees/home';
-import EmplEvaluations from '../views/employees/evaluations';
-import EmplPassword from '../views/employees/password';
+import RespHome from '../views/responsibles/home/Home.jsx';
+import RespEmployees from '../views/responsibles/employees/Employees.jsx';
+import RespEvaluations from '../views/responsibles/evaluations/Evaluations.jsx';
 
-const Routes = () => {
+import EmplHome from '../views/employees/home/Home.jsx';
+import EmplEvaluations from '../views/employees/evaluations/Evaluations.jsx';
+import EmplPassword from '../views/employees/password/Password.jsx';
+
+const CustomRouter = () => {
   return (
     <BrowserRouter>
-      <Switch>
+      <Routes>
         <Route exact path="/" component={Login} />
         <Route exact path="/hr/home" component={HRHome} />
         <Route exact path="/hr/register" component={HRRegister} />
@@ -61,9 +62,9 @@ const Routes = () => {
         <Route exact path="/empl/home" component={EmplHome} />
         <Route exact path="/empl/evaluations" component={EmplEvaluations} />
         <Route exact path="/empl/password" component={EmplPassword} />
-      </Switch>
+      </Routes>
     </BrowserRouter>
   );
 };
 
-export default Routes;
+export default CustomRouter;

@@ -1,5 +1,5 @@
 import React from "react";
-import Routes from "./router/routes";
+import CustomRouter from './router/CustomRouter';
 import "./App.css";
 
 
@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <div className='App'>
-        <Routes />
+        <CustomRouter />
       </div>
     </>
   );
