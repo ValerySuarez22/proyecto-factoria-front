@@ -1,5 +1,5 @@
 import Router from "./router/router";
-import Login from '../src/views/login/Login'
+// import Login from '../src/views/login/Login'
 import "./App.css";
 
 function App() {
@@ -7,8 +7,8 @@ function App() {
   return (
     <>
       <div>
-        {/* <Router /> */}
-        <Login/> 
+        <Router/>
+        {/* <Login/>  */}
       </div>
     </>
   );
