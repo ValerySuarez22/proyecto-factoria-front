@@ -1,140 +1,73 @@
 @import url('https://fonts.googleapis.com/css2?family=ABeeZee&family=Alfa+Slab+One&family=Changa&family=Cutive+Mono&family=Fira+Code:wght@300&family=Megrim&family=Poppins&family=Share+Tech+Mono&display=swap');
 
-/* body{
-    background-image: url('../../assets/images/fondo-login.png');
-    background-repeat: no-repeat; 
-    background-size:cover;
-    margin: 0 auto;
-    height: 60vh;
-} */
-
-.container-login {
-    background-repeat: no-repeat; 
-    background-size: cover; 
-    margin: 0;
-    background-image: url('../../assets/images/fondo-login.png');
-    width: 100%;
-} 
-
-.login-page {
-    display: flex; 
-    justify-content: center;
-    align-items: center;
-    max-height:max-content;
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url('../../assets/images/login.png');
+  background-size: cover;
+  background-position: center;
 }
 
-
-
-
-.login-form-container {
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 8px;
-    backdrop-filter: blur(10px);
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+.form-login {
+  background-color: rgba(255, 255, 255, 0.384);
+  border-radius: 15px;
+  box-shadow: 0 8px 32px 0 rgba(245, 95, 8, 0.637);
+  backdrop-filter: blur(10px);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-
-.login-form-container h2 {
-    font-family: 'poppins';
-    margin-top: 0;
-    color: white;
+.title-login{
+font-family: 'poppins';
+font-size: 20px;
+color: #E8550F;
 }
 
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 1rem;
+label {
+  display: flex;
+  flex-direction: column;
+  margin-top: 25px;
+  color: #E8550F;
+  font-family: 'poppins';
+  font-size: 18px;
+  justify-content: center;
+  align-items: center;
 }
 
-.form-group label {
-    font-weight: bold;
-    margin-bottom: 0.5rem;
+input {
+  display: flex;
+  flex-direction: column;
+  height: 30px;
+  width: 300px;
+  border: 1px solid #E8550F;
+  border-radius: 20px;
+  background-color: #ff7f508c;
+  font-size: 16px;
+  font-family: 'poppins';
 }
 
-.form-group input {
-    padding: 0.5rem;
-    border: 1px solid #E8550F;
-    border-radius: 10px;
-    background-color: #FFA37F;
-    
+input:focus {
+  outline: none;
+  background-color: rgba(206, 206, 206, 0.3);
 }
-
 
 button[type="submit"] {
-    background-color: #E8550F;
-    color: white;
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  background-color: #E8550F;
+  color: #ffffff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: 'poppins';
+  margin: 30px auto;
+  display: flex;
 }
 
 button[type="submit"]:hover {
-    background-color: salmon;
+  background-color: #ff7f50;
 }
-
-label[htmlFor="password"] {
-    font-size: 30px;
-}   
-
-/* .container-login {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: var(--background-color);
-  } 
-  
-  .login-page {
-    width: 500px;
-    background-color: #c42323;
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
-    overflow: hidden;
-  }
-  
-  .login-form-container {
-    padding: 50px;
-  }
-
-  form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .form-group {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-  }
-  
-  label {
-    font-size: 14px;
-    margin-bottom: 10px;
-    color: #666;
-  }
-  
-  input {
-    height: 40px;
-    border-radius: var(--border-radius);
-    border: none;
-    background-color: #f5f5f5;
-    padding: 10px;
-    font-size: 16px;
-    color: #333;
-  }
-  
-  button[type="submit"] {
-    background-color: var(--primary-color);
-    color: #fff;
-    border: none;
-    border-radius: var(--border-radius);
-    height: 40px;
-    font-size: 16px;
-    cursor: pointer;
-    margin-top: 20px;
-  } */

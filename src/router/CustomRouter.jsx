@@ -28,43 +28,43 @@
 
 
 
-import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+// import React from 'react';
+// import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 
-import Login from '../views/login/Login.jsx';
+// import Login from '../views/login/Login.jsx';
 
-import HRHome from '../views/humanResources/home/Home.jsx';
-import HRRegister from '../views/humanResources/register/Register.jsx';
-import HREmployees from '../views/humanResources/employees/Employees.jsx';
-import HRTeam from '../views/humanResources/team/Team.jsx';
+// import HRHome from '../views/humanResources/home/Home.jsx';
+// import HRRegister from '../views/humanResources/register/Register.jsx';
+// import HREmployees from '../views/humanResources/employees/Employees.jsx';
+// import HRTeam from '../views/humanResources/team/Team.jsx';
 
-import RespHome from '../views/responsibles/home/Home.jsx';
-import RespEmployees from '../views/responsibles/employees/Employees.jsx';
-import RespEvaluations from '../views/responsibles/evaluations/Evaluations.jsx';
+// import RespHome from '../views/responsibles/home/Home.jsx';
+// import RespEmployees from '../views/responsibles/employees/Employees.jsx';
+// import RespEvaluations from '../views/responsibles/evaluations/Evaluations.jsx';
 
-import EmplHome from '../views/employees/home/Home.jsx';
-import EmplEvaluations from '../views/employees/evaluations/Evaluations.jsx';
-import EmplPassword from '../views/employees/password/Password.jsx';
+// import EmplHome from '../views/employees/home/Home.jsx';
+// import EmplEvaluations from '../views/employees/evaluations/Evaluations.jsx';
+// import EmplPassword from '../views/employees/password/Password.jsx';
 
-const CustomRouter = () => {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route exact path="/" component={Login} />
-        <Route exact path="/hr/home" component={HRHome} />
-        <Route exact path="/hr/register" component={HRRegister} />
-        <Route exact path="/hr/employees" component={HREmployees} />
-        <Route exact path="/hr/team" component={HRTeam} />
-        <Route exact path="/resp/home" component={RespHome} />
-        <Route exact path="/resp/employees" component={RespEmployees} />
-        <Route exact path="/resp/evaluations" component={RespEvaluations} />
-        <Route exact path="/empl/home" component={EmplHome} />
-        <Route exact path="/empl/evaluations" component={EmplEvaluations} />
-        <Route exact path="/empl/password" component={EmplPassword} />
-      </Routes>
-    </BrowserRouter>
-  );
-};
+// const CustomRouter = () => {
+//   return (
+//     <BrowserRouter>
+//       <Routes>
+//         <Route exact path="/" component={Login} />
+//         <Route exact path="/hr/home" component={HRHome} />
+//         <Route exact path="/hr/register" component={HRRegister} />
+//         <Route exact path="/hr/employees" component={HREmployees} />
+//         <Route exact path="/hr/team" component={HRTeam} />
+//         <Route exact path="/resp/home" component={RespHome} />
+//         <Route exact path="/resp/employees" component={RespEmployees} />
+//         <Route exact path="/resp/evaluations" component={RespEvaluations} />
+//         <Route exact path="/empl/home" component={EmplHome} />
+//         <Route exact path="/empl/evaluations" component={EmplEvaluations} />
+//         <Route exact path="/empl/password" component={EmplPassword} />
+//       </Routes>
+//     </BrowserRouter>
+//   );
+// };
 
-export default CustomRouter;
+// export default CustomRouter;

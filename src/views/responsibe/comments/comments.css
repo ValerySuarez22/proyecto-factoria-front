@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee&family=Alfa+Slab+One&family=Changa&family=Cutive+Mono&family=Fira+Code:wght@300&family=Megrim&family=Poppins&family=Share+Tech+Mono&display=swap');
+
+.containerList {
+    background-image: url('../../../assets/images/fondo-general.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+.comment-field {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    background-color: #FFA37F;
+}
+
+.comment-field textarea {
+    height: 50px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #FFA37F;
+    border-radius: 5px;
+    justify-content: center;
+}
+
+.comment-field button {
+    background-color: #E8550F;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
