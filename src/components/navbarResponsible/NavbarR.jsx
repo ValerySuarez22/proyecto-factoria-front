@@ -1,4 +1,9 @@
 import React from 'react'
+import Logo from "../../assets/images/logo.png"
+import User from "../../assets/images/image.png"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPowerOff } from '@fortawesome/free-solid-svg-icons';
+import '../navbarResponsible/navbarR.css';
 
 function NavbarR() {
   return (

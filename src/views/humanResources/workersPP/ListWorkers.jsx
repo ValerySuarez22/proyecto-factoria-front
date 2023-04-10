@@ -6,7 +6,7 @@ function ListWorkers() {
   return (
     <div className='containerList'>
       <Navbar/>
-      <h1>cards</h1>
+      <h1>cards trabajadres preriodo de prueba</h1>
     </div>
   )
 }

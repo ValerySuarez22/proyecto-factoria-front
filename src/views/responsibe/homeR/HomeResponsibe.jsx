@@ -1,14 +1,14 @@
 import React from 'react'
-import Navbar from '../../../components/navbar-HHRR/Navbar';
-import "../homeRRHH/home.css";
+import NavbarR from '../../../components/navbarResponsible/NavbarR'
+import '../homeR/homeResponsibe.css'
 
-const Home = () =>{
+function HomeResponsibe() {
   return (
     <div className='contanierHome'>
-        <Navbar />
+        <NavbarR />
         {/* <div className='titleHome'><h1>Hola Paula</h1></div> */}
         <div className="container">
-          <h2>Agenda del Día</h2>
+          <h2>Agenda del Día respondables</h2>
           <section className="agenda">
             {/* Renderiza la agenda del día desde otro componente de calendario */}
             {/* <Calendar /> */}
@@ -24,4 +24,4 @@ const Home = () =>{
   )
 }
 
-export default Home
+export default HomeResponsibe
