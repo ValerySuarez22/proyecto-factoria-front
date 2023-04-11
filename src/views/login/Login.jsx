@@ -1,36 +1,90 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import "../login/login.css";
+import React, { useState } from 'react';
+import axios from '../../api/axios.jsx';
 
 
+const LOGIN_URL = '/api/login_check';
 
-function Login(props) {
-  return (
-    <div className='color'>
-      <div className="login-page">
-      <div className="background-image"></div>
-      <div className="login-form-container">
-        <h2>Iniciar sesión</h2>
-        <form onSubmit={props.onSubmit}>
-          <div className="form-group">
-            <label htmlFor="username">Usuario</label>
-            <input type="text" id="username" />
-          </div>
-          <div className="form-group">
-            <label htmlFor="password">Contraseña</label>
-            <input type="password" id="password" />
-          </div>
-          <button type="submit">Iniciar sesión</button>
-        </form>
-      </div>
-    </div>
-    </div>
+const Login = () => {
+
     
-  );
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const [success, setSuccess] = useState(false);
+
+        const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await axios.post(LOGIN_URL,
+                JSON.stringify({ username: username, password: password }),
+                {
+                    headers: { 'Content-Type': 'application/json' },
+                    withCredentials: true
+                }
+            );
+
+            const accessToken = response.data;
+            const user = { username: username, password: password, accessToken: accessToken };
+
+
+           const storedToken = window.localStorage.setItem(
+                'loggedAppUser', JSON.stringify(user)
+            );
+
+            console.log(storedToken)
+
+
+            setUsername('');
+            setPassword('');
+            setSuccess(true);
+
+            console.log('hecho!')
+
+
+        } catch (err) {
+            console.log('no funciona')
+        }
+    }
+
+    return (
+        <>
+            {success ? (
+                <section className='success'>
+                    <h2>¡Has iniciado sesión!</h2>
+                    <a href='https://elpais.com/' className='btn-login'>Ve al inicio</a>
+                </section> 
+            ) : (
+                <section>
+                    <h1>Plataforma de Login</h1>
+                        <div className='box-fichaje'>
+                            <form onSubmit={handleSubmit}>
+                                <label htmlFor='username'>username</label>
+                                <input
+                                    type='text'
+                                    id='username'
+                                    autoComplete='off'
+                                    onChange={(e) => setUsername(e.target.value)}
+                                    value={username}
+                                    required
+                                />
+
+                                <label htmlFor='password'>Contraseña</label>
+                                <input
+                                    type='password'
+                                    id='password'
+                                    onChange={(e) => setPassword(e.target.value)}
+                                    value={password}
+                                    required
+                                />
+                                <button className='btn'>Entrar</button>
+                            </form>
+
+                            <a href="https://elpais.com/" className='btn-password'>Recuperar Contraseña</a>
+                        </div>
+                </section>
+            )}
+        </>
+    )
 }
 
-Login.propTypes = {
-  onSubmit: PropTypes.func.isRequired,
-};
-
 export default Login;
+
