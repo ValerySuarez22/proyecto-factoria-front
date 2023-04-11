@@ -12,7 +12,7 @@ function NavbarR() {
       <img src={User} alt="user" className="user"/>
       <div className="buttons">
         <a href="/" className="btn">Home</a>
-        <a href="listWcharge" className="btn">Trabajadores</a>
+        <a href="ListEmployees" className="btn">Trabajadores</a>
         <a href="tracking" className="btn">Evaluaciones</a>
         <FontAwesomeIcon  className="icon-off" icon={faPowerOff}/>
       </div>

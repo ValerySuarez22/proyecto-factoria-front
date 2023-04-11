@@ -1,14 +1,16 @@
 import React from 'react'
 import NavbarR from '../../../components/navbarResponsible/NavbarR'
-import '../listW/listWcharge.css';
+import Comments from '../comments/Comments'
 
-function ListWcharge() {
+
+function ListEmployees() {
   return (
-    <div>
-      <NavbarR />
+    <div className='.containerList'>
+      <NavbarR/>
+      <Comments/>
       <h1>cards de trabajadres que tiene a cargo</h1>
     </div>
   )
 }
 
-export default ListWcharge
+export default ListEmployees
