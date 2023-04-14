@@ -11,6 +11,7 @@
     margin-top: 3%;
   }
   
+  
   .rbc-event {
     background-color: #FFD8B4;
     border-style: solid;
@@ -28,8 +29,26 @@
   
   .delete-button {
     margin-right: 5px;
+    width: 100px;
+    margin-bottom: 100px;
+    justify-self: center;
   }
   
   .cancel-button {
     margin-left: 5px;
+    width: 100px;
+    margin-bottom: 10px;
+    justify-self: center;
+
+
   }
+
+  /* .form-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+  }  */
+
+  

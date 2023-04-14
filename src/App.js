@@ -3,7 +3,7 @@ import RouterResponsile from './router/RouterResponsile';
 import Login from '../src/views/login/Login'
 import "./App.css";
 import Comments from "./views/responsibe/comments/Comments";
-import Login from "./views/login/Login";
+// import Login from "./views/login/Login";
 import { Calendar } from "react-big-calendar";
 import CalendarPage from "./components/calendar/Calendar";
 
@@ -13,8 +13,9 @@ function App() {
     <>
       <div>
         {/* <Router/> */}
-        <RouterResponsile/>
-        {/* <Login/>  */}
+        <CalendarPage />
+        {/* <RouterResponsile/> */}
+        <Login/> 
         {/* <Comments/> */}
       </div>
     </>

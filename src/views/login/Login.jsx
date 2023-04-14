@@ -19,12 +19,12 @@ function Login() {
         <h2 className='title-login'>Iniciar Sesión</h2>
         <form onSubmit={handleSubmit}>
           <div>
-            <label>Usuario:</label>
-            <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
+            <label name="login">Usuario:</label>
+            <input name="login" type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
           </div>
           <div>
-            <label>Contraseña:</label>
-            <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+            <label name="login">Contraseña:</label>
+            <input name="login" type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
           </div>
           <button type="submit">Iniciar Sesión</button>
         </form>

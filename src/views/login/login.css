@@ -28,7 +28,7 @@ font-size: 20px;
 color: #E8550F;
 }
 
-label {
+label[name="login"] {
   display: flex;
   flex-direction: column;
   margin-top: 25px;
@@ -39,7 +39,7 @@ label {
   align-items: center;
 }
 
-input {
+input[name="login"] {
   display: flex;
   flex-direction: column;
   height: 30px;
@@ -51,7 +51,7 @@ input {
   font-family: 'poppins';
 }
 
-input:focus {
+input[name="login"]:focus {
   outline: none;
   background-color: rgba(206, 206, 206, 0.3);
 }

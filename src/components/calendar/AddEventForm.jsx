@@ -6,7 +6,8 @@ class AddEventForm extends React.Component {
     this.state = {
       title: '',
       start: '',
-      end: ''
+      end: '',
+      recipient: '',
     };
   }
 
@@ -22,11 +23,15 @@ class AddEventForm extends React.Component {
     this.setState({ end: event.target.value });
   }
 
+  handleRecipientChange = (event) => {
+    this.setState({ recipient: event.target.value });
+  }
+
   handleSubmit = (event) => {
     event.preventDefault();
-    const { title, start, end } = this.state;
-    this.props.onAddEvent({ title, start, end });
-    this.setState({ title: '', start: '', end: '' });
+    const { title, start, end, recipient } = this.state;
+    this.props.onAddEvent({ title, start, end, recipient });
+    this.setState({ title: '', start: '', end: '', recipient: ''});
   }
 
   render() {
@@ -43,6 +48,10 @@ class AddEventForm extends React.Component {
         <label>
           Fin:
           <input type="datetime-local" value={this.state.end} onChange={this.handleEndChange} />
+        </label>
+        <label>
+          Destinatario:
+          <input type="email" value={this.state.recipient} onChange={this.handleRecipientChange} />
         </label>
         <button type="submit">Agregar evento</button>
       </form>
