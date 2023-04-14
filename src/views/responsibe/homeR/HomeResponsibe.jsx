@@ -5,7 +5,7 @@ import '../homeR/homeResponsibe.css'
 function HomeResponsibe() {
   return (
     <div className='contanierHome'>
-        <NavbarR />
+        <NavbarR/>
         {/* <div className='titleHome'><h1>Hola Paula</h1></div> */}
         <div className="container">
           <h2>Agenda del Día respondables</h2>

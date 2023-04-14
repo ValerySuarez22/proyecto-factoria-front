@@ -1,6 +1,5 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Login from "../views/login/Login";
 import Home from "../../src/views/humanResources/homeRRHH/Home"
 import Register from "../../src/views/humanResources/register/Register"
 import TeamsArea from "../views/humanResources/teams/TeamsArea";

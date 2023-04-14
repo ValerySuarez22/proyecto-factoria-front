@@ -1,5 +1,6 @@
-import React from "react";
-import CustomRouter from './router/CustomRouter';
+import Router from "./router/router";
+import RouterResponsile from './router/RouterResponsile';
+import Login from '../src/views/login/Login'
 import "./App.css";
 import Comments from "./views/responsibe/comments/Comments";
 import Login from "./views/login/Login";
@@ -12,8 +13,8 @@ function App() {
     <>
       <div>
         {/* <Router/> */}
+        <RouterResponsile/>
         {/* <Login/>  */}
-        <CalendarPage />
         {/* <Comments/> */}
       </div>
     </>
