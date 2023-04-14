@@ -12,10 +12,10 @@ function App() {
       <header >
        {/* <Navbar /> */}
        {/* <Login />  */}
-       {/* <Cards /> */}
+       { <Cards /> }
        {/* <CardsEvalue />  */}
        {/* <CardsSedes /> */}
-       <PasswordChange />
+       {/* <PasswordChange /> */}
       </header>
     </div>
   );
