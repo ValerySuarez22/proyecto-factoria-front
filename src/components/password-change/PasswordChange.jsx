@@ -59,5 +59,9 @@ function ChangePasswordForm() {
 
 
  
+<<<<<<< HEAD
 export default ChangePasswordForm;
 
+=======
+export default ChangePasswordForm;
+>>>>>>> origin/unificar

@@ -1,36 +1,36 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import "../login/login.css";
+import React, { useState } from 'react';
+import '../login/login.css'
+
+function Login() {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Aquí se puede añadir la lógica de inicio de sesión
+    console.log('Usuario:', username);
+    console.log('Contraseña:', password);
+  }
 
 
-
-function Login(props) {
   return (
-    <div className='color'>
-      <div className="login-page">
-      <div className="background-image"></div>
-      <div className="login-form-container">
-        <h2>Iniciar sesión</h2>
-        <form onSubmit={props.onSubmit}>
-          <div className="form-group">
-            <label htmlFor="username">Usuario</label>
-            <input type="text" id="username" />
+    <div className='login-container'>
+      <div className='form-login'>
+        <h2 className='title-login'>Iniciar Sesión</h2>
+        <form onSubmit={handleSubmit}>
+          <div>
+            <label name="login">Usuario:</label>
+            <input name="login" type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
           </div>
-          <div className="form-group">
-            <label htmlFor="password">Contraseña</label>
-            <input type="password" id="password" />
+          <div>
+            <label name="login">Contraseña:</label>
+            <input name="login" type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
           </div>
-          <button type="submit">Iniciar sesión</button>
+          <button type="submit">Iniciar Sesión</button>
         </form>
       </div>
     </div>
-    </div>
-    
   );
 }
-
-Login.propTypes = {
-  onSubmit: PropTypes.func.isRequired,
-};
 
 export default Login;
