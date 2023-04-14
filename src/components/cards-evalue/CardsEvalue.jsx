@@ -2,7 +2,7 @@ import React from "react";
 import "./cardsevalue.css";
 import picture from "../../assets/images/auri.png";
 
-function Cards() {
+function CardsEvalue() {
   // aqui entre los parentesis tiene que ir el objeto trabajador
   return (
     <div className="cardContainer1">
@@ -23,4 +23,4 @@ function Cards() {
   );
 }
 
-export default Cards;
+export default CardsEvalue

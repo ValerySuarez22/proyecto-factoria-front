@@ -2,7 +2,7 @@ import React from "react";
 import picture from "../../assets/images/image_4.png";
 import "./cardssedes.css";
 
-function Cards() {
+function CardsSedes() {
   // aqui entre los parentesis tiene que ir el objeto trabajador
   return (
     <div className="cardContainer2">
@@ -23,4 +23,4 @@ function Cards() {
   );
 }
 
-export default Cards;
+export default CardsSedes
