@@ -1,9 +1,9 @@
 import React, { useState} from 'react'
-import axios from '../../api/axios.jsx';
+import axios from '../api/axios';
 
 const REGISTER_URL = '/api/register'
 
-function Register() {
+function RegisterUser() {
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -71,4 +71,4 @@ function Register() {
   )
 }
 
-export default Register;
+export default RegisterUser;
