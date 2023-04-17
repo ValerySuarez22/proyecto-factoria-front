@@ -1,10 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-<<<<<<< HEAD
-import Logo from "../../assets/images/image_1.png"
-=======
 import Logo from "../../assets/images/logo.png";
->>>>>>> origin/unificar
 import "./highForm.css";
 
 const HighForm = () => {
@@ -14,12 +10,6 @@ const HighForm = () => {
   const [rols, setRols] = useState([]);
   const [status, setStatus] = useState([]);
   const [teams, setTeams] = useState([]);
-<<<<<<< HEAD
-  const [formValues, setFormValues] = useState({});
-  const [imagen, setImagen] = useState(null);
-  const [pictu, setPictu] = useState(Logo);
-  
-=======
   const [period, setPeriods] = useState([]);
   const [formValues, setFormValues] = useState([]);
   const [managers, setManagers] = useState([]);
@@ -27,7 +17,6 @@ const HighForm = () => {
   const [pictu, setPictu] = useState(Logo);
   
   
->>>>>>> origin/unificar
   useEffect(() => {
     // Nos traemos el listado de areas
     try {
