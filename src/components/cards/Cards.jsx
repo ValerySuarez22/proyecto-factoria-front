@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import "./cards.css";
-import picture from "../../assets/images/auri.png";
+// import picture from "../../assets/images/auri.png";
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 const Cards = () => {
@@ -73,7 +73,7 @@ const Cards = () => {
   <div className="cardContainer" onClick={link} style={{cursor:'pointer'}}> 
       <div className="cardLeft">
         <div className="frame">
-          <img className="picture" src={picture} alt="" />
+          {/* <img className="picture" src={picture} alt="" /> */}
           
         </div>
       </div>

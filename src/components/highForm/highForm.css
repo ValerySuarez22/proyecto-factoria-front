@@ -3,8 +3,10 @@
   justify-content: center;
   text-align: center;
   margin: 0 auto;
+  margin-top: 30px;
   max-width: 1000px;
-  background-color: #ffffff;
+  background-color: #ff7f50;
+  border: 1px solid #E8550F;
   border-radius: 15px;
 }
 

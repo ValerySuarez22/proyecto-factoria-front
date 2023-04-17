@@ -10,9 +10,12 @@ const HighForm = () => {
   const [rols, setRols] = useState([]);
   const [status, setStatus] = useState([]);
   const [teams, setTeams] = useState([]);
-  const [formValues, setFormValues] = useState({});
+  const [period, setPeriods] = useState([]);
+  const [formValues, setFormValues] = useState([]);
+  const [managers, setManagers] = useState([]);
   const [imagen, setImagen] = useState(null);
   const [pictu, setPictu] = useState(Logo);
+  
   
   useEffect(() => {
     // Nos traemos el listado de areas
@@ -40,6 +43,14 @@ const HighForm = () => {
       axios.get("http://127.0.0.1:8000/team/list")
       .then(res => {
         setTeams(res.data)
+      })
+      axios.get("http://127.0.0.1:8000/period/list")
+      .then(res => {
+        setPeriods(res.data)
+      })
+      axios.get("http://127.0.0.1:8000/manager/list")
+      .then(res => {
+        setManagers(res.data)
       })
     } catch (error) {
       console.log("🚀 ~ file: HighForm.jsx:20 ~ useEffect ~ error:", error)
@@ -170,6 +181,34 @@ const HighForm = () => {
               </select>
             </li>
             <li>
+              <label htmlFor="period">Periodo</label>
+              <select
+                id="period"
+                name="period"
+                value={formValues.period}
+                onChange={handleInputChange}
+              >
+                <option value=""></option> 
+                {period.map((data,index) =>
+                <option value={data.id}>{data.title}</option>
+                )}
+              </select>
+            </li>
+            <li>
+              <label htmlFor="manager">Responsable</label>
+              <select
+                id="manager"
+                name="manager"
+                value={formValues.manager}
+                onChange={handleInputChange}
+              >
+                <option value=""></option>
+                {managers.map((data, index) => 
+                <option value={data.id}>{data.title}</option>
+                )}
+              </select>
+            </li>
+            <li>
               <label htmlFor="inicio">Fecha de inicio</label>
               <input
                 type="date"
@@ -181,13 +220,24 @@ const HighForm = () => {
               />
             </li>
             <li>
-              <label htmlFor="manager">Responsable</label>
+              <label htmlFor="inicio">Fecha fin</label>
               <input
-                type="text"
-                id="manager"
-                name="manager"
-                value={formValues.manager}
-                placeholder="Nombre del responsable"
+                type="date"
+                id="finishDate"
+                name="finishDate"
+                value={formValues.finishDate}
+                placeholder="Fecha fin"
+                onChange={handleInputChange}
+              />
+            </li>
+            <li>
+              <label htmlFor="inicio">Primer Periodo</label>
+              <input
+                type="date"
+                id="firstPeriod"
+                name="firstPeriod"
+                value={formValues.firstPeriod}
+                placeholder="Primer Periodo"
                 onChange={handleInputChange}
               />
             </li>
@@ -258,13 +308,46 @@ const HighForm = () => {
               </select>
             </li>
             <li>
-              <label htmlFor="inicio">Fecha fin</label>
+              <label htmlFor="inicio">Segundo Periodo</label>
               <input
                 type="date"
-                id="finishDate"
-                name="finishDate"
-                value={formValues.finishDate}
-                placeholder="Fecha fin"
+                id="secondPeriod"
+                name="secondPeriod"
+                value={formValues.secondPeriod}
+                placeholder="Segundo Periodo"
+                onChange={handleInputChange}
+              />
+            </li>
+            <li>
+              <label htmlFor="inicio">Tercer Periodo</label>
+              <input
+                type="date"
+                id="thirdPeriod"
+                name="thirdtPeriod"
+                value={formValues.thirdPeriod}
+                placeholder="Tercer Periodo"
+                onChange={handleInputChange}
+              />
+            </li>
+            <li>
+              <label htmlFor="inicio">Cuarto Periodo</label>
+              <input
+                type="date"
+                id="fourthPeriod"
+                name="fourthPeriod"
+                value={formValues.fourthPeriod}
+                placeholder="Cuarto Periodo"
+                onChange={handleInputChange}
+              />
+            </li>
+            <li>
+              <label htmlFor="inicio">Quinto Periodo</label>
+              <input
+                type="date"
+                id="fifthPeriod"
+                name="fifthPeriod"
+                value={formValues.fifthPeriod}
+                placeholder="Quinto Periodo"
                 onChange={handleInputChange}
               />
             </li>

@@ -1,13 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=ABeeZee&family=Alfa+Slab+One&family=Changa&family=Cutive+Mono&family=Fira+Code:wght@300&family=Megrim&family=Poppins&family=Share+Tech+Mono&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=ABeeZee&family=Alfa+Slab+One&family=Changa&family=Cutive+Mono&family=Fira+Code:wght@300&family=Megrim&family=Poppins&family=Share+Tech+Mono&display=swap");
 
 .login-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-image: url('../../assets/images/login.png');
+  background-image: url("../../assets/images/login.png");
   background-size: cover;
   background-position: center;
+}
+
+.success {}
+.btn-login{}
+
+.title-login {
+  font-family: "poppins";
+  font-size: 22px;
+  color: #e8550f;
+  text-align: center;
 }
 
 .form-login {
@@ -22,18 +32,23 @@
   justify-content: center;
 }
 
-.title-login{
-font-family: 'poppins';
-font-size: 20px;
-color: #E8550F;
-}
-
-label[name="login"] {
+label[for="username"] {
   display: flex;
   flex-direction: column;
   margin-top: 25px;
-  color: #E8550F;
-  font-family: 'poppins';
+  color: #e8550f;
+  font-family: "poppins";
+  font-size: 18px;
+  justify-content: center;
+  align-items: center;
+}
+
+label[for="password"] {
+  display: flex;
+  flex-direction: column;
+  margin-top: 25px;
+  color: #e8550f;
+  font-family: "poppins";
   font-size: 18px;
   justify-content: center;
   align-items: center;
@@ -44,30 +59,40 @@ input[name="login"] {
   flex-direction: column;
   height: 30px;
   width: 300px;
-  border: 1px solid #E8550F;
+  border: 1px solid #e8550f;
   border-radius: 20px;
   background-color: #ff7f508c;
   font-size: 16px;
-  font-family: 'poppins';
+  font-family: "poppins";
 }
 
 input[name="login"]:focus {
   outline: none;
-  background-color: rgba(206, 206, 206, 0.3);
+  background-color: rgba(224, 98, 14, 0.3);
 }
 
-button[type="submit"] {
-  background-color: #E8550F;
+.btn-in {
+  background-color: #e8550f;
+  border: 1px solid #e8550f;
   color: #ffffff;
   padding: 8px 16px;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  font-family: 'poppins';
-  margin: 30px auto;
+  font-family: "poppins";
+  margin: 20px auto;
   display: flex;
 }
 
-button[type="submit"]:hover {
+.btn-in {
   background-color: #ff7f50;
 }
+
+.btn-password {
+  color:#e8550f;
+  text-decoration: none;
+  font-family: "poppins";
+}
+
+
+
