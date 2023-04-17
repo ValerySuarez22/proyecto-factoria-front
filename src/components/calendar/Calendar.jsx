@@ -1,23 +1,26 @@
 import React from 'react';
 import { Calendar, momentLocalizer } from 'react-big-calendar';
 import moment from 'moment';
+import 'moment/locale/es';
 import '../calendar/react-datepicker/dist/react-datepicker.css';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import AddEventForm from './AddEventForm';
 import '../calendar/calendar.css';
 import axios from 'axios';
+import DailyAgenda from '../dailyAgenda/DailyAgenda';
 
-
-moment.locale('es');
+moment.updateLocale('es', {
+  week: {
+    dow: 1, // Establece el primer día de la semana como lunes (0 es domingo, 1 es lunes, 2 es martes, etc.)
+  },
+});
 const localizer = momentLocalizer(moment);
-
 
 const Event = ({ event, selected }) => (
   <div className={`event ${selected ? 'selected' : 'unselected'}`}>
     {event.title}
   </div>
 );
-
 
 class CalendarPage extends React.Component {
   constructor(props) {
@@ -28,7 +31,6 @@ class CalendarPage extends React.Component {
       selectedDay: null,
     };
   }
-
 
   componentWillMount() {
     // cargar los eventos existentes del backend
@@ -83,17 +85,19 @@ class CalendarPage extends React.Component {
   .catch((error) => {
     console.error(error);
   });
+  
+  const dayEvents = events.filter((ev) => moment(ev.start).isSame(event.start, 'day'));
+  this.props.addEventToDailyAgenda(event);
+
   }
 
 
   handleSelectEvent = (event) => {
     console.log('rosa', event)
-    delete event.selected
+    // delete event.selected
     console.log('morado', event)
     this.setState({ selectedEvent: event });
   }
-
-
 
 
   handleCancel = () => {
@@ -107,11 +111,14 @@ class CalendarPage extends React.Component {
 
   handleDeleteEvent = (id) => {
     const { events, selectedEvent } = this.state;
-    const updatedEvents = events.filter((event) => event !== selectedEvent);
-    this.setState({ events: updatedEvents, selectedEvent: null });
-  }
 
-
+    axios.delete(`http://127.0.0.1:8000/api/calendar/${id}/delete`)
+      .then(() => {
+        const updatedEvents = events.filter((event) => event.id !== selectedEvent.id);
+        this.setState({ events: updatedEvents, selectedEvent: null });
+      })
+      .catch(error => console.error(error));
+}
 
 
 
@@ -132,13 +139,22 @@ class CalendarPage extends React.Component {
             components={{
               event: (props) => <Event {...props} selected={props.event === selectedEvent} />,
             }}
+            messages={{
+              today: 'Hoy',
+              previous: 'Anterior',
+              next: 'Siguiente',
+              month: 'Mes',
+              week: 'Semana',
+              day: 'Día',
+              agenda: 'Agenda',
+            }}
             onSelectEvent={this.handleSelectEvent}
           />
           {selectedEvent && (
             <div className={`event-description ${selectedEvent && 'selected'}`}>
               <p>¿Eliminar evento "{selectedEvent.title}"?</p>
              
-                <button className='delete-button' onClick={this.handleDeleteEvent()}>Eliminar</button>
+                <button className='delete-button' onClick={() => this.handleDeleteEvent(selectedEvent.id)}>Eliminar</button>
                 <button className='cancel-button' onClick={this.handleCancel}>Cancelar</button>
              
             </div>

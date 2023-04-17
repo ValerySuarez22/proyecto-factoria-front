@@ -1,27 +1,36 @@
-import React from 'react'
+import React, { useState } from 'react';
 import Navbar from '../../../components/navbar-HHRR/Navbar';
 import "../homeRRHH/home.css";
+import CalendarPage from '../../../components/calendar/Calendar';
+import SmallCalendar from '../../../components/smallCalendar/SmallCalendar';
+import DailyAgenda from '../../../components/dailyAgenda/DailyAgenda';
 
-const Home = () =>{
+const Home = () => {
+  const [isCalendarPageVisible, setIsCalendarPageVisible] = useState(false);
+
+  const handleSmallCalendarClick = () => {
+    setIsCalendarPageVisible(!isCalendarPageVisible);
+  };
+
   return (
-    <div className='contanierHome'>
-        <Navbar />
-        {/* <div className='titleHome'><h1>Hola Paula</h1></div> */}
-        <div className="container">
-          <h2>Agenda del Día</h2>
-          <section className="agenda">
-            {/* Renderiza la agenda del día desde otro componente de calendario */}
-            {/* <Calendar /> */}
-          </section>
-          <div className="calendar-container">
-            {/* Renderiza el calendario pequeño con estilos de glasmorfismo */}
-            <div className="calendar">
-              {/* Contenido del calendario */}
-            </div>
-          </div>
-        </div>
+    <div className='homeRRHH-container'>
+      <Navbar />
+      <section className="agenda">
+          <DailyAgenda />
+      </section>
+      <section className="calendar" onClick={handleSmallCalendarClick}>
+        <SmallCalendar />
+        {isCalendarPageVisible && <CalendarPage />}
+    </section>
     </div>
-  )
+  );
 }
 
-export default Home
+export default Home;
+
+
+
+
+
+
+

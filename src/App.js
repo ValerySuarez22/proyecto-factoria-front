@@ -5,7 +5,9 @@ import "./App.css";
 import Comments from "./views/responsibe/comments/Comments";
 // import Login from "./views/login/Login";
 import { Calendar } from "react-big-calendar";
-import CalendarPage from "./components/calendar/Calendar";
+// import CalendarPage from "./components/calendar/Calendar";
+// import SmallCalendar from "./components/smallCalendar/SmallCalendar";
+import Home from "./views/humanResources/homeRRHH/Home"
 
 function App() {
   // axiosInterceptor;
@@ -13,9 +15,11 @@ function App() {
     <>
       <div>
         {/* <Router/> */}
-        <CalendarPage />
+        {/* <SmallCalendar /> */}
+        <Home />
+        {/* <CalendarPage /> */}
         {/* <RouterResponsile/> */}
-        <Login/> 
+        {/* <Login/>  */}
         {/* <Comments/> */}
       </div>
     </>

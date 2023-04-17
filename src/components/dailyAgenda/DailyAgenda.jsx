@@ -1,5 +1,6 @@
 import React from 'react';
 import moment from 'moment';
+import 'moment/locale/es';
 
 class DailyAgenda extends React.Component {
   constructor(props) {
