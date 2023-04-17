@@ -1,44 +1,56 @@
-import React, { useEffect } from 'react'
+import React, { useState } from 'react'
 import axios from '../../api/axios.jsx';
 
 const DASHBOARD_URL = '/dashboard/employees/data';
 
 function UsersList() {
 
-    const storedToken = localStorage.getItem("loggedAppUser");
-    const parsedToken = JSON.parse(storedToken);
-    const accessToken = parsedToken.accessToken;
-    const token = accessToken.token;
+    const [users, setUsers] = useState([])
 
-    console.log(token)
+    const token = localStorage.getItem("auth_token");
+    const userRole = localStorage.getItem("auth_role");
 
-    try{
+    // console.log(token)
 
-            useEffect(() => {
+    if(userRole === ['ROLE_ADMIN', 'ROLE_USER']){
+        // useEffect(() => {
+        try{
 
-            const axiosRequest = async() => {
-                await axios.get(DASHBOARD_URL,{
-                    headers:{
-                        Authorization: 'Bearer ${token}'
-                    }
-                })
-
-                .then(data=>console.log(data.data))
+                const axiosRequest = async() => {
+                    await axios.get(DASHBOARD_URL,{
+                        headers:{
+                            Authorization: `Bearer ${token}`
+                        }
+                    })
+                    .then(res => {
+                        setUsers(res.data)
+                    })
+                    // .then(data=>console.log(data.data))
+                }
+        
+                axiosRequest()
+                
+            }catch{
+                console.log('Algo salio mal :(')
             }
+        // }, [])
+        }else {
+            return <h1>NO AUTORIZADO</h1>
+        }
 
-            axiosRequest()
-
-        }, [])
-
-    }catch{
-
-        console.log('Algo salio mal :(')
-
-    }
 
   return (
     <div>
-        <h1>Estás en la lista de empleados en prueba</h1>
+        {
+            users.map(int => {
+                return (
+                    <div key={int.id}>
+                        <h1>{int.username}</h1>
+                    </div>
+                )
+            })
+        }
+      <h1>ESTAS EN LA USER-LIST</h1>
     </div>
   )
 }
