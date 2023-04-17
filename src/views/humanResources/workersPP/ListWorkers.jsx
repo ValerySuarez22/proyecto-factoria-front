@@ -6,7 +6,7 @@ import Cards from '../../../components/cards/Cards';
 function ListWorkers() {
   return (
     <div className='containerList'>
-      <Navbar/>
+      {/* <Navbar/> */}
       <h1 className='title-employee'>cards trabajadres preriodo de prueba</h1>
       <Cards/>
     </div>

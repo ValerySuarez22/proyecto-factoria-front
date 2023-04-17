@@ -13,12 +13,12 @@ function App() {
   return (
     <>
       <div>
-        {/* <Router/> */}
+        <Router/>
         {/* <CalendarPage /> */}
         {/* <RouterResponsile/> */}
         {/* <Login/>  */}
         {/* <Comments/> */}
-        <RegisterUser/>
+        {/* <RegisterUser/> */}
       </div>
     </>
   );
