@@ -1,32 +1,24 @@
-import React, { useState } from 'react';
-import Navbar from './components/navbar/Navbar';
-import Login from './views/login/Login';
-import HighForm from './components/highForm/HighForm';
-import { Calendar, momentLocalizer } from 'react-big-calendar';
-import moment from 'moment';
-import 'react-big-calendar/lib/css/react-big-calendar.css';
-import './App.css';
-
-const localizer = momentLocalizer(moment);
+import Router from "./router/router";
+import RouterResponsile from './router/RouterResponsile';
+import Login from '../src/views/login/Login'
+import "./App.css";
+import Comments from "./views/responsibe/comments/Comments";
+// import Login from "./views/login/Login";
+import { Calendar } from "react-big-calendar";
+import CalendarPage from "./components/calendar/Calendar";
 
 function App() {
-  const [events, setEvents] = useState([
-    {
-      start: new Date(),
-      end: new Date(),
-      title: 'Ejemplo de evento',
-    },
-  ]);
-
+  // axiosInterceptor;
   return (
-    <div>
-      <header >
-       {/* <Navbar /> */}
-       <Login />
-       <HighForm />
-       <Calendar localizer={localizer} events={events} />
-      </header>
-    </div>
+    <>
+      <div>
+        <Router/>
+        {/* <CalendarPage /> */}
+        {/* <RouterResponsile/> */}
+        {/* <Login/>  */}
+        {/* <Comments/> */}
+      </div>
+    </>
   );
 }
 

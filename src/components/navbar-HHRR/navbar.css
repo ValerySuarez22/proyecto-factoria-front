@@ -1,9 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee&family=Alfa+Slab+One&family=Changa&family=Cutive+Mono&family=Fira+Code:wght@300&family=Megrim&family=Poppins&family=Share+Tech+Mono&display=swap');
+
 .content-navbar {
     height: 90vh;
     width: 130px;
     position: fixed;
     top: 50%;
-    left: 10%;
+    margin-left: -4%;
     transform: translate(-50%, -50%);
     background-color: #E8550F;
     color: white;
@@ -20,9 +22,12 @@
 
 .logo {
     width: 80%;
-    margin-bottom: 30px;
-}
+    }
 
+.user {
+    width: 60%;
+    border-radius: 50px;
+}
 .buttons {
     display: flex;
     flex-direction: column;
@@ -31,13 +36,23 @@
 .btn {
     background-color: #ff7f50;
     color: #fff;
-    border: none;
-    padding: 10px 20px;
-    margin-bottom: 10px;
+    border-radius: 5px;
+    padding: 10px 6px;
+    margin-bottom: 25px;
     cursor: pointer;
     text-decoration: none;
+    font-family: 'poppins';
+    font-size: 14px;
+    text-align: center;
 }
+
+
 
 .btn:hover {
     background-color: salmon;
+}
+
+.icon-off {
+    margin-top: 15px;
+    height: 20px;
 }

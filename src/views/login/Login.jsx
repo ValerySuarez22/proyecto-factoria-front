@@ -1,36 +1,94 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { useState } from "react";
+import axios from "../api/axios";
 import "../login/login.css";
 
+const LOGIN_URL = "/api/login_check";
 
+const Login = () => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [success, setSuccess] = useState(false);
 
-function Login(props) {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post(
+        LOGIN_URL,
+        JSON.stringify({ username: username, password: password }),
+        {
+          headers: { "Content-Type": "application/json" },
+          withCredentials: true,
+        }
+      );
+
+      const accessToken = response.data;
+      const user = {
+        username: username,
+        password: password,
+        accessToken: accessToken,
+      };
+
+      const storedToken = window.localStorage.setItem(
+        "loggedAppUser",
+        JSON.stringify(user)
+      );
+
+      console.log(storedToken);
+
+      setUsername("");
+      setPassword("");
+      setSuccess(true);
+
+      console.log("hecho!");
+    } catch (err) {
+      console.log("no funciona");
+    }
+  };
+
   return (
-    <div className='color'>
-      <div className="login-page">
-      <div className="background-image"></div>
-      <div className="login-form-container">
-        <h2>Iniciar sesión</h2>
-        <form onSubmit={props.onSubmit}>
-          <div className="form-group">
-            <label htmlFor="username">Usuario</label>
-            <input type="text" id="username" />
-          </div>
-          <div className="form-group">
-            <label htmlFor="password">Contraseña</label>
-            <input type="password" id="password" />
-          </div>
-          <button type="submit">Iniciar sesión</button>
-        </form>
-      </div>
-    </div>
-    </div>
-    
-  );
-}
+    <div className="login-container">
+      <>
+        {success ? (
+          <section className="success">
+            <h2>¡Has iniciado sesión!</h2>
+            <a href="https://elpais.com/" className="btn-login">
+              Ve al inicio
+            </a>
+          </section>
+        ) : (
+          <section>
+            <h1 className="title-login">Plataforma de Login</h1>
+            <div className="form-login">
+              <form onSubmit={handleSubmit}>
+                <label htmlFor="username">Username</label>
+                <input name="login"
+                  type="text"
+                  id="username"
+                  autoComplete="off"
+                  onChange={(e) => setUsername(e.target.value)}
+                  value={username}
+                  required
+                />
+                <label htmlFor="password">Contraseña</label>
+                <input name="login"
+                  type="password"
+                  id="password"
+                  onChange={(e) => setPassword(e.target.value)}
+                  value={password}
+                  required
+                />
+                <button className="btn-in" type="submit">Entrar</button>
+              </form>
 
-Login.propTypes = {
-  onSubmit: PropTypes.func.isRequired,
+              <a href="https://elpais.com/" className="btn-password">
+                Recuperar Contraseña
+              </a>
+            </div>
+          </section>
+        )}
+      </>
+    </div>
+  );
 };
 
 export default Login;
