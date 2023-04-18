@@ -1,70 +1,96 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h1>Final Proyect Factoria F5 - Frontend</h1>
+<p>This is a proyect developed for Factoria F5 as final proyect of femcoders bootcamp.
+The company Factoría F5 is hiring new people and as a consequence they have asked us to develop a platform to manage the trial periods.
+On this website there will be two possible accesses, one for HR who will have access to all the data of the applicants, and another for those responsible for each school, who will only be able to access the data of their applicants.</p>
+<h2>User Stories</h2>
+<h4>HR Manager</h4>
+<ul>
+  <li>As an HR manager, I want to be able to create a user account for employees in their probationary period, so that they can access the platform and view their evaluations and comments.</li>
+  <li>As an HR manager, I want to be able to add employees to the list of people in their probationary period, so that I can track their progress and ensure they receive a fair and objective evaluation.</li>
+  <li>As an HR manager, I want to be able to add comments and evaluations for employees in their probationary period, so that I can keep a record of their strengths and weaknesses, and help them improve in their work.</li>
+  <li>As an HR manager, I want to be able to generate reports and statistics on the progress and performance of employees in their probationary period, so that I can identify trends and areas for improvement.</li>
+</ul>
 
-## Available Scripts
+<h4>School Supervisor</h4>
+<ul>
+  <li>As a school supervisor, I want to be able to view the evaluations and comments of employees in my school, but not others, so that I can maintain the privacy and confidentiality of employees.</li>
+</ul>
 
-In the project directory, you can run:
+<h4>Probationary Employee</h4>
+<ul>
+  <li>As a probationary employee, I want to be able to view my evaluations and comments on the platform, so that I can have a clear idea of my progress and the areas in which I need to improve.</li>
+  <li>As a probationary employee, I want to be able to perform a self-evaluation on the platform, so that I can express my own opinions and perceptions about my progress.</li>
+</ul>
 
-### `npm start`
+## Fullstack Developer Team and GitHub Links
+| Name                       | Role                    | Link                                     |
+| --------------------------|------------------------| ---------------------------------------- |
+| Hilda Da Conceicao         | Scrum Master          | https://github.com/Hildacaro             |
+| Emma Raquel Rentero Plaza    | Product Owner      | https://github.com/emmamme447         |
+| Andrea Villegas Tirado| Developer     | https://github.com/CodeMincer                |
+| Válery Paola Suárez Bernal  | Developer         | https://github.com/ValerySuarez22            |
+| Áurea Gutiérrez Huertas       | Developer               | https://github.com/Auri78         |
+| Nerea Pascual Picazo    | Developer               | https://github.com/Npicazo12               |
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<h2>Stacks and technologies</h2>
 
-### `npm test`
+<span style="border-radius: 30px; background-color: #E34F26; padding: 5px;">
+    <img height="30" src="https://img.shields.io/badge/-HTML5-orange?style=flat-square&logo=html5&logoColor=white"/>
+</span>
+<span style="border-radius: 3px; background-color: #777BB4; padding: 5px;">
+    <img height="30" src="https://img.shields.io/badge/-PHP-8892BF?style=flat-square&logo=php&logoColor=white"/>
+</span>
+<span style="border-radius: 3px; background-color: #4479A1; padding: 5px;">
+    <img height="30" src="https://img.shields.io/badge/-MySQL-blue?style=flat-square&logo=mysql&logoColor=white"/>
+</span>
+<span style="border-radius: 3px; background-color: #000000; padding: 5px;">
+    <img height="30" src="https://img.shields.io/badge/-Symfony-black?style=flat-square&logo=symfony&logoColor=white"/>
+</span>
+<span style="border-radius: 3px; background-color: #61DAFB; padding: 5px;">
+    <img height="30" src="https://img.shields.io/badge/-React-61DAFB?style=flat-square&logo=react&logoColor=white"/>
+</span>
+<span style="border-radius: 3px; background-color: #F7DF1E; padding: 5px;">
+    <img height="30" src="https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=white"/>
+</span>
+<span style="border-radius: 3px; background-color: #FF6C37; padding: 5px;">
+    <img height="30" src="https://img.shields.io/badge/-Postman-FF6C37?style=flat-square&logo=postman&logoColor=white"/>
+</span>
+<span style="border-radius: 3px; background-color: #1572B6; padding: 5px;">
+    <img height="30" src="https://img.shields.io/badge/-CSS-1572B6?style=flat-square&logo=css3&logoColor=white"/>
+</span>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<h2>Other Tools</h2>
+<span style="border-radius: 3px; background-color: #007ACC; padding: 5px;">
+    <img height="30" src="https://img.shields.io/badge/-Visual%20Studio%20Code-007ACC?style=flat-square&logo=visual-studio-code&logoColor=white"/>
+</span>
+<span style="border-radius: 3px; background-color: #F24E1E; padding: 5px;">
+    <img height="30" src="https://img.shields.io/badge/-Figma-F24E1E?style=flat-square&logo=figma&logoColor=white"/>
+</span>
+<span style="border-radius: 3px; background-color: #F05032; padding: 5px;">
+    <img height="30" src="https://img.shields.io/badge/-Git-F05032?style=flat-square&logo=git&logoColor=white"/>
+</span>
 
-### `npm run build`
+<h2>Methodology</h2>
+<ul>
+  <li></li>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<h2>Installation</h2>
+    <p>To install the project, run:</p>
+    <code>npm install</code>
+    <h2>Usage</h2>
+    <p>To start the development server, run:</p>
+    <code>npm start</code>
+    <p>To build the project for production, run:</p>
+    <code>npm run build</code>
+    <h2>Contributing</h2>
+    <p>Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.</p>
+    <p>Please make sure to update tests as appropriate.</p>
+    <h2>License</h2>
+    <p>This project is licensed under the MIT License - see the <a href="LICENSE">LICENSE</a> file for details.</p>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
