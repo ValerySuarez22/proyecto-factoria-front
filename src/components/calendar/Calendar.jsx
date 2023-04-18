@@ -86,8 +86,8 @@ class CalendarPage extends React.Component {
     console.error(error);
   });
   
-  const dayEvents = events.filter((ev) => moment(ev.start).isSame(event.start, 'day'));
-  this.props.addEventToDailyAgenda(event);
+  // const dayEvents = events.filter((ev) => moment(ev.start).isSame(event.start, 'day'));
+  // this.props.addEventToDailyAgenda(event);
 
   }
 
@@ -125,6 +125,7 @@ class CalendarPage extends React.Component {
 
   render() {
     const { selectedEvent } = this.state;
+    const {dayCalendar} = this.props;
     return (
       <div className='calendar-container wrapper'>
         {/* <div className='form-row'> */}
@@ -135,7 +136,7 @@ class CalendarPage extends React.Component {
           <Calendar
             localizer={localizer}
             events={this.state.events}
-            defaultDate={new Date()}
+            defaultDate={dayCalendar}
             components={{
               event: (props) => <Event {...props} selected={props.event === selectedEvent} />,
             }}

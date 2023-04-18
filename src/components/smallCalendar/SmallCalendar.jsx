@@ -4,10 +4,13 @@ import 'react-calendar/dist/Calendar.css';
 import '../smallCalendar/smallCalendar.css'
 
 
-function SmallCalendar() {
+const SmallCalendar= ({handleSmallCalendarClick}) => {
+  const prueba= () => {
+    console.log('he clickado un día')
+  }
   return (
     <div className='small-calendar'>
-      <Calendar />
+      <Calendar onClickDay={handleSmallCalendarClick} />
     </div>
   )
 }
