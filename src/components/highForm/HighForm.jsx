@@ -14,41 +14,40 @@ const HighForm = () => {
   const [formValues, setFormValues] = useState([]);
   const [managers, setManagers] = useState([]);
   const [imagen, setImagen] = useState(null);
-  const [pictu, setPictu] = useState(Logo);
   
   
   useEffect(() => {
     // Nos traemos el listado de areas
     try {
-      axios.get("http://127.0.0.1:8000/area/list")
+      axios.get("https://127.0.0.1:8000/area/list")
       .then(res => {
         setAreas(res.data)
       })
-      axios.get("http://127.0.0.1:8000/contract/list")
+      axios.get("https://127.0.0.1:8000/contract/list")
       .then(res => {
         setContracts(res.data)
       })
-      axios.get("http://127.0.0.1:8000/position/list")
+      axios.get("https://127.0.0.1:8000/position/list")
       .then(res => {
         setPositions(res.data)
       })
-      axios.get("http://127.0.0.1:8000/rol/list")
+      axios.get("https://127.0.0.1:8000/rol/list")
       .then(res => {
         setRols(res.data)
       })
-      axios.get("http://127.0.0.1:8000/status/list")
+      axios.get("https://127.0.0.1:8000/status/list")
       .then(res => {
         setStatus(res.data)
       })
-      axios.get("http://127.0.0.1:8000/team/list")
+      axios.get("https://127.0.0.1:8000/team/list")
       .then(res => {
         setTeams(res.data)
       })
-      axios.get("http://127.0.0.1:8000/period/list")
+      axios.get("https://127.0.0.1:8000/period/list")
       .then(res => {
         setPeriods(res.data)
       })
-      axios.get("http://127.0.0.1:8000/manager/list")
+      axios.get("https://127.0.0.1:8000/manager/list")
       .then(res => {
         setManagers(res.data)
       })
@@ -87,7 +86,7 @@ const HighForm = () => {
 
     data.append("photo", imagen);
     data.append('data', JSON.stringify(formValues));
-    const res = await axios.post("http://127.0.0.1:8000/api/create/employee", data, {
+    await axios.post("https://127.0.0.1:8000/api/create/employee", data, {
       headers: {
         'Content-Type': 'multipart/form-data',
       },
@@ -113,7 +112,7 @@ const HighForm = () => {
   return (
     <div className="form-container">
       <form onSubmit={handleSubmit} className="high-form">
-        <img src={pictu} alt="logo111" />
+        <img src={Logo} alt="logo111" />
         <ul className="high-form-list">
           <div className="form-left">
             <li>
