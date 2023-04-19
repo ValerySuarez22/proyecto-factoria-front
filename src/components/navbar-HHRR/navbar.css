@@ -5,7 +5,7 @@
     width: 130px;
     position: fixed;
     top: 50%;
-    left: 10%;
+    margin-left: -4%;
     transform: translate(-50%, -50%);
     background-color: #E8550F;
     color: white;
@@ -22,8 +22,7 @@
 
 .logo {
     width: 80%;
-    /* margin-bottom: 30px; */
-}
+    }
 
 .user {
     width: 60%;
@@ -37,14 +36,17 @@
 .btn {
     background-color: #ff7f50;
     color: #fff;
-    border: none;
+    border-radius: 5px;
     padding: 10px 6px;
     margin-bottom: 25px;
     cursor: pointer;
     text-decoration: none;
     font-family: 'poppins';
     font-size: 14px;
+    text-align: center;
 }
+
+
 
 .btn:hover {
     background-color: salmon;

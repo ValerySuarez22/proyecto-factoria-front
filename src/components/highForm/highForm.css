@@ -1,27 +1,14 @@
 .form-container {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    margin: 0 auto;
-    max-width: 1000px;
-    background-color: #ffffff;
-    border-radius: 15px;
-  }
-  
-  .high-form-list {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 -10px;
-    padding: 0;
-    width: 100%; 
-  }
-  
-  .form-left {
-    flex: 1; 
-    width: 500px;
-    padding: 10% 0% 10% 0%;
-    margin-right: 30px; 
-  }
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 30px;
+  max-width: 1000px;
+  background-color: #ff7f50;
+  border: 1px solid #E8550F;
+  border-radius: 15px;
+}
 
   .form-left li {
     margin-bottom: 12px !important;
@@ -33,26 +20,92 @@
     padding: 10% 0% 10% 0%;
     margin-left: 30px;
   }
+
+  .form-right li {
+    margin-bottom: 12px !important;
+  }
   
   .high-form-list li {
     list-style: none;
     margin-bottom: 10px;
-
   }
   
-  .high-form-list li label {
-    display: block;
-    margin-bottom: 5px;
-    
-  }
-  
-  .high-form-list li input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #F24822;
-    border-radius: 4px;
-  }
+.high-form-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -10px;
+  padding: 0;
+  width: 100%; 
+}
 
-  .button {
-    align-items: center;
-  }
+.form-left {
+  flex: 1; 
+  width: 500px;
+  padding: 10% 0% 10% 0%;
+  margin-right: 30px; 
+}
+
+.form-left li {
+  margin-bottom: 12px !important;
+}
+
+.form-right {
+  flex: 1; 
+  max-width: 500px;
+  padding: 10% 0% 10% 0%;
+  margin-left: 30px;
+}
+
+.form-right li {
+  margin-bottom: 12px !important;
+}
+
+.high-form-list li {
+  list-style: none;
+  margin-bottom: 10px;
+
+}
+
+.high-form-list li label {
+  display: block;
+  margin-bottom: 5px;
+  
+}
+
+.high-form-list li input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #F24822;
+  border-radius: 4px;
+}
+
+.high-form-list li select {
+  width: 106%;
+  padding: 10px;
+  border: 1px solid #F24822;
+  border-radius: 4px;
+}
+
+.button {
+  align-items: center;
+}
+
+.custom-file-upload input[type="file"] {
+  display: none;
+}
+/*   
+.custom-file-upload button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.custom-file-upload button:hover {
+  background-color: #3e8e41;
+} */
