@@ -7,24 +7,30 @@ import DailyAgenda from '../../../components/dailyAgenda/DailyAgenda';
 
 const Home = () => {
   const [isCalendarPageVisible, setIsCalendarPageVisible] = useState(false);
+  const [isDailyAgendaVisible, setIsDailyAgendaVisible] = useState(true);
   const [dayCalendar, setDayCalendar] = useState(new Date());
 
   const handleSmallCalendarClick = (valueDay) => {
     console.log('hola', valueDay)
     setDayCalendar(valueDay);
     setIsCalendarPageVisible(!isCalendarPageVisible);
+    setIsDailyAgendaVisible(false);
+  };
 
+  const resetState = () => {
+    setIsCalendarPageVisible(false);
+    setIsDailyAgendaVisible(true);
   };
 
   return (
     <div className='homeRRHH-container'>
       <Navbar />
-      <section className="agenda">
+      <section className={`agenda ${isDailyAgendaVisible ? '' : 'agenda--hidden'}`}>
           <DailyAgenda dayCalendar={dayCalendar}/>
       </section>
       <section className="calendar" >
         {!isCalendarPageVisible && <SmallCalendar handleSmallCalendarClick={ handleSmallCalendarClick} />}
-        {isCalendarPageVisible && <CalendarPage dayCalendar={dayCalendar}/>}
+        {isCalendarPageVisible && <CalendarPage dayCalendar={dayCalendar} resetState={resetState} />}
     </section>
     </div>
   );

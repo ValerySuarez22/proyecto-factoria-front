@@ -8,6 +8,8 @@ import AddEventForm from './AddEventForm';
 import '../calendar/calendar.css';
 import axios from 'axios';
 import DailyAgenda from '../dailyAgenda/DailyAgenda';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 moment.updateLocale('es', {
   week: {
@@ -125,10 +127,16 @@ class CalendarPage extends React.Component {
 
   render() {
     const { selectedEvent } = this.state;
-    const {dayCalendar} = this.props;
+    const {dayCalendar, resetState} = this.props;
     return (
       <div className='calendar-container wrapper'>
         {/* <div className='form-row'> */}
+        <button className="close-btn" onClick={() => {
+          this.setState({showCalendar: false});
+          resetState();
+        }}>
+        <FontAwesomeIcon icon={faTimes} />
+      </button>
           <h4>Añadir nuevo evento</h4>
           <AddEventForm onAddEvent={this.handleAddEvent} />
         {/* </div> */}
@@ -154,10 +162,8 @@ class CalendarPage extends React.Component {
           {selectedEvent && (
             <div className={`event-description ${selectedEvent && 'selected'}`}>
               <p>¿Eliminar evento "{selectedEvent.title}"?</p>
-             
                 <button className='delete-button' onClick={() => this.handleDeleteEvent(selectedEvent.id)}>Eliminar</button>
                 <button className='cancel-button' onClick={this.handleCancel}>Cancelar</button>
-             
             </div>
           )}
         </div>

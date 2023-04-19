@@ -1,6 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 import 'moment/locale/es';
+import '../dailyAgenda/dailyAgenda.css'
 
 class DailyAgenda extends React.Component {
   constructor(props) {
@@ -52,7 +53,7 @@ class DailyAgenda extends React.Component {
    
 
     return (
-      <div>
+      <div className='daily-agenda'>
         <h2>Agenda del día: {moment(selectedDate).format('dddd D [de] MMMM')}</h2>
         <div>
           <button onClick={() => this.handleDateChange(selectedDate.clone().subtract(1, 'day'))}>Anterior</button>
@@ -62,9 +63,11 @@ class DailyAgenda extends React.Component {
         {eventsOnSelectedDate.length === 0 ? (
           <p>No hay eventos programados para este día.</p>
         ) : (
-          <ul>
+          <ul id="event-list">
             {eventsOnSelectedDate.map(event => (
-              <li key={event.id}>{event.title} - {moment(event.start).format('h:mm a')} a {moment(event.end).format('h:mm a')}</li>
+              <li key={event.id}>
+                <span className="event-dot">•</span>
+                {event.title} - {moment(event.start).format('h:mm a')} a {moment(event.end).format('h:mm a')}</li>
             ))}
           </ul>
         )}

@@ -5,7 +5,8 @@
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 100vh;
-  margin: 0px;
+  margin: 0;
+  padding: 0;
 }
 
 .titleHome {
@@ -31,7 +32,13 @@ h2 {
 }
 
 .agenda {
-  display: flex;
-  justify-content: center;
-  padding-top: 3%;
+  text-align: center;
+  display: block;
+  margin-top: -1%;
+  padding-top: 4%;
 }
+
+.agenda--hidden {
+  display: none;
+}
+
