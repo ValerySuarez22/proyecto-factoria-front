@@ -1,12 +1,18 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Navbar from '../../../components/navbar-HHRR/Navbar';
 import "../homeRRHH/home.css";
 
 const Home = () =>{
+
+
+  useEffect(()=>{
+  const username= JSON.parse(localStorage.getItem('loggedAppUser'))
+  console.log(username)
+  },[])
+
   return (
     <div className='contanierHome'>
         <Navbar/>
-        {/* <div className='titleHome'><h1>Hola Paula</h1></div> */}
         <div className="container">
           <h2>Agenda del Día</h2>
           <section className="agenda">

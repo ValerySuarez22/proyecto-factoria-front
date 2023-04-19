@@ -13,10 +13,10 @@ function App() {
   return (
     <>
       <div>
-        {/* <Router/> */}
+        <Router/>
         {/* <CalendarPage /> */}
         {/* <RouterResponsile/> */}
-        <Login/> 
+        {/* <Login/>  */}
         {/* <Comments/> */}
         {/* <RegisterUser/> */}
       </div>
