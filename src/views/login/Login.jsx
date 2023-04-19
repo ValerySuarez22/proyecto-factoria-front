@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from '../api/axios';
 import jwtDecode from 'jwt-decode';
+import '../login/login.css';
 
 
 const LOGIN_URL = '/api/login_check';
@@ -75,10 +76,10 @@ function Login () {
       <>
         {success ? (
           <section className="success">
-            <h2>¡Has iniciado sesión!</h2>
-            <a href="https://elpais.com/" className="btn-login">
+            <h2 className='login-tex'>¡Has iniciado sesión!</h2>
+            {/* <a href="https://elpais.com/" className="btn-login">
               Ve al inicio
-            </a>
+            </a> */}
           </section>
         ) : (
           <section>

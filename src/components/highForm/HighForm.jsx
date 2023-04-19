@@ -14,7 +14,6 @@ const HighForm = () => {
   const [formValues, setFormValues] = useState([]);
   const [managers, setManagers] = useState([]);
   const [imagen, setImagen] = useState(null);
-  const [pictu, setPictu] = useState(Logo);
   
   
   useEffect(() => {
@@ -87,7 +86,7 @@ const HighForm = () => {
 
     data.append("photo", imagen);
     data.append('data', JSON.stringify(formValues));
-    const res = await axios.post("http://127.0.0.1:8000/api/create/employee", data, {
+    await axios.post("http://127.0.0.1:8000/api/create/employee", data, {
       headers: {
         'Content-Type': 'multipart/form-data',
       },
@@ -113,7 +112,7 @@ const HighForm = () => {
   return (
     <div className="form-container">
       <form onSubmit={handleSubmit} className="high-form">
-        <img src={pictu} alt="logo111" />
+        <img src={Logo} alt="logo111" />
         <ul className="high-form-list">
           <div className="form-left">
             <li>

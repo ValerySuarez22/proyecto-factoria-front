@@ -10,6 +10,26 @@
   border-radius: 15px;
 }
 
+  .form-left li {
+    margin-bottom: 12px !important;
+  }
+  
+  .form-right {
+    flex: 1; 
+    max-width: 500px;
+    padding: 10% 0% 10% 0%;
+    margin-left: 30px;
+  }
+
+  .form-right li {
+    margin-bottom: 12px !important;
+  }
+  
+  .high-form-list li {
+    list-style: none;
+    margin-bottom: 10px;
+  }
+  
 .high-form-list {
   display: flex;
   flex-wrap: wrap;
@@ -86,7 +106,6 @@
   margin-top: 10px;
   cursor: pointer;
 }
-
 .custom-file-upload button:hover {
   background-color: #3e8e41;
 } */
