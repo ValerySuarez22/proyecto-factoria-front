@@ -49,8 +49,9 @@ const Cards = () => {
   // aqui entre los parentesis tiene que ir el objeto trabajador
   return (
     <div>
-      <label htmlFor="team">Equipo</label>
-      <select
+      <div className="container-select"> 
+      <label htmlFor="teams">Trabajadores en periodo de prueba</label>
+      <select className="tema-filter"
         id="team"
         name="team"
         // value={formValues.title}
@@ -61,6 +62,7 @@ const Cards = () => {
           <option key={data.id} value={data.id}>{data.title}</option>
         ))}
       </select>
+      </div>
       <div>
         {dataFilter.map((obj, index) => (
           <div key={index} className="cardContainer" >

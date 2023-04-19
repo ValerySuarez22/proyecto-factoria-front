@@ -5,12 +5,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPowerOff } from '@fortawesome/free-solid-svg-icons';
 import "../navbar-HHRR/navbar.css";
 
-function Navbar() {
+const Navbar =({user}) => {
 
   return (
     <div className="content-navbar">
       <img src={Logo} alt="logo" className="logo"/>
-      <img src={User} alt="user" className="user"/>
+      <img src={user.photo || User} alt="user" className="user"/>
       <div className="buttons">
         <a href="/" className="btn">Home</a>
         <a href="register" className="btn">Registro</a>

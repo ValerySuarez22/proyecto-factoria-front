@@ -14,10 +14,9 @@ import Login from "../views/login/Login";
 const Router = () => {
    return (
       <BrowserRouter>
-      <Navbar/>
          <Routes>
-            <Route path="login" element={<Login/>} />
-            <Route path="/" element={<Home/>} />
+            <Route path="/" element={<Login/>} />
+            <Route path="/home" element={<Home/>} />
             <Route path="/register" element={<Register/>} />
             <Route path="/evaluations" element={<Evaluations/>} />
             <Route path="/listWorkers" element={<ListWorkers/>} />

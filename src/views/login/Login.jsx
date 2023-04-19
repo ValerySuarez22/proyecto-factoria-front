@@ -6,7 +6,7 @@ import '../login/login.css';
 
 const LOGIN_URL = '/api/login_check';
 
-function Login () {
+const  Login= ()=> {
 
     
     const [username, setUsername] = useState('');
@@ -37,22 +37,22 @@ function Login () {
             const userRole = decodedToken.roles;
             console.log(userRole)
 
-            const storedUsername = window.localStorage.setItem(
+            window.localStorage.setItem(
                 'loggedAppUser', JSON.stringify(user)
             )
 
-            const storedToken = window.localStorage.setItem(
+            window.localStorage.setItem(
                 'auth_token', accessToken
             )
 
-            const storedRole = window.localStorage.setItem(
+            window.localStorage.setItem(
                 'auth_role', userRole
             )
 
             //console.log(storedToken)
             //console.log(storedUsername)
 
-            if (userRole === 'ROLE_USER'){
+            if (userRole == 'ROLE_USER'){
                 console.log('is User')
             } else {
                 console.log('its none')
@@ -65,8 +65,13 @@ function Login () {
 
             console.log('hecho!')
 
+            setTimeout(()=>{
+              window.location.href = '/home'
+            },1500)
+
 
         } catch (err) {
+          //tengo que hacer que muestre un mensaje de no autorizado
             console.log('no funciona')
         }
     }
