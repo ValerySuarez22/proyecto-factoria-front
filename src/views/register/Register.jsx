@@ -32,7 +32,7 @@ function Register() {
 
     }
 
-  return (
+    return (
     <>
             {success ? (
                 <section className='success'>
@@ -68,7 +68,7 @@ function Register() {
                 </section>
             )}
         </>
-  )
+    )
 }
 
 export default Register;
