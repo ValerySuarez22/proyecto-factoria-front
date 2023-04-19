@@ -4,8 +4,9 @@
   background-image: url('../../../assets/images/home.png');
   background-size: cover;
   background-repeat: no-repeat;
-  height: 100vh;
-  margin: 0px;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
 }
 
 .titleHome {
@@ -29,3 +30,15 @@ h2 {
   font-family: 'poppins';
   font-size: 16px;
 }
+
+.agenda {
+  text-align: center;
+  display: block;
+  margin-top: -1%;
+  padding-top: 4%;
+}
+
+.agenda--hidden {
+  display: none;
+}
+
