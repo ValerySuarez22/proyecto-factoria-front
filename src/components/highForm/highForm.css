@@ -38,39 +38,6 @@
   width: 100%; 
 }
 
-<<<<<<< HEAD
-  .high-form-list li select {
-    width: 106%;
-    padding: 10px;
-    border: 1px solid #F24822;
-    border-radius: 4px;
-  }
-
-  .button {
-    align-items: center;
-  }
-
-  .custom-file-upload input[type="file"] {
-    display: none;
-  }
-/*   
-  .custom-file-upload button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin-top: 10px;
-    cursor: pointer;
-  }
-  
-  .custom-file-upload button:hover {
-    background-color: #3e8e41;
-  } */
-=======
 .form-left {
   flex: 1; 
   width: 500px;
@@ -142,4 +109,3 @@
 .custom-file-upload button:hover {
   background-color: #3e8e41;
 } */
->>>>>>> origin/unificar

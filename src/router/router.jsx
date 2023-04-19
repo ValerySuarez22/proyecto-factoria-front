@@ -4,7 +4,7 @@ import Home from "../../src/views/humanResources/homeRRHH/Home";
 import Register from "../../src/views/humanResources/register/Register";
 import Evaluations from "../views/humanResources/evaluations/Evaluations";
 import ListWorkers from "../views/humanResources/workersPP/ListWorkers";
-import ListEmployees from "../views/responsibe/list/ListEmployees";
+import ListEmployees from "../views/responsibe/List/ListEmployees";
 import HomeResponsibe from "../../src/views/responsibe/homeR/HomeResponsibe";
 import Navbar from "../components/navbar-HHRR/Navbar";
 import NavbarR from "../components/navbarResponsible/NavbarR";
@@ -25,7 +25,7 @@ const Router = () => {
       {/* <NavbarR/>   
          <Routes>
             <Route path="/" element={<HomeResponsibe/>} />
-            <Route path="/listEmployees" element={<ListEmployees/>} />
+            <Route path="/listEmployees" element={<listEmployees/>} />
          </Routes> */}
 
       </BrowserRouter>

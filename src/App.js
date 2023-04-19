@@ -13,8 +13,8 @@ function App() {
   return (
     <>
       <div>
-        {/* <Router/> */}
-        <RouterResponsile/>
+        <Router/>
+        {/* <RouterResponsile/> */}
         {/* <Login/>  */}
         {/* <Comments/> */}
         {/* <RegisterUser/> */}
