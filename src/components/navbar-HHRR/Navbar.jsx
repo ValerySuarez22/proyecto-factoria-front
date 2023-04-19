@@ -14,8 +14,8 @@ function Navbar() {
       <div className="buttons">
         <a href="/" className="btn">Home</a>
         <a href="register" className="btn">Registro</a>
-        <a href="TeamsArea" className="btn">Equipo</a>
-        <a href="listWorkers" className="btn">Responsables</a>
+        <a href="listWorkers" className="btn">Trabajadores</a>
+        <a href="evaluations" className="btn">Evaluación</a>
         <FontAwesomeIcon  className="icon-off" icon={faPowerOff}/>
       </div>
     </div>

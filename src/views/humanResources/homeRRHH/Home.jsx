@@ -5,7 +5,7 @@ import "../homeRRHH/home.css";
 const Home = () =>{
   return (
     <div className='contanierHome'>
-        <Navbar />
+        <Navbar/>
         {/* <div className='titleHome'><h1>Hola Paula</h1></div> */}
         <div className="container">
           <h2>Agenda del Día</h2>

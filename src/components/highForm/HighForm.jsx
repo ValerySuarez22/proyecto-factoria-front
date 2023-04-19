@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+<<<<<<< HEAD
 import Logo from "../../assets/images/image_1.png"
+=======
+import Logo from "../../assets/images/logo.png";
+>>>>>>> origin/unificar
 import "./highForm.css";
 
 const HighForm = () => {
@@ -10,9 +14,17 @@ const HighForm = () => {
   const [rols, setRols] = useState([]);
   const [status, setStatus] = useState([]);
   const [teams, setTeams] = useState([]);
+<<<<<<< HEAD
   const [formValues, setFormValues] = useState({});
   const [imagen, setImagen] = useState(null);
   const [pictu, setPictu] = useState(Logo);
+=======
+  const [period, setPeriods] = useState([]);
+  const [formValues, setFormValues] = useState([]);
+  const [managers, setManagers] = useState([]);
+  const [imagen, setImagen] = useState(null);
+  
+>>>>>>> origin/unificar
   
   useEffect(() => {
     // Nos traemos el listado de areas
@@ -41,6 +53,17 @@ const HighForm = () => {
       .then(res => {
         setTeams(res.data)
       })
+<<<<<<< HEAD
+=======
+      axios.get("http://127.0.0.1:8000/period/list")
+      .then(res => {
+        setPeriods(res.data)
+      })
+      axios.get("http://127.0.0.1:8000/manager/list")
+      .then(res => {
+        setManagers(res.data)
+      })
+>>>>>>> origin/unificar
     } catch (error) {
       console.log("🚀 ~ file: HighForm.jsx:20 ~ useEffect ~ error:", error)
       
@@ -76,7 +99,11 @@ const HighForm = () => {
 
     data.append("photo", imagen);
     data.append('data', JSON.stringify(formValues));
+<<<<<<< HEAD
     const res = await axios.post("http://127.0.0.1:8000/api/create/employee", data, {
+=======
+    await axios.post("http://127.0.0.1:8000/api/create/employee", data, {
+>>>>>>> origin/unificar
       headers: {
         'Content-Type': 'multipart/form-data',
       },
@@ -102,7 +129,11 @@ const HighForm = () => {
   return (
     <div className="form-container">
       <form onSubmit={handleSubmit} className="high-form">
+<<<<<<< HEAD
         <img src={pictu} alt="logo111" />
+=======
+        <img src={Logo} alt="logo111" />
+>>>>>>> origin/unificar
         <ul className="high-form-list">
           <div className="form-left">
             <li>
@@ -170,6 +201,37 @@ const HighForm = () => {
               </select>
             </li>
             <li>
+<<<<<<< HEAD
+=======
+              <label htmlFor="period">Periodo</label>
+              <select
+                id="period"
+                name="period"
+                value={formValues.period}
+                onChange={handleInputChange}
+              >
+                <option value=""></option> 
+                {period.map((data,index) =>
+                <option value={data.id}>{data.title}</option>
+                )}
+              </select>
+            </li>
+            <li>
+              <label htmlFor="manager">Responsable</label>
+              <select
+                id="manager"
+                name="manager"
+                value={formValues.manager}
+                onChange={handleInputChange}
+              >
+                <option value=""></option>
+                {managers.map((data, index) => 
+                <option value={data.id}>{data.title}</option>
+                )}
+              </select>
+            </li>
+            <li>
+>>>>>>> origin/unificar
               <label htmlFor="inicio">Fecha de inicio</label>
               <input
                 type="date"
@@ -181,6 +243,7 @@ const HighForm = () => {
               />
             </li>
             <li>
+<<<<<<< HEAD
               <label htmlFor="manager">Responsable</label>
               <input
                 type="text"
@@ -188,6 +251,26 @@ const HighForm = () => {
                 name="manager"
                 value={formValues.manager}
                 placeholder="Nombre del responsable"
+=======
+              <label htmlFor="inicio">Fecha fin</label>
+              <input
+                type="date"
+                id="finishDate"
+                name="finishDate"
+                value={formValues.finishDate}
+                placeholder="Fecha fin"
+                onChange={handleInputChange}
+              />
+            </li>
+            <li>
+              <label htmlFor="inicio">Primer Periodo</label>
+              <input
+                type="date"
+                id="firstPeriod"
+                name="firstPeriod"
+                value={formValues.firstPeriod}
+                placeholder="Primer Periodo"
+>>>>>>> origin/unificar
                 onChange={handleInputChange}
               />
             </li>
@@ -258,6 +341,7 @@ const HighForm = () => {
               </select>
             </li>
             <li>
+<<<<<<< HEAD
               <label htmlFor="inicio">Fecha fin</label>
               <input
                 type="date"
@@ -265,6 +349,48 @@ const HighForm = () => {
                 name="finishDate"
                 value={formValues.finishDate}
                 placeholder="Fecha fin"
+=======
+              <label htmlFor="inicio">Segundo Periodo</label>
+              <input
+                type="date"
+                id="secondPeriod"
+                name="secondPeriod"
+                value={formValues.secondPeriod}
+                placeholder="Segundo Periodo"
+                onChange={handleInputChange}
+              />
+            </li>
+            <li>
+              <label htmlFor="inicio">Tercer Periodo</label>
+              <input
+                type="date"
+                id="thirdPeriod"
+                name="thirdtPeriod"
+                value={formValues.thirdPeriod}
+                placeholder="Tercer Periodo"
+                onChange={handleInputChange}
+              />
+            </li>
+            <li>
+              <label htmlFor="inicio">Cuarto Periodo</label>
+              <input
+                type="date"
+                id="fourthPeriod"
+                name="fourthPeriod"
+                value={formValues.fourthPeriod}
+                placeholder="Cuarto Periodo"
+                onChange={handleInputChange}
+              />
+            </li>
+            <li>
+              <label htmlFor="inicio">Quinto Periodo</label>
+              <input
+                type="date"
+                id="fifthPeriod"
+                name="fifthPeriod"
+                value={formValues.fifthPeriod}
+                placeholder="Quinto Periodo"
+>>>>>>> origin/unificar
                 onChange={handleInputChange}
               />
             </li>
