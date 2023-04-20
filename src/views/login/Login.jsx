@@ -108,7 +108,7 @@ function Login() {
                 />
                 <button className="btn-in" type="submit">Entrar</button>
               </form>
-
+              <p>¿Aún no estás registrado? <a href="http://127.0.0.1:8000/register">Regístrate</a></p>
               <a href="#" className="btn-password">
                 Recuperar Contraseña
               </a>
