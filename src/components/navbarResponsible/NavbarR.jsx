@@ -5,6 +5,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPowerOff } from '@fortawesome/free-solid-svg-icons';
 import '../navbarResponsible/navbarR.css';
 
+const handleLogout = () => {
+  // Redirige al usuario a la página de inicio
+  window.location.href = ("/")
+}
+
 function NavbarR() {
   return (
     <div className="content-navbar">
@@ -14,7 +19,7 @@ function NavbarR() {
         <a href="/" className="btn">Home</a>
         <a href="listWcharge" className="btn">Trabajadores</a>
         <a href="tracking" className="btn">Evaluaciones</a>
-        <FontAwesomeIcon  className="icon-off" icon={faPowerOff}/>
+        <FontAwesomeIcon className="icon-off" icon={faPowerOff} onClick={handleLogout} />
       </div>
     </div>
   )
