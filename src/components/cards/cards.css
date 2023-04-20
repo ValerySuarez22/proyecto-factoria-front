@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @media screen and (min-width: 820px) and (max-width: 1180px)
 
 
@@ -47,6 +48,62 @@
   height: 60%;
   width: 60%;
   padding: 20px;
+=======
+@import url("https://fonts.googleapis.com/css2?family=ABeeZee&family=Alfa+Slab+One&family=Changa&family=Cutive+Mono&family=Fira+Code:wght@300&family=Megrim&family=Poppins&family=Share+Tech+Mono&display=swap");
+
+.container-select{
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+label[for="teams"] {
+  display: flex;
+  flex-direction: column;
+  margin-top: 45px;
+  color: #e8550f;
+  font-family: "poppins";
+  font-size: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.tema-filter {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  height: 30px;
+  width: 300px;
+  border: 1px solid #e8550f;
+  border-radius: 20px;
+  background-color: #ff7f508c;
+  font-size: 16px;
+  font-family: "poppins";
+}
+
+.tema-filter:focus {
+  outline: none;
+  border-color: #E8550F;
+  box-shadow: 0 0 5px 0 #E8550F;
+}
+
+.cardContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 600px;
+    margin-top: 100px;
+    background-color: #FFA37F;
+    border: 1px solid #E8550F;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+  }
+>>>>>>> unificar
   
   
 }

@@ -10,9 +10,11 @@ const HighForm = () => {
   const [rols, setRols] = useState([]);
   const [status, setStatus] = useState([]);
   const [teams, setTeams] = useState([]);
-  const [formValues, setFormValues] = useState({});
+  const [period, setPeriods] = useState([]);
+  const [formValues, setFormValues] = useState([]);
+  const [managers, setManagers] = useState([]);
   const [imagen, setImagen] = useState(null);
-  const [pictu, setPictu] = useState(Logo);
+  
   
   useEffect(() => {
     // Nos traemos el listado de areas
@@ -41,6 +43,14 @@ const HighForm = () => {
       .then(res => {
         setTeams(res.data)
       })
+      axios.get("http://127.0.0.1:8000/period/list")
+      .then(res => {
+        setPeriods(res.data)
+      })
+      axios.get("http://127.0.0.1:8000/manager/list")
+      .then(res => {
+        setManagers(res.data)
+      })
     } catch (error) {
       console.log("🚀 ~ file: HighForm.jsx:20 ~ useEffect ~ error:", error)
       
@@ -68,19 +78,22 @@ const HighForm = () => {
     });
   };
   
-  const handleSubmit = async (event) => {
-    event.preventDefault();
+  const handleSubmit = async () => {
     console.log(imagen);
     console.log(formValues);
     const data = new FormData();
 
     data.append("photo", imagen);
     data.append('data', JSON.stringify(formValues));
-    const res = await axios.post("http://127.0.0.1:8000/api/create/employee", data, {
+    await axios.post("http://127.0.0.1:8000/api/create/employee", data, {
       headers: {
         'Content-Type': 'multipart/form-data',
       },
     })
+    setFormValues([])
+    setImagen(null)
+    console.log('datos',formValues )
+    console.log('foto',imagen )
     // console.log("este es el id del nuevo usuario: ", res);
     // axios.get(`http://127.0.0.1:8000/api/employee/${res.data}/photo`, { responseType: 'blob' })
     // .then((res) => {
@@ -102,7 +115,7 @@ const HighForm = () => {
   return (
     <div className="form-container">
       <form onSubmit={handleSubmit} className="high-form">
-        <img src={pictu} alt="logo111" />
+        <img src={Logo} alt="logo111" />
         <ul className="high-form-list">
           <div className="form-left">
             <li>
@@ -128,6 +141,20 @@ const HighForm = () => {
               />
             </li>
             <li>
+              <label htmlFor="position">Cargo</label>
+              <select
+                id="position"
+                name="position"
+                value={formValues.title}
+                onChange={handleInputChange}
+              >
+                <option value=""></option>
+                {positions.map((data, index) => 
+                  <option value={data.id}>{data.title}</option>
+                )}
+              </select>
+            </li>
+            <li>
               <label htmlFor="area">Area</label>
               <select
                 id="area"
@@ -138,20 +165,6 @@ const HighForm = () => {
                 <option value=""></option>
                 {areas.map((data, index) => 
                   <option value={data.id}>{data.title}</option>
-                )}
-              </select>
-            </li>
-            <li>
-              <label htmlFor="team">Equipo</label>
-              <select
-                id="team"
-                name="team"
-                value={formValues.title}
-                onChange={handleInputChange}
-              >
-                <option value=""></option>
-                {teams.map((data, index) => 
-                <option value={data.id}>{data.title}</option>
                 )}
               </select>
             </li>
@@ -170,6 +183,20 @@ const HighForm = () => {
               </select>
             </li>
             <li>
+              <label htmlFor="manager">Responsable</label>
+              <select
+                id="manager"
+                name="manager"
+                value={formValues.manager}
+                onChange={handleInputChange}
+              >
+                <option value=""></option>
+                {managers.map((data, index) => 
+                <option value={data.id}>{data.title}</option>
+                )}
+              </select>
+            </li>
+            <li>
               <label htmlFor="inicio">Fecha de inicio</label>
               <input
                 type="date"
@@ -180,14 +207,37 @@ const HighForm = () => {
                 onChange={handleInputChange}
               />
             </li>
+            
             <li>
-              <label htmlFor="manager">Responsable</label>
+              <label htmlFor="inicio">Primer Seguimiento</label>
               <input
-                type="text"
-                id="manager"
-                name="manager"
-                value={formValues.manager}
-                placeholder="Nombre del responsable"
+                type="date"
+                id="firstPeriod"
+                name="firstPeriod"
+                value={formValues.firstPeriod}
+                placeholder="Primer Periodo"
+                onChange={handleInputChange}
+              />
+            </li>
+            <li>
+              <label htmlFor="inicio">Tercer Seguimiento</label>
+              <input
+                type="date"
+                id="thirdPeriod"
+                name="thirdPeriod"
+                value={formValues.thirdPeriod}
+                placeholder="Tercer Periodo"
+                onChange={handleInputChange}
+              />
+            </li>
+            <li>
+              <label htmlFor="inicio">Quinto Seguimiento</label>
+              <input
+                type="date"
+                id="fifthPeriod"
+                name="fifthPeriod"
+                value={formValues.fifthPeriod}
+                placeholder="Quinto Periodo"
                 onChange={handleInputChange}
               />
             </li>
@@ -230,16 +280,30 @@ const HighForm = () => {
               </select>
             </li>
             <li>
-              <label htmlFor="position">Cargo</label>
+              <label htmlFor="team">Equipo</label>
               <select
-                id="position"
-                name="position"
+                id="team"
+                name="team"
                 value={formValues.title}
                 onChange={handleInputChange}
               >
                 <option value=""></option>
-                {positions.map((data, index) => 
-                  <option value={data.id}>{data.title}</option>
+                {teams.map((data, index) => 
+                <option value={data.id}>{data.title}</option>
+                )}
+              </select>
+            </li>
+            <li>
+              <label htmlFor="period">Periodo</label>
+              <select
+                id="period"
+                name="period"
+                value={formValues.period}
+                onChange={handleInputChange}
+              >
+                <option value=""></option> 
+                {period.map((data,index) =>
+                <option value={data.id}>{data.title}</option>
                 )}
               </select>
             </li>
@@ -268,6 +332,28 @@ const HighForm = () => {
                 onChange={handleInputChange}
               />
             </li>
+            <li>
+              <label htmlFor="inicio">Segundo Seguimiento</label>
+              <input
+                type="date"
+                id="secondPeriod"
+                name="secondPeriod"
+                value={formValues.secondPeriod}
+                placeholder="Segundo Periodo"
+                onChange={handleInputChange}
+              />
+            </li>
+            <li>
+              <label htmlFor="inicio">Cuarto Seguimiento</label>
+              <input
+                type="date"
+                id="fourthPeriod"
+                name="fourthPeriod"
+                value={formValues.fourthPeriod}
+                placeholder="Cuarto Periodo"
+                onChange={handleInputChange}
+              />
+            </li>            
             <li>
               <label htmlFor="imagen">
                 Foto del empleado

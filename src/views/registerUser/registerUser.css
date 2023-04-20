@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=ABeeZee&family=Alfa+Slab+One&family=Changa&family=Cutive+Mono&family=Fira+Code:wght@300&family=Megrim&family=Poppins&family=Share+Tech+Mono&display=swap");
 
-.login-container {
+.register-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,7 +10,7 @@
   background-position: center;
 }
 
-.login-tex {
+.register-tex {
   color:#e8550f;
   font-family: "poppins";
   font-size: 22px;
@@ -30,14 +30,14 @@
 
 .btn-login{}
 
-.title-login {
+.title-register {
   font-family: "poppins";
   font-size: 22px;
   color: #e8550f;
   text-align: center;
 }
 
-.form-login {
+.form-register {
   background-color: rgba(255, 255, 255, 0.384);
   border-radius: 15px;
   box-shadow: 0 8px 32px 0 rgba(245, 95, 8, 0.637);
@@ -71,7 +71,7 @@ label[for="password"] {
   align-items: center;
 }
 
-input[name="login"] {
+input[name="register"] {
   display: flex;
   flex-direction: column;
   height: 30px;
@@ -83,7 +83,7 @@ input[name="login"] {
   font-family: "poppins";
 }
 
-input[name="login"]:focus {
+input[name="register"]:focus {
   outline: none;
   background-color: rgba(224, 98, 14, 0.3);
 }
@@ -110,6 +110,3 @@ input[name="login"]:focus {
   text-decoration: none;
   font-family: "poppins";
 }
-
-
-

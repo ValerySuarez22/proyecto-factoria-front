@@ -1,21 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Logo from "../../assets/images/logo.png"
 import User from "../../assets/images/image.png"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPowerOff } from '@fortawesome/free-solid-svg-icons';
 import "../navbar-HHRR/navbar.css";
 
-function Navbar() {
-
+const Navbar =({user}) => {
+  const [data, setData] = useState({})
+  useEffect(()=> setData(user))
   return (
+    console.log('user', user),
     <div className="content-navbar">
       <img src={Logo} alt="logo" className="logo"/>
-      <img src={User} alt="user" className="user"/>
+      <img src={data.photo} alt="user" className="user"/>
       <div className="buttons">
         <a href="/" className="btn">Home</a>
         <a href="register" className="btn">Registro</a>
-        <a href="TeamsArea" className="btn">Equipo</a>
-        <a href="listWorkers" className="btn">Responsables</a>
+        <a href="listWorkers" className="btn">Trabajadores</a>
         <FontAwesomeIcon  className="icon-off" icon={faPowerOff}/>
       </div>
     </div>

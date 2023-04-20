@@ -1,16 +1,16 @@
 .calendar-container {
+    background-color: rgba(255, 255, 255, 0.384);
     border: 2px solid #F24822;
     border-radius: 15px;
-    padding: 10px;
-    width: 90%;
-    margin: 0 auto;
-    padding-bottom: 5%;
+    padding: 2%;
+    width: 81.75%;
+    /* margin: 0 auto; */
+    margin-left: 12.5%;
   }
   
   .rbc-calendar {
     margin-top: 3%;
   }
-  
   
   .rbc-event {
     background-color: #FFD8B4;
@@ -39,8 +39,15 @@
     width: 100px;
     margin-bottom: 10px;
     justify-self: center;
+  }
 
+  .close-btn {
+    color:#F24822;
+    float:right;
+  }
 
+  .event-description {
+    margin-left: 40%;
   }
 
   /* .form-row {
