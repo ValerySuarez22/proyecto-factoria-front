@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./cards.css";
-// import picture from "../../assets/images/auri.png";
 import axios from "axios";
 
 const Cards = () => {
@@ -72,7 +71,7 @@ const Cards = () => {
               </div>
             </div>
             <div className="cardRight">
-              <p>{`${obj.name} ${obj.lastname} `}</p>
+              <p>{`${obj.name} ${obj.lastname} : ${obj.team} / ${obj.rol} / ${obj.manager}`}</p>
             </div>
           </div>
         ))}

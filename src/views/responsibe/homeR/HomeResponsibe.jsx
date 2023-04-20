@@ -8,7 +8,7 @@ function HomeResponsibe() {
         <NavbarR/>
         {/* <div className='titleHome'><h1>Hola Paula</h1></div> */}
         <div className="container">
-          <h2>Agenda del Día respondables</h2>
+          <h2>Agenda del Día </h2>
           <section className="agenda">
             {/* Renderiza la agenda del día desde otro componente de calendario */}
             {/* <Calendar /> */}

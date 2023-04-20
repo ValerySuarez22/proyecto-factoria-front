@@ -32,7 +32,7 @@ function RegisterUser() {
   };
 
   return (
-    <div className="register-container">
+    <div id="/registerUser" className="register-container">
       <>
         {success ? (
           <section className="success">

@@ -16,9 +16,9 @@ class DailyAgenda extends React.Component {
     this.fetchEvents();
   }
 
-  componentWillReceiveProps(nextProps){
+  componentWillReceiveProps(nextProps) {
     console.log(nextProps)
-    this.setState({ selectedDate: nextProps.dayCalendar})
+    this.setState({ selectedDate: nextProps.dayCalendar })
   }
 
   fetchEvents = () => {
@@ -44,13 +44,13 @@ class DailyAgenda extends React.Component {
 
   render() {
     const { events, selectedDate } = this.state;
-    let eventsOnSelectedDate = [] ;
-    if (events.length >0) {
-      eventsOnSelectedDate = events.filter(event => moment (new Date(event.startDate.date)).format('YYYY-MM-DD') == moment(selectedDate).format('YYYY-MM-DD'))
+    let eventsOnSelectedDate = [];
+    if (events.length > 0) {
+      eventsOnSelectedDate = events.filter(event => moment(new Date(event.startDate.date)).format('YYYY-MM-DD') == moment(selectedDate).format('YYYY-MM-DD'))
     }
-    
-   
-   
+
+
+
 
     return (
       <div className='daily-agenda'>
