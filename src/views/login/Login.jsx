@@ -81,7 +81,6 @@ function Login() {
           </section>
         ) : (
           <section>
-            
             <h1 className="title-login">Plataforma de Login</h1>
             <div className="form-login">
               <form onSubmit={handleSubmit}>
