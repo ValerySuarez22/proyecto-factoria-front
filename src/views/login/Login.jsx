@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from '../../api/axios';
+import axios from '../api/axios';
 import jwtDecode from 'jwt-decode';
 import '../login/login.css';
 
@@ -44,7 +44,7 @@ function Login() {
             console.log(decoded_token);
 
             const decoded_role = decoded_token.roles
-            console.log(decoded_role[1])
+            console.log(decoded_role)
 
            // const userRole = { role: decoded_role }
             const stored_roles = window.localStorage.setItem(
@@ -58,9 +58,14 @@ function Login() {
             console.log('¡Milagro de Dios! ¡Estás dentro!')
 
 		setTimeout(()=>{
-                window.location.href = '/home'
-            },1500)
+      if (decoded_role == 'ROLE_USER') {
+        window.location.href = '/homeResponsibe'
+      } else{
+        window.location.href = '/home'
+      } 
+      },1000)
 
+           
 
         } catch (err) {
           //tengo que hacer que muestre un mensaje de no autorizado

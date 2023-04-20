@@ -6,29 +6,46 @@ import Evaluations from "../views/humanResources/evaluations/Evaluations";
 import ListWorkers from "../views/humanResources/workersPP/ListWorkers";
 import ListEmployees from "../views/responsibe/list/ListEmployees";
 import HomeResponsibe from "../../src/views/responsibe/homeR/HomeResponsibe";
-import Navbar from "../components/navbar-HHRR/Navbar";
-import NavbarR from "../components/navbarResponsible/NavbarR";
 import Login from "../views/login/Login";
 
 
 const Router = () => {
-   return (
-      <BrowserRouter>
-         <Routes>
-            <Route path="/" element={<Login/>} />
-            <Route path="/home" element={<Home/>} />
-            <Route path="/register" element={<Register/>} />
-            <Route path="/evaluations" element={<Evaluations/>} />
-            <Route path="/listWorkers" element={<ListWorkers/>} />
-         </Routes>
-         
-         {/* <Routes>
-            <Route path="/" element={<HomeResponsibe/>} />
-            <Route path="/listEmployees" element={<ListEmployees/>} />
-         </Routes>  */}
+   const userRole = window.localStorage.getItem('role')
 
-      </BrowserRouter>
-   );
+
+   if (userRole == ['ROLE_ADMIN', 'ROLE_USER']) {
+      return (
+         <BrowserRouter>
+            <Routes>
+               <Route path="/home" element={<Home />} />
+               <Route path="/register" element={<Register />} />
+               <Route path="/evaluations" element={<Evaluations />} />
+               <Route path="/listWorkers" element={<ListWorkers />} />
+            </Routes>
+         </BrowserRouter>
+      )
+
+   } else if (userRole == 'ROLE_USER') {
+      return (
+         <BrowserRouter>
+            <Routes>
+               <Route path="/homeResponsibe" element={<HomeResponsibe />} />
+               <Route path="/listEmployees" element={<ListEmployees />} />
+            </Routes>
+         </BrowserRouter>
+      )
+   } else{
+      return (
+         <BrowserRouter>
+         <Routes>
+               <Route path="/" element={<Login />} />
+         </Routes>
+         </BrowserRouter>
+      )
+         
+            
+               
+   }
 };
 
 export default Router;

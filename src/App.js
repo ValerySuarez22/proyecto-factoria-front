@@ -8,6 +8,7 @@ import { Calendar } from "react-big-calendar";
 import CalendarPage from "./components/calendar/Calendar";
 import RegisterUser from "./views/registerUser/RegisterUser";
 
+
 function App() {
   // axiosInterceptor;
   return (
@@ -19,6 +20,7 @@ function App() {
         {/* <Login/>  */}
         {/* <Comments/> */}
         {/* <RegisterUser/> */}
+       
       </div>
     </>
   );
