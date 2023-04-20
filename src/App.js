@@ -16,9 +16,9 @@ function App() {
         {/* <Router/> */}
         {/* <CalendarPage /> */}
         {/* <RouterResponsile/> */}
-        <Login/> 
+        {/* <Login/>  */}
         {/* <Comments/> */}
-        {/* <RegisterUser/> */}
+        <RegisterUser/>
       </div>
     </>
   );

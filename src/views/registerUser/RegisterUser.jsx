@@ -10,7 +10,7 @@ function RegisterUser() {
   const [success, setSuccess] = useState(false);
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault()
 
     try {
       const response = await axios.post(
@@ -25,9 +25,13 @@ function RegisterUser() {
       );
 
       console.log(response.data);
-      setSuccess(true);
+
+      setSuccess(true)
+
     } catch {
+
       console.log("no funciona");
+
     }
   };
 

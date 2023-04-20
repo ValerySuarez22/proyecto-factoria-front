@@ -1,73 +1,68 @@
 import React, { useState } from 'react';
-import axios from '../api/axios';
+import axios from '../../api/axios';
 import jwtDecode from 'jwt-decode';
 import '../login/login.css';
 
 
 const LOGIN_URL = '/api/login_check';
 
-function Login () {
 
-    
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
-    const [success, setSuccess] = useState(false);
+function Login() {
 
-        const handleSubmit = async (e) => {
+    const [username, setUsername] = useState('')
+    const [password, setPassword] = useState('')
+    const [success, setSuccess] = useState(false)
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        try {
-
-            const response = await axios.post(LOGIN_URL,
-                JSON.stringify({ username: username, password: password }),
-                {
-                    headers: { 'Content-Type' : 'application/json' },
-                    withCredentials: true
-                }
-            );
+        try{
+            const response = await axios.post(LOGIN_URL, 
+                JSON.stringify({username: username, password: password}),
+                    {
+                        headers:{'content-Type' : 'application/json'},
+                        withCredentials: true
+                    }
+            )
 
             const accessToken = response.data.token;
-            const user = { username: username };
-            const userToken = { accessToken: accessToken };
-
-
-           const decodedToken = jwtDecode(accessToken);
-
-            //console.log(decodedToken)
-
-            const userRole = decodedToken.roles;
-            console.log(userRole)
-
-            const storedUsername = window.localStorage.setItem(
-                'loggedAppUser', JSON.stringify(user)
-            )
-
+            const token = { accessToken: accessToken };
+            console.log(accessToken);
+            
             const storedToken = window.localStorage.setItem(
-                'auth_token', accessToken
+                'loggedAppUser', accessToken
+            );
+
+            console.log(storedToken)
+
+            const auth_username = { username: username }
+            const stored_username = window.localStorage.setItem(
+                'name', JSON.stringify(auth_username)
+            );
+            console.log(stored_username)
+
+            const decoded_token = jwtDecode(accessToken)
+            console.log(decoded_token);
+
+            const decoded_role = decoded_token.roles
+            console.log(decoded_role[1])
+
+           // const userRole = { role: decoded_role }
+            const stored_roles = window.localStorage.setItem(
+                'role', decoded_role
             )
 
-            const storedRole = window.localStorage.setItem(
-                'auth_role', userRole
-            )
+            setUsername('')
+            setPassword('')
+            setSuccess(true)
 
-            //console.log(storedToken)
-            //console.log(storedUsername)
+            console.log('¡Milagro de Dios! ¡Estás dentro!')
 
-            if (userRole === 'ROLE_USER'){
-                console.log('is User')
-            } else {
-                console.log('its none')
-            }
+		setTimeout(()=>{
+                window.location.href = '/home'
+            },1500)
 
-
-            setUsername('');
-            setPassword('');
-            setSuccess(true);
-
-            console.log('hecho!')
-
-
-        } catch (err) {
-            console.log('no funciona')
+        }catch (err){
+            console.log('¡Sorpresaaa! ¡¡No funciona y no tienes los conocimientos para arreglarlo!!')
         }
     }
 
