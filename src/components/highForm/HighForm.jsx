@@ -78,8 +78,7 @@ const HighForm = () => {
     });
   };
   
-  const handleSubmit = async (event) => {
-    event.preventDefault();
+  const handleSubmit = async () => {
     console.log(imagen);
     console.log(formValues);
     const data = new FormData();
@@ -91,6 +90,10 @@ const HighForm = () => {
         'Content-Type': 'multipart/form-data',
       },
     })
+    setFormValues([])
+    setImagen(null)
+    console.log('datos',formValues )
+    console.log('foto',imagen )
     // console.log("este es el id del nuevo usuario: ", res);
     // axios.get(`http://127.0.0.1:8000/api/employee/${res.data}/photo`, { responseType: 'blob' })
     // .then((res) => {

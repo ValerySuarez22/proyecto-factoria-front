@@ -61,8 +61,11 @@ function Login() {
                 window.location.href = '/home'
             },1500)
 
-        }catch (err){
-            console.log('¡Sorpresaaa! ¡¡No funciona y no tienes los conocimientos para arreglarlo!!')
+
+        } catch (err) {
+          //tengo que hacer que muestre un mensaje de no autorizado
+          alert('Datos incorrectos')  
+          console.log('no funciona')
         }
     }
 
@@ -78,6 +81,7 @@ function Login() {
           </section>
         ) : (
           <section>
+            
             <h1 className="title-login">Plataforma de Login</h1>
             <div className="form-login">
               <form onSubmit={handleSubmit}>
@@ -101,7 +105,7 @@ function Login() {
                 <button className="btn-in" type="submit">Entrar</button>
               </form>
 
-              <a href="https://elpais.com/" className="btn-password">
+              <a href="#" className="btn-password">
                 Recuperar Contraseña
               </a>
             </div>
