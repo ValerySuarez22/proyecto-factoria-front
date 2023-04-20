@@ -54,14 +54,14 @@ class DailyAgenda extends React.Component {
 
     return (
       <div className='daily-agenda'>
-        <h2>Agenda del día: {moment(selectedDate).format('dddd D [de] MMMM')}</h2>
-        <div>
-          <button onClick={() => this.handleDateChange(selectedDate.clone().subtract(1, 'day'))}>Anterior</button>
+        <h1>Agenda del día: {moment(selectedDate).format('dddd D [de] MMMM')}</h1>
+        <div className='buttons-agenda'>
+          <button onClick={() => this.handleDateChange(moment(selectedDate).subtract(1, 'day'))}>Anterior</button>
           <button onClick={() => this.handleDateChange(moment())}>Hoy</button>
-          <button onClick={() => this.handleDateChange(selectedDate.clone().add(1, 'day'))}>Siguiente</button>
+          <button onClick={() => this.handleDateChange(moment(selectedDate).add(1, 'day'))}>Siguiente</button>
         </div>
         {eventsOnSelectedDate.length === 0 ? (
-          <p>No hay eventos programados para este día.</p>
+          <p className='agenda-events'>No hay eventos programados para este día.</p>
         ) : (
           <ul id="event-list">
             {eventsOnSelectedDate.map(event => (

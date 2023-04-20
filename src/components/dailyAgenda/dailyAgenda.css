@@ -1,19 +1,23 @@
 .daily-agenda {
-  background-color: blueviolet;
+  color: #020100;
 }
 
-.daily-agenda li {
-    margin-bottom: 5px;
-    padding-left: 10px; /* agrega un padding a la izquierda del elemento li */
-    position: relative; /* agrega posición relativa al elemento li */
-  }
-  
-  .daily-agenda li:before {
-    content: "•"; /* agrega el punto como contenido antes del elemento li */
-    position: absolute; /* agrega posición absoluta al punto */
-    left: 0; /* ajusta la posición del punto a la izquierda del elemento li */
-    top: 50%; /* ajusta la posición del punto en la mitad superior del elemento li */
-    transform: translateY(-50%); /* ajusta la posición vertical del punto en el centro del elemento li */
-  }
+.agenda-events {
+  padding-top: 50px;
+  color: #020100;
+  font-size: large;
+}
 
- 
+.buttons-agenda button {
+  margin: 0 5px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  background-color: #ff7f50;
+  cursor: pointer;
+}
+
+.buttons-agenda button:hover {
+  background-color: salmon;
+}
