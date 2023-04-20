@@ -8,7 +8,6 @@ On this website there will be two possible accesses, one for HR who will have ac
 <ul>
   <li>As an HR manager, I want to be able to create a user account for employees in their probationary period, so that they can access the platform and view their evaluations and comments.</li>
   <li>As an HR manager, I want to be able to add employees to the list of people in their probationary period, so that I can track their progress and ensure they receive a fair and objective evaluation.</li>
-  <li>As an HR manager, I want to be able to add comments and evaluations for employees in their probationary period, so that I can keep a record of their strengths and weaknesses, and help them improve in their work.</li>
   <li>As an HR manager, I want to be able to generate reports and statistics on the progress and performance of employees in their probationary period, so that I can identify trends and areas for improvement.</li>
 </ul>
 
@@ -17,11 +16,6 @@ On this website there will be two possible accesses, one for HR who will have ac
   <li>As a school supervisor, I want to be able to view the evaluations and comments of employees in my school, but not others, so that I can maintain the privacy and confidentiality of employees.</li>
 </ul>
 
-<h4>Probationary Employee</h4>
-<ul>
-  <li>As a probationary employee, I want to be able to view my evaluations and comments on the platform, so that I can have a clear idea of my progress and the areas in which I need to improve.</li>
-  <li>As a probationary employee, I want to be able to perform a self-evaluation on the platform, so that I can express my own opinions and perceptions about my progress.</li>
-</ul>
 
 ## Fullstack Developer Team and GitHub Links
 | Name                       | Role                    | Link                                     |
@@ -59,6 +53,9 @@ On this website there will be two possible accesses, one for HR who will have ac
 </span>
 <span style="border-radius: 3px; background-color: #1572B6; padding: 5px;">
     <img height="30" src="https://img.shields.io/badge/-CSS-1572B6?style=flat-square&logo=css3&logoColor=white"/>
+</span>
+<span style="border-radius: 5px; background-color: #007FFF; padding: 5px;">
+    <img height="30" src="https://img.shields.io/badge/-PHPMyAdmin-9cf?style=flat-square&logo=php&logoColor=white"/>
 </span>
 
 <h2>Other Tools</h2>
