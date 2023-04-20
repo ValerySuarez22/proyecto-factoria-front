@@ -1,21 +1,28 @@
 import React from 'react';
 import moment from 'moment';
+import 'moment/locale/es';
+import '../dailyAgenda/dailyAgenda.css'
 
 class DailyAgenda extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       events: [],
-      selectedDate: moment().startOf('day'), // inicialmente se mostrarán los eventos del día actual
+      selectedDate: new Date(), // inicialmente se mostrarán los eventos del día actual
     };
   }
 
-  componentDidMount() {
+  componentWillMount() {
     this.fetchEvents();
   }
 
+  componentWillReceiveProps(nextProps){
+    console.log(nextProps)
+    this.setState({ selectedDate: nextProps.dayCalendar})
+  }
+
   fetchEvents = () => {
-    const url = `http://127.0.0.1:8000/api/calendar?date=${this.state.selectedDate.format('YYYY-MM-DD')}`;
+    const url = `http://127.0.0.1:8000/api/calendar`;
     const token = localStorage.getItem('jwtToken'); // obtiene el token JWT de localStorage
     fetch(url, {
       headers: {
@@ -37,22 +44,30 @@ class DailyAgenda extends React.Component {
 
   render() {
     const { events, selectedDate } = this.state;
-    const eventsOnSelectedDate = events.filter(event => moment(event.start).isSame(selectedDate, 'day'));
+    let eventsOnSelectedDate = [] ;
+    if (events.length >0) {
+      eventsOnSelectedDate = events.filter(event => moment (new Date(event.startDate.date)).format('YYYY-MM-DD') == moment(selectedDate).format('YYYY-MM-DD'))
+    }
+    
+   
+   
 
     return (
-      <div>
-        <h2>Agenda del día: {selectedDate.format('dddd D [de] MMMM')}</h2>
-        <div>
-          <button onClick={() => this.handleDateChange(selectedDate.clone().subtract(1, 'day'))}>Anterior</button>
+      <div className='daily-agenda'>
+        <h1>Agenda del día: {moment(selectedDate).format('dddd D [de] MMMM')}</h1>
+        <div className='buttons-agenda'>
+          <button onClick={() => this.handleDateChange(moment(selectedDate).subtract(1, 'day'))}>Anterior</button>
           <button onClick={() => this.handleDateChange(moment())}>Hoy</button>
-          <button onClick={() => this.handleDateChange(selectedDate.clone().add(1, 'day'))}>Siguiente</button>
+          <button onClick={() => this.handleDateChange(moment(selectedDate).add(1, 'day'))}>Siguiente</button>
         </div>
         {eventsOnSelectedDate.length === 0 ? (
-          <p>No hay eventos programados para este día.</p>
+          <p className='agenda-events'>No hay eventos programados para este día.</p>
         ) : (
-          <ul>
+          <ul id="event-list">
             {eventsOnSelectedDate.map(event => (
-              <li key={event.id}>{event.title} - {moment(event.start).format('h:mm a')} a {moment(event.end).format('h:mm a')}</li>
+              <li key={event.id}>
+                <span className="event-dot">•</span>
+                {event.title} - {moment(event.start).format('h:mm a')} a {moment(event.end).format('h:mm a')}</li>
             ))}
           </ul>
         )}

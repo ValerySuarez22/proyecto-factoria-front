@@ -44,7 +44,7 @@ function Login() {
             console.log(decoded_token);
 
             const decoded_role = decoded_token.roles
-            console.log(decoded_role[1])
+            console.log(decoded_role)
 
            // const userRole = { role: decoded_role }
             const stored_roles = window.localStorage.setItem(
@@ -58,11 +58,19 @@ function Login() {
             console.log('¡Milagro de Dios! ¡Estás dentro!')
 
 		setTimeout(()=>{
-                window.location.href = '/home'
-            },1500)
+      if (decoded_role == 'ROLE_USER') {
+        window.location.href = '/homeResponsibe'
+      } else{
+        window.location.href = '/home'
+      } 
+      },1000)
 
-        }catch (err){
-            console.log('¡Sorpresaaa! ¡¡No funciona y no tienes los conocimientos para arreglarlo!!')
+           
+
+        } catch (err) {
+          //tengo que hacer que muestre un mensaje de no autorizado
+          alert('Datos incorrectos')  
+          console.log('no funciona')
         }
     }
 
@@ -100,8 +108,8 @@ function Login() {
                 />
                 <button className="btn-in" type="submit">Entrar</button>
               </form>
-
-              <a href="https://elpais.com/" className="btn-password">
+              <p>¿Aún no estás registrado? <a href="http://127.0.0.1:8000/register">Regístrate</a></p>
+              <a href="#" className="btn-password">
                 Recuperar Contraseña
               </a>
             </div>
