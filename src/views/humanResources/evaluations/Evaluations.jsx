@@ -1,8 +1,8 @@
 import React from 'react'
 import Navbar from '../../../components/navbar-HHRR/Navbar';
-import '../teams/teamsArea.css'
+import '../evaluations/evaluations.css'
 
-function TeamsArea() {
+function Evaluations() {
   return (
     <div className='containerTeams'>
       <Navbar/>
@@ -11,4 +11,4 @@ function TeamsArea() {
   )
 }
 
-export default TeamsArea
+export default Evaluations

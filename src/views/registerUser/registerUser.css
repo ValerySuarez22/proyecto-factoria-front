@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=ABeeZee&family=Alfa+Slab+One&family=Changa&family=Cutive+Mono&family=Fira+Code:wght@300&family=Megrim&family=Poppins&family=Share+Tech+Mono&display=swap");
+
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url("../../assets/images/login.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.register-tex {
+  color:#e8550f;
+  font-family: "poppins";
+  font-size: 22px;
+}
+
+.success{
+  background-color: rgba(255, 255, 255, 0.384);
+  border-radius: 15px;
+  box-shadow: 0 8px 32px 0 rgba(245, 95, 8, 0.637);
+  backdrop-filter: blur(10px);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-login{}
+
+.title-register {
+  font-family: "poppins";
+  font-size: 22px;
+  color: #e8550f;
+  text-align: center;
+}
+
+.form-register {
+  background-color: rgba(255, 255, 255, 0.384);
+  border-radius: 15px;
+  box-shadow: 0 8px 32px 0 rgba(245, 95, 8, 0.637);
+  backdrop-filter: blur(10px);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+label[for="username"] {
+  display: flex;
+  flex-direction: column;
+  margin-top: 25px;
+  color: #e8550f;
+  font-family: "poppins";
+  font-size: 18px;
+  justify-content: center;
+  align-items: center;
+}
+
+label[for="password"] {
+  display: flex;
+  flex-direction: column;
+  margin-top: 25px;
+  color: #e8550f;
+  font-family: "poppins";
+  font-size: 18px;
+  justify-content: center;
+  align-items: center;
+}
+
+input[name="register"] {
+  display: flex;
+  flex-direction: column;
+  height: 30px;
+  width: 300px;
+  border: 1px solid #e8550f;
+  border-radius: 20px;
+  background-color: #ff7f508c;
+  font-size: 16px;
+  font-family: "poppins";
+}
+
+input[name="register"]:focus {
+  outline: none;
+  background-color: rgba(224, 98, 14, 0.3);
+}
+
+.btn-in {
+  background-color: #e8550f;
+  border: 1px solid #e8550f;
+  color: #ffffff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: "poppins";
+  margin: 20px auto;
+  display: flex;
+}
+
+.btn-in {
+  background-color: #ff7f50;
+}
+
+.btn-password {
+  color:#e8550f;
+  text-decoration: none;
+  font-family: "poppins";
+}

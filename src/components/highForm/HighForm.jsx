@@ -141,6 +141,20 @@ const HighForm = () => {
               />
             </li>
             <li>
+              <label htmlFor="position">Cargo</label>
+              <select
+                id="position"
+                name="position"
+                value={formValues.title}
+                onChange={handleInputChange}
+              >
+                <option value=""></option>
+                {positions.map((data, index) => 
+                  <option value={data.id}>{data.title}</option>
+                )}
+              </select>
+            </li>
+            <li>
               <label htmlFor="area">Area</label>
               <select
                 id="area"
@@ -155,20 +169,6 @@ const HighForm = () => {
               </select>
             </li>
             <li>
-              <label htmlFor="team">Equipo</label>
-              <select
-                id="team"
-                name="team"
-                value={formValues.title}
-                onChange={handleInputChange}
-              >
-                <option value=""></option>
-                {teams.map((data, index) => 
-                <option value={data.id}>{data.title}</option>
-                )}
-              </select>
-            </li>
-            <li>
               <label htmlFor="typeOfContract">Tipo de contrato</label>
               <select
                 id="typeOfContract"
@@ -178,20 +178,6 @@ const HighForm = () => {
               >
                 <option value=""></option> 
                 {contracts.map((data,index) =>
-                <option value={data.id}>{data.title}</option>
-                )}
-              </select>
-            </li>
-            <li>
-              <label htmlFor="period">Periodo</label>
-              <select
-                id="period"
-                name="period"
-                value={formValues.period}
-                onChange={handleInputChange}
-              >
-                <option value=""></option> 
-                {period.map((data,index) =>
                 <option value={data.id}>{data.title}</option>
                 )}
               </select>
@@ -221,25 +207,37 @@ const HighForm = () => {
                 onChange={handleInputChange}
               />
             </li>
+            
             <li>
-              <label htmlFor="inicio">Fecha fin</label>
-              <input
-                type="date"
-                id="finishDate"
-                name="finishDate"
-                value={formValues.finishDate}
-                placeholder="Fecha fin"
-                onChange={handleInputChange}
-              />
-            </li>
-            <li>
-              <label htmlFor="inicio">Primer Periodo</label>
+              <label htmlFor="inicio">Primer Seguimiento</label>
               <input
                 type="date"
                 id="firstPeriod"
                 name="firstPeriod"
                 value={formValues.firstPeriod}
                 placeholder="Primer Periodo"
+                onChange={handleInputChange}
+              />
+            </li>
+            <li>
+              <label htmlFor="inicio">Tercer Seguimiento</label>
+              <input
+                type="date"
+                id="thirdPeriod"
+                name="thirdPeriod"
+                value={formValues.thirdPeriod}
+                placeholder="Tercer Periodo"
+                onChange={handleInputChange}
+              />
+            </li>
+            <li>
+              <label htmlFor="inicio">Quinto Seguimiento</label>
+              <input
+                type="date"
+                id="fifthPeriod"
+                name="fifthPeriod"
+                value={formValues.fifthPeriod}
+                placeholder="Quinto Periodo"
                 onChange={handleInputChange}
               />
             </li>
@@ -282,16 +280,30 @@ const HighForm = () => {
               </select>
             </li>
             <li>
-              <label htmlFor="position">Cargo</label>
+              <label htmlFor="team">Equipo</label>
               <select
-                id="position"
-                name="position"
+                id="team"
+                name="team"
                 value={formValues.title}
                 onChange={handleInputChange}
               >
                 <option value=""></option>
-                {positions.map((data, index) => 
-                  <option value={data.id}>{data.title}</option>
+                {teams.map((data, index) => 
+                <option value={data.id}>{data.title}</option>
+                )}
+              </select>
+            </li>
+            <li>
+              <label htmlFor="period">Periodo</label>
+              <select
+                id="period"
+                name="period"
+                value={formValues.period}
+                onChange={handleInputChange}
+              >
+                <option value=""></option> 
+                {period.map((data,index) =>
+                <option value={data.id}>{data.title}</option>
                 )}
               </select>
             </li>
@@ -310,7 +322,18 @@ const HighForm = () => {
               </select>
             </li>
             <li>
-              <label htmlFor="inicio">Segundo Periodo</label>
+              <label htmlFor="inicio">Fecha fin</label>
+              <input
+                type="date"
+                id="finishDate"
+                name="finishDate"
+                value={formValues.finishDate}
+                placeholder="Fecha fin"
+                onChange={handleInputChange}
+              />
+            </li>
+            <li>
+              <label htmlFor="inicio">Segundo Seguimiento</label>
               <input
                 type="date"
                 id="secondPeriod"
@@ -321,18 +344,7 @@ const HighForm = () => {
               />
             </li>
             <li>
-              <label htmlFor="inicio">Tercer Periodo</label>
-              <input
-                type="date"
-                id="thirdPeriod"
-                name="thirdtPeriod"
-                value={formValues.thirdPeriod}
-                placeholder="Tercer Periodo"
-                onChange={handleInputChange}
-              />
-            </li>
-            <li>
-              <label htmlFor="inicio">Cuarto Periodo</label>
+              <label htmlFor="inicio">Cuarto Seguimiento</label>
               <input
                 type="date"
                 id="fourthPeriod"
@@ -341,18 +353,7 @@ const HighForm = () => {
                 placeholder="Cuarto Periodo"
                 onChange={handleInputChange}
               />
-            </li>
-            <li>
-              <label htmlFor="inicio">Quinto Periodo</label>
-              <input
-                type="date"
-                id="fifthPeriod"
-                name="fifthPeriod"
-                value={formValues.fifthPeriod}
-                placeholder="Quinto Periodo"
-                onChange={handleInputChange}
-              />
-            </li>
+            </li>            
             <li>
               <label htmlFor="imagen">
                 Foto del empleado
