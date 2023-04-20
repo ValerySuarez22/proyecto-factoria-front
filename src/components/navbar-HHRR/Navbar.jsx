@@ -7,17 +7,24 @@ import "../navbar-HHRR/navbar.css";
 
 const Navbar =({user}) => {
   const [data, setData] = useState({})
+  
   useEffect(()=> setData(user))
+
+  const handleLogout = () => {
+    // Redirige al usuario a la página de inicio
+    window.location.href = ("/")
+  }
+
   return (
     console.log('user', user),
     <div className="content-navbar">
       <img src={Logo} alt="logo" className="logo"/>
-      <img src={data.photo} alt="user" className="user"/>
+      <img src={data.photo ? data.photo : User} alt="user" className="user"/>
       <div className="buttons">
-        <a href="/" className="btn">Home</a>
+        <a href="home" className="btn">Home</a>
         <a href="register" className="btn">Registro</a>
         <a href="listWorkers" className="btn">Trabajadores</a>
-        <FontAwesomeIcon  className="icon-off" icon={faPowerOff}/>
+        <FontAwesomeIcon className="icon-off" icon={faPowerOff} onClick={handleLogout} />
       </div>
     </div>
   );
