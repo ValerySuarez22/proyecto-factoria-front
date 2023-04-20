@@ -40,25 +40,12 @@ const Home = () =>{
     <div className='containerHome'>
         <Navbar user={user} />
         <section className={`agenda ${isDailyAgendaVisible ? '' : 'agenda--hidden'}`}>
-          <DailyAgenda dayCalendar={dayCalendar}/>
+          <DailyAgenda user={user} dayCalendar={dayCalendar}/>
       </section>
       <section className="calendar" >
-        {!isCalendarPageVisible && <SmallCalendar handleSmallCalendarClick={ handleSmallCalendarClick} />}
-        {isCalendarPageVisible && <CalendarPage dayCalendar={dayCalendar} resetState={resetState} />}
+        {!isCalendarPageVisible && <SmallCalendar user={user} handleSmallCalendarClick={ handleSmallCalendarClick} />}
+        {isCalendarPageVisible && <CalendarPage user={user} dayCalendar={dayCalendar} resetState={resetState} />}
     </section>
-        <div className="container">
-          <h2>Agenda del Día</h2>
-          <section className="agenda">
-            {/* Renderiza la agenda del día desde otro componente de calendario */}
-            {/* <Calendar /> */}
-          </section>
-          <div className="calendar-container">
-            {/* Renderiza el calendario pequeño con estilos de glasmorfismo */}
-            <div className="calendar">
-              {/* Contenido del calendario */}
-            </div>
-          </div>
-        </div>
     </div>
     
   )

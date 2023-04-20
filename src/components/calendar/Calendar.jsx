@@ -42,18 +42,32 @@ class CalendarPage extends React.Component {
       //   Authorization: `Bearer ${localStorage.getItem('token')}`,
       // },
     })
-  //     .then((res) => {
-  //       console.log(res)
-  //       return res.data.json()
-        
-  // })
+
+
+  
       .then((res) => {
-        const events = res.data.map((event) => ({
-          start: (event.startDate.date),
-          end: (event.finishDate.date),
-          title: event.title,
-          id: event.id,
-        }));
+        const events = []
+        res.data.forEach((event) => {
+          if (this.props.user.rol == 'User') {
+            if (this.props.user.email === event.recipient) {
+              events.push({
+                start: (event.startDate.date),
+                end: (event.finishDate.date),
+                title: event.title,
+                id: event.id,
+                recipient: event.recipient,
+              })
+            }
+          }else {
+            events.push({
+              start: (event.startDate.date),
+              end: (event.finishDate.date),
+              title: event.title,
+              id: event.id,
+              recipient: event.recipient,
+            })
+          }
+        });
         console.log('mensajito2', events)
         this.setState({ events });
       })
@@ -127,7 +141,7 @@ class CalendarPage extends React.Component {
 
   render() {
     const { selectedEvent } = this.state;
-    const {dayCalendar, resetState} = this.props;
+    const {dayCalendar, resetState, user} = this.props;
     return (
       <div className='calendar-container wrapper'>
         {/* <div className='form-row'> */}
@@ -137,8 +151,12 @@ class CalendarPage extends React.Component {
         }}>
         <FontAwesomeIcon icon={faTimes} />
       </button>
-          <h4>Añadir nuevo evento</h4>
+      {user.rol !== "User" && 
+      <>
+      <h4>Añadir nuevo evento</h4>
           <AddEventForm onAddEvent={this.handleAddEvent} />
+      </> 
+      }
         {/* </div> */}
         <div style={{ height: '500px', width: '90%', margin: '0 auto' }}>
           <Calendar
