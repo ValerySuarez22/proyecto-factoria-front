@@ -1,78 +1,68 @@
 import React, { useState } from 'react';
-import axios from '../api/axios';
+import axios from '../../api/axios';
 import jwtDecode from 'jwt-decode';
 import '../login/login.css';
 
 
 const LOGIN_URL = '/api/login_check';
 
-const  Login= ()=> {
 
-    
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
-    const [success, setSuccess] = useState(false);
+function Login() {
 
-        const handleSubmit = async (e) => {
+    const [username, setUsername] = useState('')
+    const [password, setPassword] = useState('')
+    const [success, setSuccess] = useState(false)
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        try {
-
-            const response = await axios.post(LOGIN_URL,
-                JSON.stringify({ username: username, password: password }),
-                {
-                    headers: { 'Content-Type' : 'application/json' },
-                    withCredentials: true
-                }
-            );
+        try{
+            const response = await axios.post(LOGIN_URL, 
+                JSON.stringify({username: username, password: password}),
+                    {
+                        headers:{'content-Type' : 'application/json'},
+                        withCredentials: true
+                    }
+            )
 
             const accessToken = response.data.token;
-            const user = { username: username };
-            const userToken = { accessToken: accessToken };
+            const token = { accessToken: accessToken };
+            console.log(accessToken);
+            
+            const storedToken = window.localStorage.setItem(
+                'loggedAppUser', accessToken
+            );
 
+            console.log(storedToken)
 
-           const decodedToken = jwtDecode(accessToken);
+            const auth_username = { username: username }
+            const stored_username = window.localStorage.setItem(
+                'name', JSON.stringify(auth_username)
+            );
+            console.log(stored_username)
 
-            //console.log(decodedToken)
+            const decoded_token = jwtDecode(accessToken)
+            console.log(decoded_token);
 
-            const userRole = decodedToken.roles;
-            console.log(userRole)
+            const decoded_role = decoded_token.roles
+            console.log(decoded_role[1])
 
-            window.localStorage.setItem(
-                'loggedAppUser', JSON.stringify(user)
+           // const userRole = { role: decoded_role }
+            const stored_roles = window.localStorage.setItem(
+                'role', decoded_role
             )
 
-            window.localStorage.setItem(
-                'auth_token', accessToken
-            )
+            setUsername('')
+            setPassword('')
+            setSuccess(true)
 
-            window.localStorage.setItem(
-                'auth_role', userRole
-            )
+            console.log('¡Milagro de Dios! ¡Estás dentro!')
 
-            //console.log(storedToken)
-            //console.log(storedUsername)
-
-            if (userRole == 'ROLE_USER'){
-                console.log('is User')
-            } else {
-                console.log('its none')
-            }
-
-
-            setUsername('');
-            setPassword('');
-            setSuccess(true);
-
-            console.log('hecho!')
-
-            setTimeout(()=>{
-              window.location.href = '/home'
+		setTimeout(()=>{
+                window.location.href = '/home'
             },1500)
 
-
-        } catch (err) {
-          //tengo que hacer que muestre un mensaje de no autorizado
-            console.log('no funciona')
+        }catch (err){
+            console.log('¡Sorpresaaa! ¡¡No funciona y no tienes los conocimientos para arreglarlo!!')
         }
     }
 
