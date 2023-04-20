@@ -72,7 +72,8 @@ const  Login= ()=> {
 
         } catch (err) {
           //tengo que hacer que muestre un mensaje de no autorizado
-            console.log('no funciona')
+          alert('Datos incorrectos')  
+          console.log('no funciona')
         }
     }
 
@@ -88,6 +89,7 @@ const  Login= ()=> {
           </section>
         ) : (
           <section>
+            
             <h1 className="title-login">Plataforma de Login</h1>
             <div className="form-login">
               <form onSubmit={handleSubmit}>
@@ -111,7 +113,7 @@ const  Login= ()=> {
                 <button className="btn-in" type="submit">Entrar</button>
               </form>
 
-              <a href="https://elpais.com/" className="btn-password">
+              <a href="#" className="btn-password">
                 Recuperar Contraseña
               </a>
             </div>
