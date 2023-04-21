@@ -24,6 +24,7 @@ const Navbar =({user}) => {
       <div className="buttons">
         <a href="home" className="btn">Home</a>
         <a href="register" className="btn">Registro</a>
+        <a href="listWorkers" className="btn">Trabajadores</a>
         <FontAwesomeIcon className="icon-off" icon={faPowerOff} onClick={handleLogout} />
       </div>
     </div>
