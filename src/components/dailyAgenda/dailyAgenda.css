@@ -21,3 +21,7 @@
 .buttons-agenda button:hover {
   background-color: salmon;
 }
+
+#event-list {
+  list-style: none;
+}

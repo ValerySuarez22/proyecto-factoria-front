@@ -9,25 +9,17 @@ const Navbar =({user}) => {
   const [data, setData] = useState({})
   
   useEffect(()=> setData(user))
-<<<<<<< HEAD
-  
-=======
 
   const handleLogout = () => {
     // Redirige al usuario a la página de inicio
     window.location.href = ("/")
   }
 
->>>>>>> 468842b553901086ec10073f4fde5f3bc156a307
   return (
     console.log('user', user),
     <div className="content-navbar">
       <img src={Logo} alt="logo" className="logo"/>
-<<<<<<< HEAD
-      <img src={data.Photo} alt="user" className="user"/>
-=======
-      <img src={data.photo ? data.photo : User} alt="user" className="user"/>
->>>>>>> 468842b553901086ec10073f4fde5f3bc156a307
+      <img src={data.photo ? data.photo : Photo} alt="user" className="user"/>
       <div className="buttons">
         <a href="home" className="btn">Home</a>
         <a href="register" className="btn">Registro</a>
