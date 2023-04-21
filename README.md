@@ -71,7 +71,7 @@ On this website there will be two possible accesses, one for HR who will have ac
 
 <h2>Methodology</h2>
 <ul>
-  <li></li>
+  <li>Agile con Scrum</li>
 
 
 
