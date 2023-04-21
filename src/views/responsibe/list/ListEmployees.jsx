@@ -1,12 +1,12 @@
-import React from 'react'
-import NavbarR from '../../../components/navbarResponsible/NavbarR'
-import Comments from '../comments/Comments'
-import Cards from '../../../components/cards/Cards'
+import React from 'react';
+import NavbarR from '../../../components/navbarResponsible/NavbarR';
+import Cards from '../../../components/cards/Cards';
+import '../list/listEmployees.css';
 
 
 function ListEmployees() {
   return (
-    <div className='.containerList'>
+    <div className='containerList'>
       <NavbarR/>
       <Cards/>
     </div>
