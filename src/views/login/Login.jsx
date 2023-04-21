@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import axios from '../api/axios';
 import jwtDecode from 'jwt-decode';
 import '../login/login.css';
@@ -22,7 +23,7 @@ function Login() {
                         headers:{'content-Type' : 'application/json'},
                         withCredentials: true
                     }
-            )
+            );
 
             const accessToken = response.data.token;
             const token = { accessToken: accessToken };
@@ -59,13 +60,11 @@ function Login() {
 
 		setTimeout(()=>{
       if (decoded_role == 'ROLE_USER') {
-        window.location.href = '/homeResponsibe'
+        window.location.href = '/homeResponsible'
       } else{
         window.location.href = '/home'
       } 
-      },1000)
-
-           
+      },1000)           
 
         } catch (err) {
           //tengo que hacer que muestre un mensaje de no autorizado
@@ -74,6 +73,7 @@ function Login() {
         }
     }
 
+    
   return (
     <div className="login-container">
       <>
@@ -108,7 +108,7 @@ function Login() {
                 />
                 <button className="btn-in" type="submit">Entrar</button>
               </form>
-              <p>¿Aún no estás registrado? <a className="btn-register" href="registerUser">Regístrate</a></p>
+              <p>¿Aún no estás registrado? <Link className="btn-register" to="/registerUser">Regístrate</Link></p>
               {/* <a href="#" className="btn-password">
                 Recuperar Contraseña
               </a> */}

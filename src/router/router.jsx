@@ -5,8 +5,9 @@ import Register from "../../src/views/humanResources/register/Register";
 import Evaluations from "../views/humanResources/evaluations/Evaluations";
 import ListWorkers from "../views/humanResources/workersPP/ListWorkers";
 import ListEmployees from "../views/responsibe/list/ListEmployees";
-import HomeResponsibe from "../../src/views/responsibe/homeR/HomeResponsibe";
+import HomeResponsible from "../views/responsibe/homeR/HomeResponsible";
 import Login from "../views/login/Login";
+import RegisterUser from "../views/registerUser/RegisterUser";
 // import Tracking from "../views/responsibe/evaluations/Tracking";
 
 
@@ -20,6 +21,7 @@ const Router = () => {
          <BrowserRouter>
             <Routes>
                <Route path="/" element={<Login />} />
+               <Route path="registerUser" element={<RegisterUser />} />
                <Route path="/home" element={<Home />} />
                <Route path="/register" element={<Register />} />
                <Route path="/evaluations" element={<Evaluations />} />
@@ -33,7 +35,8 @@ const Router = () => {
          <BrowserRouter>
             <Routes>
                <Route path="/" element={<Login />} />
-               <Route path="/homeResponsibe" element={<HomeResponsibe />} />
+               <Route path="registerUser" element={<RegisterUser />} />
+               <Route path="/homeResponsible" element={<HomeResponsible />} />
                <Route path="/listEmployees" element={<ListEmployees />} />
                {/* <Route path="/tracking" element={<Tracking />} /> */}
                
@@ -45,6 +48,7 @@ const Router = () => {
          <BrowserRouter>
          <Routes>
                <Route path="/" element={<Login />} />
+               <Route path="registerUser" element={<RegisterUser />} />
          </Routes>
          </BrowserRouter>
       )

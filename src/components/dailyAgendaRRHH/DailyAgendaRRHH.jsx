@@ -1,9 +1,9 @@
 import React from 'react';
 import moment from 'moment';
 import 'moment/locale/es';
-import '../dailyAgenda/dailyAgenda.css'
+import '../dailyAgendaRRHH/dailyAgendaRRHH.css';
 
-class DailyAgenda extends React.Component {
+class DailyAgendaRRHH extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -76,4 +76,4 @@ class DailyAgenda extends React.Component {
   }
 }
 
-export default DailyAgenda
+export default DailyAgendaRRHH

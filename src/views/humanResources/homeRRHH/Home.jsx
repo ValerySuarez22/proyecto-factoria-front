@@ -1,18 +1,18 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import Navbar from '../../../components/navbar-HHRR/Navbar';
 import "../homeRRHH/home.css";
-import axios from '../../api/axios';
+import axios from '../../../views/api/axios';
 import customActions from '../../../components/actions';
-import CalendarPage from '../../../components/calendar/Calendar';
+import CalendarPageRRHH from '../../../components/calendarRRHH/CalendarRRHH';
 import SmallCalendar from '../../../components/smallCalendar/SmallCalendar';
-import DailyAgenda from '../../../components/dailyAgenda/DailyAgenda';
+import DailyAgendaRRHH from '../../../components/dailyAgendaRRHH/DailyAgendaRRHH';
 
 const Home = () =>{
 
   const [user, setUser] = useState({});
   
-  const [isCalendarPageVisible, setIsCalendarPageVisible] = useState(false);
-  const [isDailyAgendaVisible, setIsDailyAgendaVisible] = useState(true);
+  const [isCalendarPageRRHHVisible, setIsCalendarPageRRHHVisible] = useState(false);
+  const [isDailyAgendaRRHHVisible, setIsDailyAgendaRRHHVisible] = useState(true);
   const [dayCalendar, setDayCalendar] = useState(new Date());
 
   useEffect(()=>{
@@ -27,24 +27,24 @@ const Home = () =>{
   const handleSmallCalendarClick = (valueDay) => {
     console.log('hola', valueDay)
     setDayCalendar(valueDay);
-    setIsCalendarPageVisible(!isCalendarPageVisible);
-    setIsDailyAgendaVisible(false);
+    setIsCalendarPageRRHHVisible(!isCalendarPageRRHHVisible);
+    setIsDailyAgendaRRHHVisible(false);
   };
 
   const resetState = () => {
-    setIsCalendarPageVisible(false);
-    setIsDailyAgendaVisible(true);
+    setIsCalendarPageRRHHVisible(false);
+    setIsDailyAgendaRRHHVisible(true);
   };
 
   return (
     <div className='containerHome'>
         <Navbar user={user} />
-        <section className={`agenda ${isDailyAgendaVisible ? '' : 'agenda--hidden'}`}>
-          <DailyAgenda user={user} dayCalendar={dayCalendar}/>
+        <section className={`agenda ${isDailyAgendaRRHHVisible ? '' : 'agenda--hidden'}`}>
+          <DailyAgendaRRHH user={user} dayCalendar={dayCalendar}/>
       </section>
       <section className="calendar" >
-        {!isCalendarPageVisible && <SmallCalendar user={user} handleSmallCalendarClick={ handleSmallCalendarClick} />}
-        {isCalendarPageVisible && <CalendarPage user={user} dayCalendar={dayCalendar} resetState={resetState} />}
+        {!isCalendarPageRRHHVisible && <SmallCalendar user={user} handleSmallCalendarClick={ handleSmallCalendarClick} />}
+        {isCalendarPageRRHHVisible && <CalendarPageRRHH user={user} dayCalendar={dayCalendar} resetState={resetState} />}
     </section>
     </div>
     

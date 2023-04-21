@@ -4,7 +4,7 @@ import moment from 'moment';
 import 'moment/locale/es';
 import '../calendar/react-datepicker/dist/react-datepicker.css';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
-import AddEventForm from './AddEventForm';
+import AddEventFormRRHH from './AddEventFormRRHH';
 import '../calendar/calendar.css';
 import axios from 'axios';
 import DailyAgenda from '../dailyAgenda/DailyAgenda';
@@ -24,7 +24,7 @@ const Event = ({ event, selected }) => (
   </div>
 );
 
-class CalendarPage extends React.Component {
+class CalendarPageRRHH extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -145,7 +145,7 @@ class CalendarPage extends React.Component {
       {user.rol !== "User" && 
       <>
       <h4>Añadir nuevo evento</h4>
-          <AddEventForm onAddEvent={this.handleAddEvent} />
+          <AddEventFormRRHH onAddEvent={this.handleAddEvent} />
       </> 
       }
         {/* </div> */}
@@ -182,4 +182,4 @@ class CalendarPage extends React.Component {
 }
 
 
-export default CalendarPage;
+export default CalendarPageRRHH;
