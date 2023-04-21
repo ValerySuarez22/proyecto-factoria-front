@@ -2,12 +2,12 @@ import React from 'react';
 import { Calendar, momentLocalizer } from 'react-big-calendar';
 import moment from 'moment';
 import 'moment/locale/es';
-import '../calendar/react-datepicker/dist/react-datepicker.css';
+import '../calendarRRHH/react-datepicker/dist/react-datepicker.css';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import AddEventFormRRHH from './AddEventFormRRHH';
-import '../calendar/calendar.css';
+import '../calendarRRHH/calendarRRHH.css';
 import axios from 'axios';
-import DailyAgenda from '../dailyAgenda/DailyAgenda';
+import DailyAgendaRRHH from '../dailyAgendaRRHH/DailyAgendaRRHH';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 

@@ -1,10 +1,10 @@
 import React from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
-import '../smallCalendar/smallCalendar.css'
+import '../smallCalendarResponsible/smallCalendarResponsible.css';
 
 
-const SmallCalendar= ({handleSmallCalendarClick}) => {
+const SmallCalendarResponsible= ({handleSmallCalendarClick}) => {
   const prueba= () => {
     console.log('he clickado un día')
   }
@@ -15,4 +15,4 @@ const SmallCalendar= ({handleSmallCalendarClick}) => {
   )
 }
 
-export default SmallCalendar
+export default SmallCalendarResponsible

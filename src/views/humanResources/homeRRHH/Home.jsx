@@ -4,7 +4,7 @@ import "../homeRRHH/home.css";
 import axios from '../../../views/api/axios';
 import customActions from '../../../components/actions';
 import CalendarPageRRHH from '../../../components/calendarRRHH/CalendarRRHH';
-import SmallCalendar from '../../../components/smallCalendar/SmallCalendar';
+import SmallCalendarRRHH from '../../../components/smallCalendarRRHH/SmallCallendarRRHH';
 import DailyAgendaRRHH from '../../../components/dailyAgendaRRHH/DailyAgendaRRHH';
 
 const Home = () =>{
@@ -43,7 +43,7 @@ const Home = () =>{
           <DailyAgendaRRHH user={user} dayCalendar={dayCalendar}/>
       </section>
       <section className="calendar" >
-        {!isCalendarPageRRHHVisible && <SmallCalendar user={user} handleSmallCalendarClick={ handleSmallCalendarClick} />}
+        {!isCalendarPageRRHHVisible && <SmallCalendarRRHH user={user} handleSmallCalendarClick={ handleSmallCalendarClick} />}
         {isCalendarPageRRHHVisible && <CalendarPageRRHH user={user} dayCalendar={dayCalendar} resetState={resetState} />}
     </section>
     </div>

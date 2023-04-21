@@ -3,8 +3,9 @@ import NavbarR from '../../../components/navbarResponsible/NavbarR';
 import '../homeR/homeResponsible.css';
 import CalendarPageResponsible from '../../../components/calendarResponsible/CalendarResponsible';
 import customActions from '../../../components/actions';
-import SmallCalendar from '../../../components/smallCalendar/SmallCalendar';
+import SmallCalendarResponsible from '../../../components/smallCalendarResponsible/SmallCalendarResponsible';
 import DailyAgendaResponsible from '../../../components/dailyAgendaResponsible/DailyAgendaResponsible';
+
 
 const HomeResponsible = () =>{
 
@@ -42,7 +43,7 @@ const HomeResponsible = () =>{
           <DailyAgendaResponsible user={user} dayCalendar={dayCalendar}/>
       </section>
       <section className="calendar" >
-        {!isCalendarPageResponsibleVisible && <SmallCalendar user={user} handleSmallCalendarClick={ handleSmallCalendarClick} />}
+        {!isCalendarPageResponsibleVisible && <SmallCalendarResponsible user={user} handleSmallCalendarClick={ handleSmallCalendarClick} />}
         {isCalendarPageResponsibleVisible && <CalendarPageResponsible user={user} dayCalendar={dayCalendar} resetState={resetState} />}
     </section>
     </div>
