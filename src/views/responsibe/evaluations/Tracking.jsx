@@ -5,7 +5,7 @@ import '../evaluations/Tracking.css'
 function Tracking() {
   return (
     <div>
-      <NavbarR />
+      <NavbarR/>
       <h1>cards de las evaluaciones</h1>
     </div>
   )
