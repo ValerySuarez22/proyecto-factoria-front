@@ -85,7 +85,7 @@ function Login() {
             </a> */}
           </section>
         ) : (
-          <section>
+          <section className='title-and-formLogin'>
             <h1 className="title-login">Plataforma de Login</h1>
             <div className="form-login">
               <form onSubmit={handleSubmit}>

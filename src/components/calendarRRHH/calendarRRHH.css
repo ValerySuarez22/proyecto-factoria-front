@@ -1,51 +1,50 @@
 .calendar-container {
-    background-color: rgba(255, 255, 255, 0.384);
-    border: 2px solid #F24822;
-    border-radius: 15px;
-    padding: 2%;
-    width: 81.75%;
-    /* margin: 0 auto; */
-    margin-left: 12.5%;
-  }
-  
-  .rbc-calendar {
-    margin-top: 3%;
-  }
-  
-  .rbc-event {
-    background-color: #FFD8B4;
-    border-style: solid;
-    border-width: 2px;
-    border-color: #F24822;
-    color: #020100;
-  }
-  
-  
-  .rbc-event.rbc-selected {
-    background-color: #F24822;
-    border: 2px solid #F24822;
-    color: white;
-  }
-  
-  .delete-button {
-    margin-right: 5px;
-    width: 100px;
-    margin-bottom: 100px;
-    justify-self: center;
-  }
-  
-  .cancel-button {
-    margin-left: 5px;
-    width: 100px;
-    margin-bottom: 10px;
-    justify-self: center;
-  }
+  background-color: rgba(255, 255, 255, 0.825);
+  border: 2px solid #F24822;
+  border-radius: 15px;
+  padding: 2%;
+  width: 81.75%;
+  /* margin: 0 auto; */
+  margin-left: 12.5%;
+}
 
-  .close-btn {
-    color:#F24822;
-    float:right;
-  }
+.rbc-calendar {
+  margin-top: 3%;
+}
 
-  .event-description {
-    margin-left: 40%;
-  }
+.rbc-event {
+  background-color: #FFD8B4;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #F24822;
+  color: #020100;
+}
+
+.rbc-event.rbc-selected {
+  background-color: #F24822;
+  border: 2px solid #F24822;
+  color: white;
+}
+
+.delete-button {
+  margin-right: 5px;
+  width: 100px;
+  margin-bottom: 100px;
+  justify-self: center;
+}
+
+.cancel-button {
+  margin-left: 5px;
+  width: 100px;
+  margin-bottom: 10px;
+  justify-self: center;
+}
+
+.close-btn {
+  color:#F24822;
+  float:right;
+}
+
+.event-description {
+  margin-left: 40%;
+}

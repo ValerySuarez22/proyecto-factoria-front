@@ -42,11 +42,11 @@ function RegisterUser() {
             </a>
           </section>
         ) : (
-          <section>
+          <section className="title-and-formRegister">
             <h1 className="title-register">Plataforma de Registro</h1>
             <div className="form-register">
               <form onSubmit={handleSubmit}>
-                <label htmlFor="username">username</label>
+                <label htmlFor="username">Username</label>
                 <input name="register"
                   type="text"
                   id="username"
