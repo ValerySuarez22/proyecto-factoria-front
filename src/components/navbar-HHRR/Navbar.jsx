@@ -22,7 +22,7 @@ const Navbar =({user}) => {
       <img src={Logo} alt="logo" className="logo"/>
       <img src={data.photo ? data.photo : Photo} alt="user" className="user"/>
       <div className="buttons">
-        <a href="home" className="btn">Home</a>
+      <a href="/" className="btn">Home</a>
         <a href="register" className="btn">Registro</a>
         <a href="listWorkers" className="btn">Trabajadores</a>
         <FontAwesomeIcon className="icon-off" icon={faPowerOff} onClick={handleLogout} />
