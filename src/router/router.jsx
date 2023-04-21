@@ -7,7 +7,8 @@ import ListWorkers from "../views/humanResources/workersPP/ListWorkers";
 import ListEmployees from "../views/responsibe/list/ListEmployees";
 import HomeResponsibe from "../../src/views/responsibe/homeR/HomeResponsibe";
 import Login from "../views/login/Login";
-import Tracking from "../views/responsibe/evaluations/Tracking";
+// import Tracking from "../views/responsibe/evaluations/Tracking";
+
 
 
 const Router = () => {
