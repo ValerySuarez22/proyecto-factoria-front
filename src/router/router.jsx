@@ -6,6 +6,7 @@ import Evaluations from "../views/humanResources/evaluations/Evaluations";
 import ListWorkers from "../views/humanResources/workersPP/ListWorkers";
 import ListEmployees from "../views/responsibe/list/ListEmployees";
 import HomeResponsibe from "../../src/views/responsibe/homeR/HomeResponsibe";
+import Tracking from "../../src/views/responsibe/evaluations/Tracking";
 import Login from "../views/login/Login";
 
 
@@ -33,6 +34,7 @@ const Router = () => {
                <Route path="/" element={<Login />} />
                <Route path="/homeResponsibe" element={<HomeResponsibe />} />
                <Route path="/listEmployees" element={<ListEmployees />} />
+               <Route path="/tracking" element={<Tracking />} />
             </Routes>
          </BrowserRouter>
       )
