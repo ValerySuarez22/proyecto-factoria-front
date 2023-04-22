@@ -3,7 +3,7 @@ import Logo from "../../assets/images/logo.png"
 import Photo from "../../assets/images/image.png"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPowerOff } from '@fortawesome/free-solid-svg-icons';
-import "../navbar-HHRR/navbar.css";
+import "../navbar-HHRR/navbar.css"
 
 const Navbar =({user}) => {
   const [data, setData] = useState({})
