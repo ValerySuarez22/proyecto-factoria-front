@@ -1,14 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react'
 import NavbarR from '../../../components/navbarResponsible/NavbarR';
-import Cards from '../../../components/cards/Cards';
+import customActions from '../../../components/actions';
+import CardResponsible from '../../../components/cardResponsible/CardResponsible';
 import '../list/listEmployees.css';
 
+const ListEmployees = () => {
 
-function ListEmployees() {
+  const [user, setUser] = useState({});
+
+
+  useEffect(() => {
+    customActions()
+      .then(result => {
+        setUser(result)
+      })
+  }, [])
+
   return (
     <div className='containerList'>
-      <NavbarR/>
-      <Cards/>
+      <NavbarR user={user} />
+      <CardResponsible user={user} />
     </div>
   )
 }

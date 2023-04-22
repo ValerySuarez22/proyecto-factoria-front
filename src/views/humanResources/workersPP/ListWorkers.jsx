@@ -1,14 +1,24 @@
-import React, { useState, user } from 'react'
+import React, { useEffect, useState } from 'react'
 import Navbar from '../../../components/navbar-HHRR/Navbar';
 import '../workersPP/listWorkers.css'
 import Cards from '../../../components/cards/Cards';
+import customActions from '../../../components/actions';
 
-const ListWorkers =() => {
+const ListWorkers = () => {
   const [user, setUser] = useState({});
+
+  useEffect(() => {
+    customActions()
+      .then(result => {
+        console.log('result', result)
+        setUser(result)
+      })
+  }, [])
+
   return (
     <div className='containerList'>
       <Navbar user={user} />
-      <Cards/>
+      <Cards user={user} />
     </div>
   )
 }

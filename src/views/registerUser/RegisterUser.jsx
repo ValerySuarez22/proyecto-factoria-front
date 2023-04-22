@@ -37,7 +37,7 @@ function RegisterUser() {
         {success ? (
           <section className="success">
             <h2 className='register-tex'>¡Ya te has registrado!</h2>
-            <a href="https://elpais.com/" className="btn-login">
+            <a href="/" className="btn-login">
               Ve al inicio
             </a>
           </section>

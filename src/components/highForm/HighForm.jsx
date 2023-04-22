@@ -14,6 +14,8 @@ const HighForm = () => {
   const [formValues, setFormValues] = useState([]);
   const [managers, setManagers] = useState([]);
   const [imagen, setImagen] = useState(null);
+  const [formErrors, setFormErrors] = useState({});
+  
   
   
   useEffect(() => {
@@ -78,9 +80,38 @@ const HighForm = () => {
     });
   };
   
-  const handleSubmit = async () => {
-    console.log(imagen);
-    console.log(formValues);
+  const validateForm = () => {
+    const requiredFields = [
+      'name',
+      'identifying',
+      'position',
+      'area',
+      'typeOfContract',
+      'manager',
+      'startDate',
+      'firstPeriod',
+      'thirdPeriod',
+      'fifthPeriod',
+    ];
+  
+    let isValid = true;
+  
+    for (const fieldName of requiredFields) {
+      if (!formValues[fieldName]) {
+        alert(`El campo ${fieldName} es obligatorio`);
+        isValid = false;
+      }
+    }
+  
+    return isValid;
+  };
+
+  const handleSubmit = async (event) => {
+    // event.preventDefault();
+    // if (validateForm()) {
+    //   return;
+    // }
+
     const data = new FormData();
 
     data.append("photo", imagen);
@@ -92,23 +123,6 @@ const HighForm = () => {
     })
     setFormValues([])
     setImagen(null)
-    console.log('datos',formValues )
-    console.log('foto',imagen )
-    // console.log("este es el id del nuevo usuario: ", res);
-    // axios.get(`http://127.0.0.1:8000/api/employee/${res.data}/photo`, { responseType: 'blob' })
-    // .then((res) => {
-    // console.log("🚀 ~ file: HighForm.jsx:119 ~ .then ~ res:", res)
-    //   const reader = new FileReader();
-    //   reader.readAsDataURL(res.data);
-    //   reader.onloadend = () => {
-    //     setPictu(reader.result);
-
-    //   // rese.data.blob()
-    //   }
-    // })
-    // .then((blob) => {
-    //   };
-    // });
   };
   
 
@@ -127,7 +141,9 @@ const HighForm = () => {
                 value={formValues.name}
                 placeholder="Nombre completo"
                 onChange={handleInputChange}
+                required
               />
+             
             </li>
             <li>
               <label htmlFor="identifying">DNI</label>
@@ -138,6 +154,7 @@ const HighForm = () => {
                 value={formValues.identifying}
                 placeholder="DNI"
                 onChange={handleInputChange}
+                required
               />
             </li>
             <li>
@@ -147,6 +164,7 @@ const HighForm = () => {
                 name="position"
                 value={formValues.title}
                 onChange={handleInputChange}
+                required
               >
                 <option value=""></option>
                 {positions.map((data, index) => 
@@ -161,6 +179,7 @@ const HighForm = () => {
                 name="area"
                 value={formValues.area}
                 onChange={handleInputChange}
+                required
               >
                 <option value=""></option>
                 {areas.map((data, index) => 
@@ -175,6 +194,7 @@ const HighForm = () => {
                 name="typeOfContract"
                 value={formValues.contract}
                 onChange={handleInputChange}
+                required
               >
                 <option value=""></option> 
                 {contracts.map((data,index) =>
@@ -189,6 +209,7 @@ const HighForm = () => {
                 name="manager"
                 value={formValues.manager}
                 onChange={handleInputChange}
+                required
               >
                 <option value=""></option>
                 {managers.map((data, index) => 
@@ -205,6 +226,7 @@ const HighForm = () => {
                 value={formValues.startDate}
                 placeholder="Fecha de inicio"
                 onChange={handleInputChange}
+                required
               />
             </li>
             
@@ -217,6 +239,7 @@ const HighForm = () => {
                 value={formValues.firstPeriod}
                 placeholder="Primer Periodo"
                 onChange={handleInputChange}
+                
               />
             </li>
             <li>
@@ -252,6 +275,7 @@ const HighForm = () => {
                 value={formValues.lastname}
                 placeholder="Apellido"
                 onChange={handleInputChange}
+                required
               />
             </li>
             <li>
@@ -263,6 +287,7 @@ const HighForm = () => {
                 value={formValues.email}
                 placeholder="Email"
                 onChange={handleInputChange}
+                required
               />
             </li>
             <li>
@@ -272,6 +297,7 @@ const HighForm = () => {
                 name="rol"
                 value={formValues.title}
                 onChange={handleInputChange}
+                required
               >
                 <option value=""></option>
                 {rols.map((data, index) => 
@@ -286,6 +312,7 @@ const HighForm = () => {
                 name="team"
                 value={formValues.title}
                 onChange={handleInputChange}
+                required
               >
                 <option value=""></option>
                 {teams.map((data, index) => 
@@ -300,6 +327,7 @@ const HighForm = () => {
                 name="period"
                 value={formValues.period}
                 onChange={handleInputChange}
+                required
               >
                 <option value=""></option> 
                 {period.map((data,index) =>
@@ -314,6 +342,7 @@ const HighForm = () => {
                 name="status"
                 value={formValues.title}
                 onChange={handleInputChange}
+                required
               >
                 <option value=""></option>
                 {status.map((data, index) => 
@@ -330,6 +359,7 @@ const HighForm = () => {
                 value={formValues.finishDate}
                 placeholder="Fecha fin"
                 onChange={handleInputChange}
+                required
               />
             </li>
             <li>
@@ -364,6 +394,7 @@ const HighForm = () => {
                 name="imagen"
                 accept="image/png, image/jpeg"
                 onChange={handleImageSelected} //Estos es una función que se ejecuta cuando recibe un cambio
+                required
               />
             </li>
           </div>

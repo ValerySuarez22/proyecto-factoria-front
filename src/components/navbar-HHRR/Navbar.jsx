@@ -8,7 +8,7 @@ import "../navbar-HHRR/navbar.css";
 const Navbar =({user}) => {
   const [data, setData] = useState({})
   
-  useEffect(()=> setData(user))
+  useEffect(()=> setData(user),[user])
 
 
   const handleLogout = () => {
@@ -17,7 +17,6 @@ const Navbar =({user}) => {
   }
 
   return (
-    console.log('user', user),
     <div className="content-navbar">
       <img src={Logo} alt="logo" className="logo"/>
       <img src={data.photo ? data.photo : Photo} alt="user" className="user"/>
