@@ -4,11 +4,11 @@ import Home from "../../src/views/humanResources/homeRRHH/Home";
 import Register from "../../src/views/humanResources/register/Register";
 import Evaluations from "../views/humanResources/evaluations/Evaluations";
 import ListWorkers from "../views/humanResources/workersPP/ListWorkers";
-import ListEmployees from "../views/responsibe/list/ListEmployees";
-import HomeResponsible from "../views/responsibe/homeR/HomeResponsible";
+import ListEmployees from "../views/responsible/list/ListEmployees";
+import HomeResponsible from "../views/responsible/homeR/HomeResponsible";
 import Login from "../views/login/Login";
 import RegisterUser from "../views/registerUser/RegisterUser";
-// import Tracking from "../views/responsibe/evaluations/Tracking";
+// import Tracking from "../views/responsible/evaluations/Tracking";
 
 
 
