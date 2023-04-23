@@ -6,19 +6,21 @@ import customActions from '../../../components/actions';
 
 const ListWorkers = () => {
   const [user, setUser] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     customActions()
       .then(result => {
         console.log('result', result)
         setUser(result)
+        setIsLoading(false);
       })
   }, [])
 
   return (
     <div className='containerList'>
       <Navbar user={user} />
-      <Cards user={user} />
+      <Cards user={user} loading={isLoading} />
     </div>
   )
 }
