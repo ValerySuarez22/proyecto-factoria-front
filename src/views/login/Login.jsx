@@ -13,9 +13,11 @@ function Login() {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [success, setSuccess] = useState(false)
+    const [isLoading, setIsLoading] = useState(false) // Nuevo estado para controlar si se está cargando o no
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setIsLoading(true) // Marcamos que se está cargando
         try{
             const response = await axios.post(LOGIN_URL, 
                 JSON.stringify({username: username, password: password}),
@@ -55,6 +57,8 @@ function Login() {
             setUsername('')
             setPassword('')
             setSuccess(true)
+            setIsLoading(false) // Finaliza la carga
+            
 
             console.log('¡Milagro de Dios! ¡Estás dentro!')
 
@@ -70,6 +74,7 @@ function Login() {
           //tengo que hacer que muestre un mensaje de no autorizado
           alert('Datos incorrectos')  
           console.log('no funciona')
+          setIsLoading(false) // Finaliza la carga
         }
     }
 
@@ -106,7 +111,12 @@ function Login() {
                   value={password}
                   required
                 />
-                <button className="btn-in" type="submit">Entrar</button>
+                {/* Agregamos la condición para mostrar el mensaje de cargando */}
+                {isLoading ? (
+                  <button className="btn-in" type="submit" disabled>Cargando...</button>
+                ) : (
+                  <button className="btn-in" type="submit">Entrar</button>
+                )}
               </form>
               <p>¿Aún no estás registrado? <Link className="btn-register" to="/registerUser">Regístrate</Link></p>
               {/* <a href="#" className="btn-password">
