@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react";
 import "./cards.css";
 import axios from "axios";
 
-const Cards = ({ user }) => {
+const Cards = ({ user, loading }) => {
   const [repo, setRepo] = useState([]);
   const [teams, setTeams] = useState([]);
   const [dataFilter, setDataFilter] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loadingCards, setLoadingCards] = useState(true);
 
   useEffect(() => {
 
@@ -31,7 +31,7 @@ const Cards = ({ user }) => {
                 data.push(element);
                 setRepo(data);
                 setDataFilter(data);
-                setLoading(false);
+                setLoadingCards(false);
               };
             }
 
@@ -59,7 +59,7 @@ const Cards = ({ user }) => {
   // aqui entre los parentesis tiene que ir el objeto trabajador
   return (
     <div>
-      {loading ? (
+      {loading || loadingCards ? (
         <div className='loading-list-workers'>
         <p className='loading-cards'>Un momento, por favor.<br /> Los datos se están cargando...</p>
         <div className="spinner">

@@ -20,17 +20,7 @@ const ListWorkers = () => {
   return (
     <div className='containerList'>
       <Navbar user={user} />
-      {isLoading ? (
-        <div className='loading-list-workers'>
-          <p className='loading-cards'>Un momento, por favor.<br /> Los datos se están cargando...</p>
-          <div className="spinner">
-            <div class="double-bounce1"></div>
-            <div class="double-bounce2"></div>
-          </div>
-        </div>
-      ) : (
-      <Cards user={user} />
-      )}
+      <Cards user={user} loading={isLoading} />
     </div>
   )
 }
