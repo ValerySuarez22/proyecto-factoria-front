@@ -2,18 +2,18 @@ import React from 'react';
 import { Calendar, momentLocalizer } from 'react-big-calendar';
 import moment from 'moment';
 import 'moment/locale/es';
-import '../calendar/react-datepicker/dist/react-datepicker.css';
+import '../calendarResponsible/react-datepicker/dist/react-datepicker.css';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
-import AddEventForm from './AddEventForm';
-import '../calendar/calendar.css';
+import AddEventFormResponsible from './AddEventFormResponsible';
+import '../calendarResponsible/calendarResponsible.css';
 import axios from 'axios';
-import DailyAgenda from '../dailyAgenda/DailyAgenda';
+import DailyAgendaResponsible from '../dailyAgendaResponsible/DailyAgendaResponsible';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 moment.updateLocale('es', {
   week: {
-    dow: 1, // Establece el primer día de la semana como lunes (0 es domingo, 1 es lunes, 2 es martes, etc.)
+    dow: 1, 
   },
 });
 const localizer = momentLocalizer(moment);
@@ -24,7 +24,7 @@ const Event = ({ event, selected }) => (
   </div>
 );
 
-class CalendarPage extends React.Component {
+class CalendarPageResponsible extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -35,16 +35,12 @@ class CalendarPage extends React.Component {
   }
 
   componentWillMount() {
-    // cargar los eventos existentes del backend
-    console.log('mensajito')
     axios.get('http://127.0.0.1:8000/api/calendar', {
       // headers: {
       //   Authorization: `Bearer ${localStorage.getItem('token')}`,
       // },
     })
 
-
-  
       .then((res) => {
         const events = []
         res.data.forEach((event) => {
@@ -68,7 +64,6 @@ class CalendarPage extends React.Component {
             })
           }
         });
-        console.log('mensajito2', events)
         this.setState({ events });
       })
       .catch((error) => console.log(error));
@@ -109,9 +104,6 @@ class CalendarPage extends React.Component {
 
 
   handleSelectEvent = (event) => {
-    console.log('rosa', event)
-    // delete event.selected
-    console.log('morado', event)
     this.setState({ selectedEvent: event });
   }
 
@@ -119,7 +111,6 @@ class CalendarPage extends React.Component {
   handleCancel = () => {
     const { selectedEvent } = this.state; console.log('adiós', selectedEvent)
     const updatedEvent = { ...selectedEvent, selected: false };
-    console.log('hola', updatedEvent)
     const updatedEvents = this.state.events.map(event => event === selectedEvent ? updatedEvent : event);
     this.setState({ events: updatedEvents, selectedEvent: null });
   }
@@ -154,7 +145,7 @@ class CalendarPage extends React.Component {
       {user.rol !== "User" && 
       <>
       <h4>Añadir nuevo evento</h4>
-          <AddEventForm onAddEvent={this.handleAddEvent} />
+          <AddEventFormResponsible onAddEvent={this.handleAddEvent} />
       </> 
       }
         {/* </div> */}
@@ -191,4 +182,4 @@ class CalendarPage extends React.Component {
 }
 
 
-export default CalendarPage;
+export default CalendarPageResponsible;

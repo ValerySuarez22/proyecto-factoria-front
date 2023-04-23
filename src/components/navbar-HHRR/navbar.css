@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=ABeeZee&family=Alfa+Slab+One&family=Changa&family=Cutive+Mono&family=Fira+Code:wght@300&family=Megrim&family=Poppins&family=Share+Tech+Mono&display=swap');
 
 .content-navbar {
-    height: 90vh;
+    height: 60vh;
     width: 130px;
     position: fixed;
-    top: 50%;
+    top: 40%;
     margin-left: -4%;
     transform: translate(-50%, -50%);
     background-color: #E8550F;
@@ -26,7 +26,7 @@
 
 .user {
     width: 60%;
-    border-radius: 50px;
+    border-radius: 60px;
 }
 .buttons {
     display: flex;
@@ -38,7 +38,7 @@
     color: #fff;
     border-radius: 5px;
     padding: 10px 6px;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
     cursor: pointer;
     text-decoration: none;
     font-family: 'poppins';

@@ -1,6 +1,6 @@
 import React from 'react';
 
-class AddEventForm extends React.Component {
+class AddEventFormRRHH extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -59,4 +59,4 @@ class AddEventForm extends React.Component {
   }
 }
 
-export default AddEventForm;
+export default AddEventFormRRHH;

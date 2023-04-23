@@ -1,9 +1,9 @@
 import React from 'react';
 import moment from 'moment';
 import 'moment/locale/es';
-import '../dailyAgenda/dailyAgenda.css'
+import '../dailyAgendaResponsible/dailyAgendaResponsible.css'
 
-class DailyAgenda extends React.Component {
+class DailyAgendaResponsible extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -16,9 +16,9 @@ class DailyAgenda extends React.Component {
     this.fetchEvents();
   }
 
-  componentWillReceiveProps(nextProps){
+  componentWillReceiveProps(nextProps) {
     console.log(nextProps)
-    this.setState({ selectedDate: nextProps.dayCalendar})
+    this.setState({ selectedDate: nextProps.dayCalendar })
   }
 
   fetchEvents = () => {
@@ -44,24 +44,24 @@ class DailyAgenda extends React.Component {
 
   render() {
     const { events, selectedDate } = this.state;
-    let eventsOnSelectedDate = [] ;
-    if (events.length >0) {
-      eventsOnSelectedDate = events.filter(event => moment (new Date(event.startDate.date)).format('YYYY-MM-DD') == moment(selectedDate).format('YYYY-MM-DD'))
+    let eventsOnSelectedDate = [];
+    if (events.length > 0) {
+      eventsOnSelectedDate = events.filter(event => moment(new Date(event.startDate.date)).format('YYYY-MM-DD') == moment(selectedDate).format('YYYY-MM-DD'))
     }
-    
-   
-   
+
+
+
 
     return (
       <div className='daily-agenda'>
-        <h2>Agenda del día: {moment(selectedDate).format('dddd D [de] MMMM')}</h2>
-        <div>
-          <button onClick={() => this.handleDateChange(selectedDate.clone().subtract(1, 'day'))}>Anterior</button>
+        <h1>Agenda del día: {moment(selectedDate).format('dddd D [de] MMMM')}</h1>
+        <div className='buttons-agenda'>
+          <button onClick={() => this.handleDateChange(moment(selectedDate).subtract(1, 'day'))}>Anterior</button>
           <button onClick={() => this.handleDateChange(moment())}>Hoy</button>
-          <button onClick={() => this.handleDateChange(selectedDate.clone().add(1, 'day'))}>Siguiente</button>
+          <button onClick={() => this.handleDateChange(moment(selectedDate).add(1, 'day'))}>Siguiente</button>
         </div>
         {eventsOnSelectedDate.length === 0 ? (
-          <p>No hay eventos programados para este día.</p>
+          <p className='agenda-events'>No hay eventos programados para este día.</p>
         ) : (
           <ul id="event-list">
             {eventsOnSelectedDate.map(event => (
@@ -76,4 +76,4 @@ class DailyAgenda extends React.Component {
   }
 }
 
-export default DailyAgenda;
+export default DailyAgendaResponsible

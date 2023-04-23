@@ -28,7 +28,9 @@
   justify-content: center;
 }
 
-.btn-login{}
+.title-and-formLogin {
+  margin-bottom: 5%;
+}
 
 .title-login {
   font-family: "poppins";
@@ -38,7 +40,8 @@
 }
 
 .form-login {
-  background-color: rgba(255, 255, 255, 0.384);
+  /* background-color: rgba(255, 255, 255, 0.384); */
+  background-color: rgba(255, 255, 255, 0.825);
   border-radius: 15px;
   box-shadow: 0 8px 32px 0 rgba(245, 95, 8, 0.637);
   backdrop-filter: blur(10px);
@@ -111,5 +114,9 @@ input[name="login"]:focus {
   font-family: "poppins";
 }
 
-
+.btn-register {
+  color:#e8550f;
+  text-decoration: none;
+  font-family: "poppins";
+}
 

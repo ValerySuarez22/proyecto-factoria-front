@@ -5,7 +5,7 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-image: url("../../assets/images/login.png");
+  background-image: url("../../assets/images/background-register.png");
   background-size: cover;
   background-position: center;
 }
@@ -28,7 +28,9 @@
   justify-content: center;
 }
 
-.btn-login{}
+.title-and-formRegister {
+  margin-bottom: 5%;
+}
 
 .title-register {
   font-family: "poppins";
@@ -38,7 +40,7 @@
 }
 
 .form-register {
-  background-color: rgba(255, 255, 255, 0.384);
+  background-color: #FFA37F;
   border-radius: 15px;
   box-shadow: 0 8px 32px 0 rgba(245, 95, 8, 0.637);
   backdrop-filter: blur(10px);
@@ -78,7 +80,7 @@ input[name="register"] {
   width: 300px;
   border: 1px solid #e8550f;
   border-radius: 20px;
-  background-color: #ff7f508c;
+  background-color: #ffffffe3;
   font-size: 16px;
   font-family: "poppins";
 }
@@ -87,6 +89,12 @@ input[name="register"]:focus {
   outline: none;
   background-color: rgba(224, 98, 14, 0.3);
 }
+
+input[name="register"]:focus {
+  outline: none;
+  background-color: rgba(224, 98, 14, 0.3);
+}
+
 
 .btn-in {
   background-color: #e8550f;

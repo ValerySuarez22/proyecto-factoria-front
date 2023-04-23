@@ -32,21 +32,21 @@ function RegisterUser() {
   };
 
   return (
-    <div className="register-container">
+    <div id="/registerUser" className="register-container">
       <>
         {success ? (
           <section className="success">
             <h2 className='register-tex'>¡Ya te has registrado!</h2>
-            <a href="https://elpais.com/" className="btn-login">
+            <a href="/" className="btn-login">
               Ve al inicio
             </a>
           </section>
         ) : (
-          <section>
+          <section className="title-and-formRegister">
             <h1 className="title-register">Plataforma de Registro</h1>
             <div className="form-register">
               <form onSubmit={handleSubmit}>
-                <label htmlFor="username">username</label>
+                <label htmlFor="username">Username</label>
                 <input name="register"
                   type="text"
                   id="username"

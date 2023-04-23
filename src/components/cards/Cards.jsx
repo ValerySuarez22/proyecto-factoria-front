@@ -1,39 +1,47 @@
 import React, { useState, useEffect } from "react";
 import "./cards.css";
-// import picture from "../../assets/images/auri.png";
 import axios from "axios";
 
-const Cards = () => {
+const Cards = ({user}) => {
   const [repo, setRepo] = useState([]);
   const [teams, setTeams] = useState([]);
   const [dataFilter, setDataFilter] = useState([]);
 
   useEffect(() => {
-    axios
-      .get("https://127.0.0.1:8000/api/employee")
+
+    if(user.identifying){
+      axios
+      .get(`http://127.0.0.1:8000/api/employee/filter/status/activo`)
       .then(async (repo) => {
         const data = [];
         for (let index = 0; index < repo.data.length; index++) {
           const element = repo.data[index];
-          const rese = await fetch(
-            `https://127.0.0.1:8000/api/employee/${element.id}/photo`
-          );
-          const blob = await rese.blob();
-          const reader = new FileReader();
-          reader.readAsDataURL(blob);
-          reader.onloadend = () => {
-            element.photo = reader.result;
-            data.push(element);
-            setRepo(data);
-            setDataFilter(data);
-          };
+          console.log('element', element.identifying)
+          console.log('user', user.identifying)
+          if(user.identifying !== element.identifying){
+            const rese = await fetch(
+              `http://127.0.0.1:8000/api/employee/${element.id}/photo`
+            );
+            const blob = await rese.blob();
+            const reader = new FileReader();
+            reader.readAsDataURL(blob);
+            reader.onloadend = () => {
+              element.photo = reader.result;
+              data.push(element);
+              setRepo(data);
+              setDataFilter(data);
+            };
+          }
+          
         }
       })
       .catch((error) => console.error(error));
     axios
       .get("https://localhost:8000/team/list")
       .then((result) => setTeams(result.data));
-  }, []);
+    }
+    
+  }, [user]);
 
   const handleTeams = (event) => {
     const { value } = event.target;
@@ -72,7 +80,7 @@ const Cards = () => {
               </div>
             </div>
             <div className="cardRight">
-              <p>{`${obj.name} ${obj.lastname} `}</p>
+              <p>{`${obj.name} ${obj.lastname} : ${obj.team} / ${obj.rol} / ${obj.manager}`}</p>
             </div>
           </div>
         ))}

@@ -1,26 +1,27 @@
 import React, { useEffect, useState } from 'react'
-import Navbar from '../../../components/navbar-HHRR/Navbar';
-import '../workersPP/listWorkers.css'
-import Cards from '../../../components/cards/Cards';
+import NavbarR from '../../../components/navbarResponsible/NavbarR';
 import customActions from '../../../components/actions';
+import CardResponsible from '../../../components/cardResponsible/CardResponsible';
+import '../list/listEmployees.css';
 
-const ListWorkers = () => {
+const ListEmployees = () => {
+
   const [user, setUser] = useState({});
+
 
   useEffect(() => {
     customActions()
       .then(result => {
-        console.log('result', result)
         setUser(result)
       })
   }, [])
 
   return (
     <div className='containerList'>
-      <Navbar user={user} />
-      <Cards user={user} />
+      <NavbarR user={user} />
+      <CardResponsible user={user} />
     </div>
   )
 }
 
-export default ListWorkers
+export default ListEmployees

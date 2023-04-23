@@ -1,24 +1,19 @@
 import axios from 'axios';
 
 const customActions = async () => {
-    const dataemail= JSON.parse(localStorage.getItem('loggedAppUser'))
-  console.log(dataemail) 
-  const rest = await axios.get("http://127.0.0.1:8000/api/employee");
-    console.log(rest.data);
-    const findUser = rest.data.find(obj => obj.email === dataemail.username);
-    console.log(findUser);
+    const dataEmail = JSON.parse(localStorage.getItem('name'))
+    const myUser = await axios.get(`http://127.0.0.1:8000/api/employee/filter/email/${dataEmail.username}`);
     const rese = await fetch(
-        `http://127.0.0.1:8000/api/employee/${findUser.id}/photo`
+        `http://127.0.0.1:8000/api/employee/${myUser.data[0].id}/photo`
     );
     const blob = await rese.blob();
     const reader = new FileReader();
     reader.readAsDataURL(blob);
     reader.onloadend = () => {
-        findUser.photo = reader.result;
-        console.log('findUser', findUser)
-        return findUser;
+        myUser.data[0].photo = reader.result;
+        // return myUser.data[0];
     };
-    return findUser
+    return myUser.data[0]
 }
 
 export default customActions
