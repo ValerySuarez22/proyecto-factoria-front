@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=ABeeZee&family=Alfa+Slab+One&family=Changa&family=Cutive+Mono&family=Fira+Code:wght@300&family=Megrim&family=Poppins&family=Share+Tech+Mono&display=swap');
 
 .content-navbar {
-    height: 90vh;
-    width: 130px;
+    height: 63vh;
+    width: 160px;
     position: fixed;
-    top: 50%;
-    left: 10%;
+    top: 36%;
+    left: 12%;
     transform: translate(-50%, -50%);
     background-color: #E8550F;
     color: white;
@@ -26,7 +26,8 @@
 
 .user {
     width: 60%;
-    border-radius: 50px;
+    border-radius: 60px;
+    margin-bottom: 20px;
 }
 .buttons {
     display: flex;
@@ -38,7 +39,7 @@
     color: #fff;
     border-radius: 5px;
     padding: 10px 6px;
-    margin-bottom: 40px;
+    margin-bottom: 25px;
     cursor: pointer;
     text-decoration: none;
     font-family: 'poppins';
@@ -52,7 +53,29 @@
     background-color: salmon;
 }
 
-.icon-off {
-    margin-top: 15px;
+.btn-Logout {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+  }
+  
+  .btn-Logout:hover {
+    background-color: #0069d9;
+  }
+  
+  .icon-off {
+    margin-right: 0.5rem;
+  }
+
+/* .icon-off {
+    margin-top: 10px;
+    margin-bottom: 10px;
     height: 20px;
-}
+    cursor: pointer;
+    transform: translateY(2px);
+    box-shadow: none;
+    opacity: 0.7;
+} */
