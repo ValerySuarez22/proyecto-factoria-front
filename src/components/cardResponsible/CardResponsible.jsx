@@ -10,13 +10,14 @@ const CardResponsible = ({user}) => {
     const [dataFilter, setDataFilter] = useState([]);
 
     useEffect(() => {
-        console.log('usercard', user)
+        if(user.identifying){
             axios
             .get(`http://127.0.0.1:8000/api/employee/filter/manager/${user.identifying}`)
             .then(async (repo) => {
                 const data = [];
                 for (let index = 0; index < repo.data.length; index++) {
                     const element = repo.data[index];
+                    if(user.identifying !== element.identifying){
                     const rese = await fetch(
                         `http://127.0.0.1:8000/api/employee/${element.id}/photo`
                     );
@@ -30,12 +31,13 @@ const CardResponsible = ({user}) => {
                         setDataFilter(data);
                     };
                 }
+            }
             })
             .catch((error) => console.error(error));
         axios
             .get("http://localhost:8000/team/list")
             .then((result) => setTeams(result.data));
-    
+        }
     }, [user]);
 
     const handleTeams = (event) => {
