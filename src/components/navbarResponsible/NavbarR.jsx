@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Logo from "../../assets/images/logo.png"
-import Photo from "../../assets/images/image.png"
+import Photo from "../../assets/images/defaultUser.png"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPowerOff } from '@fortawesome/free-solid-svg-icons';
 import '../navbarResponsible/navbarR.css';

@@ -8,10 +8,11 @@ function RegisterUser() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [success, setSuccess] = useState(false);
+  const [isLoading, setIsLoading] = useState(false)
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    setIsLoading(true);
     try {
       const response = await axios.post(
         REGISTER_URL,
@@ -26,8 +27,9 @@ function RegisterUser() {
 
       console.log(response.data);
       setSuccess(true);
+      setIsLoading(false);
     } catch {
-      console.log("no funciona");
+      setIsLoading(false)
     }
   };
 
@@ -36,9 +38,9 @@ function RegisterUser() {
       <>
         {success ? (
           <section className="success">
-            <h2 className='register-tex'>¡Ya te has registrado!</h2>
+            <h2 className='register-tex'>¡Te has registrado correctamente!</h2>
             <a href="/" className="btn-login">
-              Ve al inicio
+              Ahora ya puedes iniciar sesión
             </a>
           </section>
         ) : (
@@ -46,7 +48,7 @@ function RegisterUser() {
             <h1 className="title-register">Plataforma de Registro</h1>
             <div className="form-register">
               <form onSubmit={handleSubmit}>
-                <label htmlFor="username">Username</label>
+                <label htmlFor="username">Correo Corporativo</label>
                 <input name="register"
                   type="text"
                   id="username"
@@ -56,7 +58,7 @@ function RegisterUser() {
                   required
                 />
 
-                <label htmlFor="password">Contraseña</label>
+                <label htmlFor="password">Elige una Contraseña</label>
                 <input name="register"
                   type="password"
                   id="password"
@@ -64,7 +66,11 @@ function RegisterUser() {
                   value={password}
                   required
                 />
+                {isLoading ? (
+                  <button className="btn-in" type="submit" disabled>Cargando...</button>
+                ) : (
                 <button className="btn-in">Registrarse</button>
+                )}
               </form>
             </div>
           </section>
