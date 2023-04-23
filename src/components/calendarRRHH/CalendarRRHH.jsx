@@ -43,6 +43,7 @@ class CalendarPageRRHH extends React.Component {
 
       .then((res) => {
         const events = []
+        console.log('datos de mi usuario', this.props)
         res.data.forEach((event) => {
           if (this.props.user.rol == 'User') {
             if (this.props.user.email === event.recipient) {
@@ -72,7 +73,6 @@ class CalendarPageRRHH extends React.Component {
 
   handleAddEvent = (event) => {
     const { events } = this.state;
-    this.setState({ events: [...events, event] });
 
     const formatEvent = {
       title: event.title, 
@@ -80,7 +80,7 @@ class CalendarPageRRHH extends React.Component {
       finishDate: event.end,
       recipient: event.recipient,
     }
-
+console.log('formatEvent', formatEvent)
     axios.post('http://127.0.0.1:8000/api/calendar/new', formatEvent
   //   {
   //   headers: {
@@ -88,11 +88,13 @@ class CalendarPageRRHH extends React.Component {
   //   },
   // }
   )
-  // .then((response) => {
-  //   const savedEvent = response.data;
-  //   const { events } = this.state;
-  //   this.setState({ events: [...events, savedEvent] });
-  // })
+  .then((response) => {
+    const savedEvent = response.data; console.log('savedEvent', savedEvent)
+    const { events } = this.state;
+    this.setState({ events: [...events, event] });
+    // this.setState({ events: [...events, savedEvent] });
+  })
+
   .catch((error) => {
     console.error(error);
   });
@@ -128,7 +130,9 @@ class CalendarPageRRHH extends React.Component {
 }
 
 
-
+test=(e) => {
+  console.log('prueba')
+}
 
   render() {
     const { selectedEvent } = this.state;
@@ -151,6 +155,7 @@ class CalendarPageRRHH extends React.Component {
         {/* </div> */}
         <div style={{ height: '500px', width: '90%', margin: '0 auto' }}>
           <Calendar
+            onShowMore={(e) => this.test(e)}
             localizer={localizer}
             events={this.state.events}
             defaultDate={dayCalendar}

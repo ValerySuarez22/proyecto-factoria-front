@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import axios from '../api/axios';
 import jwtDecode from 'jwt-decode';
 import '../login/login.css';
+import 'animate.css';
 
 
 const LOGIN_URL = '/api/login_check';
@@ -13,9 +14,22 @@ function Login() {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [success, setSuccess] = useState(false)
+    const [isLoading, setIsLoading] = useState(false) // Nuevo estado para controlar si se está cargando o no
+    const [showAlert, setShowAlert] = useState(false); // Nuevo estado para mostrar alerta
+
+
+    const handleAlertClose = () => {
+      setShowAlert(false);
+      setUsername('')
+      setPassword('')
+    };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+      if (!username || !password) {
+        return;
+      }
+    setIsLoading(true);// Marcamos que se está cargando
         try{
             const response = await axios.post(LOGIN_URL, 
                 JSON.stringify({username: username, password: password}),
@@ -55,8 +69,8 @@ function Login() {
             setUsername('')
             setPassword('')
             setSuccess(true)
-
-            console.log('¡Milagro de Dios! ¡Estás dentro!')
+            setIsLoading(false) // Finaliza la carga
+            
 
 		setTimeout(()=>{
       if (decoded_role == 'ROLE_USER') {
@@ -67,29 +81,35 @@ function Login() {
       },1000)           
 
         } catch (err) {
-          //tengo que hacer que muestre un mensaje de no autorizado
-          alert('Datos incorrectos')  
-          console.log('no funciona')
+          setShowAlert(true); // Mostrar alerta si hay error
+          setIsLoading(false) // Finaliza la carga
         }
-    }
+    };
 
     
   return (
     <div className="login-container">
       <>
+      {showAlert && ( // Mostrar alerta solo si showAlert es verdadero
+          <div id="custom-alert" className="alert">
+            <div className="alert-content animate__animated animate__shakeX">
+              <span className="close" onClick={handleAlertClose}>
+                &times;
+              </span>
+              <p className='alert-text'>Datos incorrectos</p>
+            </div>
+          </div>
+        )}
         {success ? (
           <section className="success">
             <h2 className='login-tex'>¡Has iniciado sesión!</h2>
-            {/* <a href="https://elpais.com/" className="btn-login">
-              Ve al inicio
-            </a> */}
           </section>
         ) : (
           <section className='title-and-formLogin'>
             <h1 className="title-login">Plataforma de Login</h1>
             <div className="form-login">
               <form onSubmit={handleSubmit}>
-                <label htmlFor="username">Username</label>
+                <label htmlFor="usernameLogin">Correo Corporativo</label>
                 <input name="login"
                   type="text"
                   id="username"
@@ -98,7 +118,7 @@ function Login() {
                   value={username}
                   required
                 />
-                <label htmlFor="password">Contraseña</label>
+                <label htmlFor="passwordLogin">Contraseña</label>
                 <input name="login"
                   type="password"
                   id="password"
@@ -106,7 +126,12 @@ function Login() {
                   value={password}
                   required
                 />
-                <button className="btn-in" type="submit">Entrar</button>
+                {/* Agregamos la condición para mostrar el mensaje de cargando */}
+                {isLoading ? (
+                  <button className="btn-in" type="submit" disabled>Cargando...</button>
+                ) : (
+                  <button className="btn-in" type="submit">Entrar</button>
+                )}
               </form>
               <p>¿Aún no estás registrado? <Link className="btn-register" to="/registerUser">Regístrate</Link></p>
               {/* <a href="#" className="btn-password">

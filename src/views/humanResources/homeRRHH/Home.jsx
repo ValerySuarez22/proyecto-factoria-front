@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from '../../../components/navbar-HHRR/Navbar';
 import "../homeRRHH/home.css";
-import axios from '../../../views/api/axios';
 import customActions from '../../../components/actions';
 import CalendarPageRRHH from '../../../components/calendarRRHH/CalendarRRHH';
 import SmallCalendarRRHH from '../../../components/smallCalendarRRHH/SmallCallendarRRHH';

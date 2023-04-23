@@ -1,20 +1,26 @@
-import React from 'react'
+import React, { useEffect, useState } from "react";
 import Logo from "../../assets/images/logo.png"
-import User from "../../assets/images/image.png"
+import Photo from "../../assets/images/defaultUser.png"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPowerOff } from '@fortawesome/free-solid-svg-icons';
 import '../navbarResponsible/navbarR.css';
+
+
+
+const NavbarR=({user}) => {
+  const [data, setData] = useState({})
+
+  useEffect(()=> setData(user),[user])
 
 const handleLogout = () => {
   // Redirige al usuario a la página de inicio
   window.location.href = ("/")
 }
 
-function NavbarR() {
   return (
     <div className="content-navbar">
       <img src={Logo} alt="logo" className="logo"/>
-      <img src={User} alt="user" className="user"/>
+      <img src={data.photo ? data.photo : Photo} alt="user" className="user"/>
       <div className="buttons">
         <a href="/" className="btn">Home</a>
         <a href="listEmployees" className="btn">Trabajadores</a>

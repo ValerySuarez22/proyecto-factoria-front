@@ -10,6 +10,33 @@
   background-position: center;
 }
 
+.alert-content {
+  position: fixed;
+  top: 0;
+  left: 50;
+  right: 50;
+  width:auto;
+  background-color: rgba(255, 255, 255, 0.825);
+  border-radius: 15px;
+  color: #e8550f;
+  font-family: "poppins";
+  font-size: 18px;
+  padding: 15px;
+  margin-top: 1%;
+  margin-left: 5%;
+}
+
+.alert-content .alert-text {
+  display: flex;
+  justify-content: center;
+}
+
+.alert-content .close {
+  display: flex;
+  justify-content: right;
+  margin-bottom: -20px;
+}
+
 .login-tex {
   color:#e8550f;
   font-family: "poppins";
@@ -40,7 +67,6 @@
 }
 
 .form-login {
-  /* background-color: rgba(255, 255, 255, 0.384); */
   background-color: rgba(255, 255, 255, 0.825);
   border-radius: 15px;
   box-shadow: 0 8px 32px 0 rgba(245, 95, 8, 0.637);
@@ -52,7 +78,7 @@
   justify-content: center;
 }
 
-label[for="username"] {
+label[for="usernameLogin"] {
   display: flex;
   flex-direction: column;
   margin-top: 25px;
@@ -63,7 +89,7 @@ label[for="username"] {
   align-items: center;
 }
 
-label[for="password"] {
+label[for="passwordLogin"] {
   display: flex;
   flex-direction: column;
   margin-top: 25px;
