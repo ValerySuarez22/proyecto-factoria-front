@@ -130,7 +130,9 @@ console.log('formatEvent', formatEvent)
 }
 
 
-
+test=(e) => {
+  console.log('prueba')
+}
 
   render() {
     const { selectedEvent } = this.state;
@@ -153,6 +155,7 @@ console.log('formatEvent', formatEvent)
         {/* </div> */}
         <div style={{ height: '500px', width: '90%', margin: '0 auto' }}>
           <Calendar
+            onShowMore={(e) => this.test(e)}
             localizer={localizer}
             events={this.state.events}
             defaultDate={dayCalendar}

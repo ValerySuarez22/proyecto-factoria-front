@@ -11,7 +11,7 @@ const Cards = ({user}) => {
 
     if(user.identifying){
       axios
-      .get("http://127.0.0.1:8000/api/employee")
+      .get(`http://127.0.0.1:8000/api/employee/filter/status/activo`)
       .then(async (repo) => {
         const data = [];
         for (let index = 0; index < repo.data.length; index++) {
