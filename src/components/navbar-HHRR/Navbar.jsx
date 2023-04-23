@@ -22,7 +22,7 @@ console.log('data', data)
       <img src={data.photo ? data.photo : Photo} alt="user" className="user"/>
       <div className="buttons">
       <a href="/" className="btn">Home</a>
-        <a href="register" className="btn">Registro</a>
+        <a href="registerRRHH" className="btn">Registro</a>
         <a href="listWorkers" className="btn">Trabajadores</a>
         <FontAwesomeIcon className="icon-off" icon={faPowerOff} onClick={handleLogout} />
       </div>
