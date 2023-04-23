@@ -117,17 +117,25 @@ const HighForm = () => {
       return;
     }
 
-    const data = new FormData();
+    const token = localStorage.getItem('loggedAppUser')
+    
+    if (!formValues.firstPeriod) formValues.firstPeriod = ""
+    if (!formValues.secondPeriod) formValues.secondPeriod = ""
+    if (!formValues.thirdPeriod) formValues.thirdPeriod = ""
+    if (!formValues.fourthPeriod) formValues.fourthPeriod = ""
+    if (!formValues.fifthPeriod) formValues.fifthPeriod = ""
 
+    const data = new FormData();
     data.append("photo", imagen);
-    data.append("data", JSON.stringify(formValues));
-    await axios.post("http://127.0.0.1:8000/api/create/employee", data, {
+    data.append('data', JSON.stringify(formValues));
+    await axios.post("http://127.0.0.1:8000/api/employee/new", data, {
       headers: {
-        "Content-Type": "multipart/form-data",
+        'Content-Type': 'multipart/form-data',
+        // 'Authorization': `Bearer ${token}`,
       },
-    });
-    setFormValues([]);
-    setImagen(null);
+    })
+    setFormValues([])
+    setImagen(null)
   };
 
   return (

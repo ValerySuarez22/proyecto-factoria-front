@@ -53,29 +53,8 @@
     background-color: salmon;
 }
 
-.btn-Logout {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 0.25rem;
-    cursor: pointer;
-  }
-  
-  .btn-Logout:hover {
-    background-color: #0069d9;
-  }
-  
-  .icon-off {
-    margin-right: 0.5rem;
-  }
-
-/* .icon-off {
+.icon-off {
     margin-top: 10px;
     margin-bottom: 10px;
     height: 20px;
-    cursor: pointer;
-    transform: translateY(2px);
-    box-shadow: none;
-    opacity: 0.7;
-} */
+}
