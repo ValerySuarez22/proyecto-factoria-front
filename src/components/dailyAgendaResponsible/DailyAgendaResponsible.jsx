@@ -12,12 +12,11 @@ class DailyAgendaResponsible extends React.Component {
     };
   }
 
-  componentWillMount() {
-    this.fetchEvents();
-  }
-
   componentWillReceiveProps(nextProps) {
-    console.log(nextProps)
+    console.log("nextprops", nextProps)
+    if(nextProps.user.name && !this.props.user.name ) {
+      this.fetchEvents();
+    }
     this.setState({ selectedDate: nextProps.dayCalendar })
   }
 
@@ -31,7 +30,22 @@ class DailyAgendaResponsible extends React.Component {
     })
       .then(response => response.json())
       .then(data => {
-        this.setState({ events: data });
+        console.log(this.props, "thisprops")
+        const events = []
+        data.forEach((event) => {
+        
+          if (this.props.user.email === event.recipient) {
+            events.push({
+              start: (event.startDate.date),
+              end: (event.finishDate.date),
+              title: event.title,
+              id: event.id,
+              recipient: event.recipient,
+              name: event.name,
+            })
+          } 
+        });
+        this.setState({ events: events });
       })
       .catch(error => console.error(error));
   }
@@ -46,7 +60,7 @@ class DailyAgendaResponsible extends React.Component {
     const { events, selectedDate } = this.state;
     let eventsOnSelectedDate = [];
     if (events.length > 0) {
-      eventsOnSelectedDate = events.filter(event => moment(new Date(event.startDate.date)).format('YYYY-MM-DD') == moment(selectedDate).format('YYYY-MM-DD'))
+      eventsOnSelectedDate = events.filter(event => moment(new Date(event.start)).format('YYYY-MM-DD') == moment(selectedDate).format('YYYY-MM-DD'))
     }
 
 
@@ -67,7 +81,7 @@ class DailyAgendaResponsible extends React.Component {
             {eventsOnSelectedDate.map(event => (
               <li key={event.id}>
                 <span className="event-dot">•</span>
-                {event.title} - {moment(event.startDate.date).format('LLLL')} a {moment(event.finishDate.date).format('LT')}</li>
+                {event.title} - {moment(event.start).format('LLLL')} a {moment(event.end).format('LT')} con {event.name.length>0 && event.name[0].name} {event.lastname.length>0 && event.lastname[0].lastname}</li>
             ))}
           </ul>
         )}

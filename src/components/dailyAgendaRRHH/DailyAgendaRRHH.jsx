@@ -13,30 +13,39 @@ class DailyAgendaRRHH extends React.Component {
     };
   }
 
-  componentWillMount() {
-    this.fetchEvents();
-  }
-
   componentWillReceiveProps(nextProps) {
     console.log(nextProps)
+    if(nextProps.user.name && !this.props.user.name ) {
+      this.fetchEvents();
+    }
     this.setState({ selectedDate: nextProps.dayCalendar })
   }
 
   fetchEvents = () => {
     const url = `http://127.0.0.1:8000/api/calendar`;
     const token = localStorage.getItem('loggedAppUser'); // obtiene el token JWT de localStorage
-    axios.get(url
-      // ,{
-      
-      // headers: {
+    fetch(url, {
+      headers: {
         // Authorization: `Bearer ${token}`,
-      // },
-    // }
-    )
-      // .then(response => response.json())
-      .then(result=> {
-        console.log('dataeventos', result.data)
-        this.setState({ events: result.data });
+      },
+    })
+      .then(response => response.json())
+      .then(data=> {
+        const events = []
+        data.forEach((event) => {
+
+          if (this.props.user.email === event.recipient) {
+            events.push({
+              start: (event.startDate.date),
+              end: (event.finishDate.date),
+              title: event.title,
+              id: event.id,
+              recipient: event.recipient,
+              name: event.name,
+            })
+          }
+        });
+        this.setState({ events: events});
       })
       .catch(error => console.error(error));
   }
@@ -52,7 +61,7 @@ class DailyAgendaRRHH extends React.Component {
     let eventsOnSelectedDate = [];
     if (events.length > 0) {
       console.log('selected', selectedDate)
-      eventsOnSelectedDate = events.filter(event => moment(new Date(event.startDate.date)).format('YYYY-MM-DD') == moment(selectedDate).format('YYYY-MM-DD'))
+      eventsOnSelectedDate = events.filter(event => moment(new Date(event.start)).format('YYYY-MM-DD') == moment(selectedDate).format('YYYY-MM-DD'))
       console.log('mi evento', eventsOnSelectedDate)
     }
 
@@ -74,7 +83,7 @@ class DailyAgendaRRHH extends React.Component {
             {eventsOnSelectedDate.map(event => (
               <li key={event.id}>
                 <span className="event-dot">•</span>
-                {event.title} - {moment(event.startDate.date).format('LLLL')} a {moment(event.finishDate.date).format('LT')}</li>
+                {event.title} - {moment(event.star).format('LLLL')} a {moment(event.end).format('LT')} con {event.name.length>0 && event.name[0].name}</li>
             ))}
           </ul>
         )}
