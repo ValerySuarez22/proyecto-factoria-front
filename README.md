@@ -1,4 +1,4 @@
-<img src="/src/assets/images/image_2.png" alt="Logo">
+<img src="/src/assets/images/logo2.png" alt="Logo">
 
 <h1>Final Proyect Factoria F5 - Frontend</h1>
 <p>This is a proyect developed for Factoria F5 as final proyect of femcoders bootcamp.
