@@ -1,12 +1,15 @@
-import './App.css';
+import Router from "./router/router";
+import "./App.css";
+
 
 function App() {
+  // axiosInterceptor;
   return (
-    <div className="App">
-      <header className="App-header">
-      
-      </header>
-    </div>
+    <>
+      <div>
+        <Router/>
+      </div>
+    </>
   );
 }
 

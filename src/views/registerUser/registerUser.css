@@ -1,43 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=ABeeZee&family=Alfa+Slab+One&family=Changa&family=Cutive+Mono&family=Fira+Code:wght@300&family=Megrim&family=Poppins&family=Share+Tech+Mono&display=swap");
 
-.login-container {
+.register-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-image: url("../../assets/images/login.png");
+  background-image: url("../../assets/images/background-register.png");
   background-size: cover;
   background-position: center;
 }
 
-.alert-content {
-  position: fixed;
-  top: 0;
-  left: 50;
-  right: 50;
-  width:auto;
-  background-color: rgba(255, 255, 255, 0.825);
-  border-radius: 15px;
-  color: #e8550f;
-  font-family: "poppins";
-  font-size: 18px;
-  padding: 15px;
-  margin-top: 1%;
-  margin-left: 5%;
-}
-
-.alert-content .alert-text {
-  display: flex;
-  justify-content: center;
-}
-
-.alert-content .close {
-  display: flex;
-  justify-content: right;
-  margin-bottom: -20px;
-}
-
-.login-tex {
+.register-tex {
   color:#e8550f;
   font-family: "poppins";
   font-size: 22px;
@@ -55,21 +28,21 @@
   justify-content: center;
 }
 
-.title-and-formLogin {
+.title-and-formRegister {
   margin-bottom: 5%;
 }
 
-.title-login {
+.title-register {
   font-family: "poppins";
   font-size: 22px;
   color: #e8550f;
   text-align: center;
 }
 
-.form-login {
-  background-color: rgba(255, 255, 255, 0.825);
+.form-register {
+  background-color: #FFA37F;
   border-radius: 15px;
-  box-shadow: 0 8px 32px 0 rgba(245, 95, 8, 0.637);
+  box-shadow: 0 8px 32px 0 rgba(205, 96, 38, 0.637);
   backdrop-filter: blur(10px);
   padding: 30px;
   display: flex;
@@ -78,43 +51,43 @@
   justify-content: center;
 }
 
-label[for="usernameLogin"] {
+label[for="username"] {
   display: flex;
   flex-direction: column;
   margin-top: 25px;
-  color: #e8550f;
+  color: #ffffff;
   font-family: "poppins";
   font-size: 18px;
   justify-content: center;
   align-items: center;
 }
 
-label[for="passwordLogin"] {
+label[for="password"] {
   display: flex;
   flex-direction: column;
   margin-top: 25px;
-  color: #e8550f;
+  color: #ffffff;
   font-family: "poppins";
   font-size: 18px;
   justify-content: center;
   align-items: center;
 }
 
-input[name="login"] {
+input[name="register"] {
   display: flex;
   flex-direction: column;
   height: 30px;
   width: 300px;
   border: 1px solid #e8550f;
   border-radius: 20px;
-  background-color: #ff7f508c;
+  background-color: #ffffffe3;
   font-size: 16px;
   font-family: "poppins";
 }
 
-input[name="login"]:focus {
+input[name="register"]:focus {
   outline: none;
-  background-color: rgba(224, 98, 14, 0.3);
+  background-color: #F6C1A1;
 }
 
 .btn-in {
@@ -139,10 +112,3 @@ input[name="login"]:focus {
   text-decoration: none;
   font-family: "poppins";
 }
-
-.btn-register {
-  color:#e8550f;
-  text-decoration: none;
-  font-family: "poppins";
-}
-
