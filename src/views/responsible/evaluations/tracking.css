@@ -1,0 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee&family=Alfa+Slab+One&family=Changa&family=Cutive+Mono&family=Fira+Code:wght@300&family=Megrim&family=Poppins&family=Share+Tech+Mono&display=swap');
+
+.containerList {
+    background-image: url('../../../assets/images/fondo-general.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}

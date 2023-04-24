@@ -1,15 +1,15 @@
-import Navbar from './components/navbar/Navbar';
-import Login from './views/login/Login';
-import './App.css';
+import Router from "./router/router";
+import "./App.css";
+
 
 function App() {
+  // axiosInterceptor;
   return (
-    <div>
-      <header >
-       <Navbar />
-       <Login />
-      </header>
-    </div>
+    <>
+      <div>
+        <Router/>
+      </div>
+    </>
   );
 }
 
