@@ -18,14 +18,14 @@ const handleLogout = () => {
 }
 
   return (
-    <div className="content-navbar">
-      <img src={Logo} alt="logo" className="logo"/>
-      <img src={data.photo ? data.photo : Photo} alt="user" className="user"/>
-      <div className="buttons">
-        <a href="/homeResponsible" className="btn">Home</a>
-        <a href="listEmployees" className="btn">Trabajadores</a>
+    <div className="content-navbarR">
+      <img src={Logo} alt="logo" className="logoR"/>
+      <img src={data.photo ? data.photo : Photo} alt="user" className="userR"/>
+      <div className="buttonsR">
+        <a href="/homeResponsible" className="btnR">Home</a>
+        <a href="listEmployees" className="btnR">Trabajadores</a>
         {/* <a href="tracking" className="btn">Evaluaciones</a> */}
-        <FontAwesomeIcon className="icon-off" icon={faPowerOff} onClick={handleLogout} />
+        <FontAwesomeIcon className="iconR-off" icon={faPowerOff} onClick={handleLogout} />
       </div>
     </div>
   )

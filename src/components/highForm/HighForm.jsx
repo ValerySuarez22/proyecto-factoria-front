@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import axios from "axios";
 import Logo from "../../assets/images/logo.png";
 import "./highForm.css";
@@ -14,8 +14,6 @@ const HighForm = () => {
   const [formValues, setFormValues] = useState([]);
   const [managers, setManagers] = useState([]);
   const [imagen, setImagen] = useState(null);
-  // const [loading, setLoading] = useState(false);
-  // const [saved, setSaved] = useState(false);
 
   useEffect(() => {
     // Nos traemos el listado de areas
@@ -113,6 +111,7 @@ const HighForm = () => {
     return isValid;
   };
 
+  const [enviado, setEnviado] = useState(false);
   const handleSubmit = async (event) => {
     event.preventDefault();
     if (validateForm()) {
@@ -138,10 +137,18 @@ const HighForm = () => {
     })
     setFormValues([])
     setImagen(null)
+    setEnviado(true);
   };
 
   return (
     <div className="form-container">
+      {enviado ? (
+        <Fragment>
+          <p className="alert">Los datos se han enviado correctamente.</p>
+         <button className="btn-alert-form" onClick={() => window.location.reload()}>Volver</button>
+        </Fragment>
+       
+      ) : (
       <form onSubmit={handleSubmit} className="high-form">
       <h1 className="title-r">Resgisto de empleados en periodo de prueba</h1> 
         <ul className="high-form-list">
@@ -426,14 +433,12 @@ const HighForm = () => {
             </li>
           </div>
         </ul>
-        {/* {isLoading ? (
-                  <button className="btn-in" type="submit" disabled>Cargando...</button>
-                ) : ( */}
-                  <button className="btn-enviar" type="submit">Enviar</button>
-                // )}
+        <button className="btn-enviar" type="submit">Enviar</button>
       </form>
+      )}
     </div>
   );
+ 
 };
 
 export default HighForm;

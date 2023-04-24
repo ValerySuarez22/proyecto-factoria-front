@@ -7,19 +7,21 @@ import '../list/listEmployees.css';
 const ListEmployees = () => {
 
   const [user, setUser] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
 
 
   useEffect(() => {
     customActions()
       .then(result => {
         setUser(result)
+        setIsLoading(false);
       })
   }, [])
 
   return (
     <div className='containerList'>
       <NavbarR user={user} />
-      <CardResponsible user={user} />
+      <CardResponsible user={user} loading={isLoading} />
     </div>
   )
 }

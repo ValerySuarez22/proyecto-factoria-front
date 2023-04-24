@@ -13,7 +13,6 @@ class DailyAgendaResponsible extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log("nextprops", nextProps)
     if(nextProps.user.name && !this.props.user.name ) {
       this.fetchEvents();
     }
@@ -23,14 +22,9 @@ class DailyAgendaResponsible extends React.Component {
   fetchEvents = () => {
     const url = `http://127.0.0.1:8000/api/calendar`;
     const token = localStorage.getItem('jwtToken'); // obtiene el token JWT de localStorage
-    fetch(url, {
-      headers: {
-        // Authorization: `Bearer ${token}`,
-      },
-    })
+    fetch(url)
       .then(response => response.json())
-      .then(data => {
-        console.log(this.props, "thisprops")
+      .then(data => {        
         const events = []
         data.forEach((event) => {
         
@@ -63,12 +57,10 @@ class DailyAgendaResponsible extends React.Component {
       eventsOnSelectedDate = events.filter(event => moment(new Date(event.start)).format('YYYY-MM-DD') == moment(selectedDate).format('YYYY-MM-DD'))
     }
 
-
-
-
+    
     return (
       <div className='daily-agenda'>
-        <h1>Agenda del día: {moment(selectedDate).format('dddd D [de] MMMM')}</h1>
+        <h1 className="title-agenda">Agenda del día: {moment(selectedDate).format('dddd D [de] MMMM')}</h1>
         <div className='buttons-agenda'>
           <button onClick={() => this.handleDateChange(moment(selectedDate).subtract(1, 'day'))}>Anterior</button>
           <button onClick={() => this.handleDateChange(moment())}>Hoy</button>
@@ -81,7 +73,7 @@ class DailyAgendaResponsible extends React.Component {
             {eventsOnSelectedDate.map(event => (
               <li key={event.id}>
                 <span className="event-dot">•</span>
-                {event.title} - {moment(event.start).format('LLLL')} a {moment(event.end).format('LT')} con {event.name.length>0 && event.name[0].name} {event.lastname.length>0 && event.lastname[0].lastname}</li>
+                {event.title} - {moment(event.start).format('LLLL')} a {moment(event.end).format('LT')} con {event.name.length >0 && event.name[0].name} {event.name.length >0 && event.name[0].lastname}</li>
             ))}
           </ul>
         )}

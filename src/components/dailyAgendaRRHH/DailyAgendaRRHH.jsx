@@ -18,24 +18,14 @@ class DailyAgendaRRHH extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log(nextProps)
     this.setState({ selectedDate: nextProps.dayCalendar })
   }
 
   fetchEvents = () => {
     const url = `http://127.0.0.1:8000/api/calendar`;
     const token = localStorage.getItem('loggedAppUser'); // obtiene el token JWT de localStorage
-    axios.get(url
-      // ,{
-      
-      // headers: {
-        // Authorization: `Bearer ${token}`,
-      // },
-    // }
-    )
-      // .then(response => response.json())
+    axios.get(url)
       .then(result=> {
-        console.log('dataeventos', result.data)
         this.setState({ events: result.data });
       })
       .catch(error => console.error(error));
@@ -51,12 +41,8 @@ class DailyAgendaRRHH extends React.Component {
     const { events, selectedDate } = this.state;
     let eventsOnSelectedDate = [];
     if (events.length > 0) {
-      console.log('selected', selectedDate)
-      eventsOnSelectedDate = events.filter(event => moment(new Date(event.startDate.date)).format('YYYY-MM-DD') == moment(selectedDate).format('YYYY-MM-DD'))
-      console.log('mi evento', eventsOnSelectedDate)
+      eventsOnSelectedDate = events.filter(event => moment(new Date(event.startDate.date)).format('YYYY-MM-DD') == moment(selectedDate).format('YYYY-MM-DD'))     
     }
-
-
 
 
     return (
@@ -74,7 +60,9 @@ class DailyAgendaRRHH extends React.Component {
             {eventsOnSelectedDate.map(event => (
               <li key={event.id}>
                 <span className="event-dot">•</span>
-                {event.title} - {moment(event.startDate.date).format('LLLL')} a {moment(event.finishDate.date).format('LT')}</li>
+                {event.title} - {moment(event.startDate.date).format('LLLL')} a {moment(event.finishDate.date).format('LT')} con {event.name.length >0 && event.name[0].name} {event.name.length >0 && event.name[0].lastname}
+                </li>
+              
             ))}
           </ul>
         )}
