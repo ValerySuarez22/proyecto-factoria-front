@@ -14,6 +14,8 @@ const HighForm = () => {
   const [formValues, setFormValues] = useState([]);
   const [managers, setManagers] = useState([]);
   const [imagen, setImagen] = useState(null);
+  // const [loading, setLoading] = useState(false);
+  // const [saved, setSaved] = useState(false);
 
   useEffect(() => {
     // Nos traemos el listado de areas
@@ -141,12 +143,12 @@ const HighForm = () => {
   return (
     <div className="form-container">
       <form onSubmit={handleSubmit} className="high-form">
-        <img src={Logo} alt="logo111" />
+      <h1 className="title-r">Resgisto de empleados en periodo de prueba</h1> 
         <ul className="high-form-list">
           <div className="form-left">
             <li>
               <label htmlFor="name">Nombre</label>
-              <input
+              <input 
                 type="text"
                 id="name"
                 name="name"
@@ -159,7 +161,7 @@ const HighForm = () => {
 
             <li>
               <label htmlFor="identifying">DNI</label>
-              <input
+              <input 
                 type="text"
                 id="identifying"
                 name="identifying"
@@ -172,7 +174,7 @@ const HighForm = () => {
 
             <li>
               <label htmlFor="position">Cargo</label>
-              <select
+              <select 
                 id="position"
                 name="position"
                 value={formValues.title}
@@ -188,7 +190,7 @@ const HighForm = () => {
 
             <li>
               <label htmlFor="area">Area</label>
-              <select
+              <select 
                 id="area"
                 name="area"
                 value={formValues.area}
@@ -204,7 +206,7 @@ const HighForm = () => {
 
             <li>
               <label htmlFor="typeOfContract">Tipo de contrato</label>
-              <select
+              <select 
                 id="typeOfContract"
                 name="typeOfContract"
                 value={formValues.contract}
@@ -220,7 +222,7 @@ const HighForm = () => {
 
             <li>
               <label htmlFor="manager">Responsable</label>
-              <select
+              <select 
                 id="manager"
                 name="manager"
                 onChange={handleInputChange}                
@@ -235,7 +237,7 @@ const HighForm = () => {
 
             <li>
               <label htmlFor="inicio">Fecha de inicio</label>
-              <input
+              <input 
                 type="date"
                 id="startDate"
                 name="startDate"
@@ -248,7 +250,7 @@ const HighForm = () => {
 
             <li>
               <label htmlFor="inicio">Primer Seguimiento</label>
-              <input
+              <input 
                 type="date"
                 id="firstPeriod"
                 name="firstPeriod"
@@ -260,7 +262,7 @@ const HighForm = () => {
 
             <li>
               <label htmlFor="inicio">Tercer Seguimiento</label>
-              <input
+              <input 
                 type="date"
                 id="thirdPeriod"
                 name="thirdPeriod"
@@ -272,7 +274,7 @@ const HighForm = () => {
 
             <li>
               <label htmlFor="inicio">Quinto Seguimiento</label>
-              <input
+              <input 
                 type="date"
                 id="fifthPeriod"
                 name="fifthPeriod"
@@ -286,7 +288,7 @@ const HighForm = () => {
           <div className="form-right">
             <li>
               <label htmlFor="lastname">Apellido</label>
-              <input
+              <input 
                 type="text"
                 id="lastname"
                 name="lastname"
@@ -299,7 +301,7 @@ const HighForm = () => {
 
             <li>
               <label htmlFor="email">Email</label>
-              <input
+              <input 
                 type="email"
                 id="email"
                 name="email"
@@ -312,7 +314,7 @@ const HighForm = () => {
 
             <li>
               <label htmlFor="rol">Rol</label>
-              <select
+              <select 
                 id="rol"
                 name="rol"
                 value={formValues.title}
@@ -328,7 +330,7 @@ const HighForm = () => {
 
             <li>
               <label htmlFor="team">Equipo</label>
-              <select
+              <select 
                 id="team"
                 name="team"
                 value={formValues.title}
@@ -344,7 +346,7 @@ const HighForm = () => {
 
             <li>
               <label htmlFor="period">Periodo</label>
-              <select
+              <select 
                 id="period"
                 name="period"
                 value={formValues.period}
@@ -360,7 +362,7 @@ const HighForm = () => {
 
             <li>
               <label htmlFor="status">Estado del empleado</label>
-              <select
+              <select 
                 id="status"
                 name="status"
                 value={formValues.title}
@@ -376,7 +378,7 @@ const HighForm = () => {
 
             <li>
               <label htmlFor="inicio">Fecha fin</label>
-              <input
+              <input 
                 type="date"
                 id="finishDate"
                 name="finishDate"
@@ -389,7 +391,7 @@ const HighForm = () => {
 
             <li>
               <label htmlFor="inicio">Segundo Seguimiento</label>
-              <input
+              <input 
                 type="date"
                 id="secondPeriod"
                 name="secondPeriod"
@@ -401,7 +403,7 @@ const HighForm = () => {
 
             <li>
               <label htmlFor="inicio">Cuarto Seguimiento</label>
-              <input
+              <input 
                 type="date"
                 id="fourthPeriod"
                 name="fourthPeriod"
@@ -413,7 +415,7 @@ const HighForm = () => {
 
             <li>
               <label htmlFor="imagen">Foto del empleado</label>
-              <input
+              <input 
                 type="file"
                 id="imagen"
                 name="imagen"
@@ -424,7 +426,11 @@ const HighForm = () => {
             </li>
           </div>
         </ul>
-        <input type="submit" value="Enviar"/>
+        {/* {isLoading ? (
+                  <button className="btn-in" type="submit" disabled>Cargando...</button>
+                ) : ( */}
+                  <button className="btn-enviar" type="submit">Enviar</button>
+                // )}
       </form>
     </div>
   );

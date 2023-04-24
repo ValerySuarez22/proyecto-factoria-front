@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=ABeeZee&family=Alfa+Slab+One&family=Changa&family=Cutive+Mono&family=Fira+Code:wght@300&family=Megrim&family=Poppins&family=Share+Tech+Mono&display=swap');
 
 .content-navbar {
-    height: 63vh;
-    width: 160px;
+    height: 60vh;
+    width: 135px;
     position: fixed;
-    top: 36%;
-    left: 12%;
+    top: 50%;
+    margin-left: -4%;
     transform: translate(-50%, -50%);
     background-color: #E8550F;
     color: white;
@@ -25,7 +25,7 @@
     }
 
 .user {
-    width: 60%;
+    width: 50%;
     border-radius: 60px;
     margin-bottom: 20px;
 }
@@ -58,3 +58,4 @@
     margin-bottom: 10px;
     height: 20px;
 }
+

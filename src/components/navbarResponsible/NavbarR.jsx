@@ -22,7 +22,7 @@ const handleLogout = () => {
       <img src={Logo} alt="logo" className="logo"/>
       <img src={data.photo ? data.photo : Photo} alt="user" className="user"/>
       <div className="buttons">
-        <a href="/" className="btn">Home</a>
+        <a href="/homeResponsible" className="btn">Home</a>
         <a href="listEmployees" className="btn">Trabajadores</a>
         {/* <a href="tracking" className="btn">Evaluaciones</a> */}
         <FontAwesomeIcon className="icon-off" icon={faPowerOff} onClick={handleLogout} />
