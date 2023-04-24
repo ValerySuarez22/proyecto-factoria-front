@@ -3,12 +3,23 @@
 <p>This is a proyect developed for Factoria F5 as final proyect of femcoders bootcamp.
 The company Factoría F5 is hiring new people and as a consequence they have asked us to develop a platform to manage the trial periods.
 On this website there will be two possible accesses, one for HR who will have access to all the data of the applicants, and another for those responsible for each school, who will only be able to access the data of their applicants.</p>
-<h2>User Stories</h2>
+
+## Table of contents
+- [User Stories](#user-stories)
+- [Fullstack Developer Team](#Fullstack-Developer-Team)
+- [Stacks and technologies](#stacks-and-technologies)
+- [Other Tools](#other-tools)
+- [Methodology](#methodology)
+- [Installation](#installation)
+
+
+<h2 id="User-Stories"><span class="emoji">📝</span>
+User Stories</h2> 
 <h4>HR Manager</h4>
 <ul>
   <li>As an HR manager, I want to be able to create a user account for employees in their probationary period, so that they can access the platform and view their evaluations and comments.</li>
   <li>As an HR manager, I want to be able to add employees to the list of people in their probationary period, so that I can track their progress and ensure they receive a fair and objective evaluation.</li>
-  <li>As an HR manager, I want to be able to generate reports and statistics on the progress and performance of employees in their probationary period, so that I can identify trends and areas for improvement.</li>
+ 
 </ul>
 
 <h4>School Supervisor</h4>
@@ -17,18 +28,55 @@ On this website there will be two possible accesses, one for HR who will have ac
 </ul>
 
 
-## Fullstack Developer Team and GitHub Links
-| Name                       | Role                    | Link                                     |
-| --------------------------|------------------------| ---------------------------------------- |
-| Hilda Da Conceicao         | Scrum Master          | https://github.com/Hildacaro             |
-| Emma Raquel Rentero Plaza    | Product Owner      | https://github.com/emmamme447         |
-| Andrea Villegas Tirado| Developer     | https://github.com/CodeMincer                |
-| Válery Paola Suárez Bernal  | Developer         | https://github.com/ValerySuarez22            |
-| Áurea Gutiérrez Huertas       | Developer               | https://github.com/Auri78         |
-| Nerea Pascual Picazo    | Developer               | https://github.com/Npicazo12               |
 
 
-<h2>Stacks and technologies</h2>
+<h2 id="Fullstack-Developer-Team"><span class="emoji">👩‍💻</span> Fullstack Developer Team and GitHub Links</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Role</th>
+      <th>Link</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Hilda Da Conceicao</td>
+      <td>Scrum Master</td>
+      <td><a href="https://github.com/Hildacaro">https://github.com/Hildacaro</a></td>
+    </tr>
+    <tr>
+      <td>Emma Raquel Rentero Plaza</td>
+      <td>Product Owner</td>
+      <td><a href="https://github.com/emmamme447">https://github.com/emmamme447</a></td>
+    </tr>
+    <tr>
+      <td>Andrea Villegas Tirado</td>
+      <td>Developer</td>
+      <td><a href="https://github.com/CodeMincer">https://github.com/CodeMincer</a></td>
+    </tr>
+    <tr>
+      <td>Válery Paola Suárez Bernal</td>
+      <td>Developer</td>
+      <td><a href="https://github.com/ValerySuarez22">https://github.com/ValerySuarez22</a></td>
+    </tr>
+    <tr>
+      <td>Áurea Gutiérrez Huertas</td>
+      <td>Developer</td>
+      <td><a href="https://github.com/Auri78">https://github.com/Auri78</a></td>
+    </tr>
+    <tr>
+      <td>Nerea Pascual Picazo</td>
+      <td>Developer</td>
+      <td><a href="https://github.com/Npicazo12">https://github.com/Npicazo12</a></td>
+    </tr>
+  </tbody>
+</table>
+
+
+<h2 id="Stacks-and-technologies">
+<span class="emoji">:wrench:</span>Stacks and technologies</h2> 
 
 <span style="border-radius: 30px; background-color: #E34F26; padding: 5px;">
     <img height="30" src="https://img.shields.io/badge/-HTML5-orange?style=flat-square&logo=html5&logoColor=white"/>
@@ -58,7 +106,9 @@ On this website there will be two possible accesses, one for HR who will have ac
     <img height="30" src="https://img.shields.io/badge/-PHPMyAdmin-9cf?style=flat-square&logo=php&logoColor=white"/>
 </span>
 
-<h2>Other Tools</h2>
+
+<h2 id="Other-Tools"><span class="emoji">:hammer:</span>
+Other Tools</h2> 
 <span style="border-radius: 3px; background-color: #007ACC; padding: 5px;">
     <img height="30" src="https://img.shields.io/badge/-Visual%20Studio%20Code-007ACC?style=flat-square&logo=visual-studio-code&logoColor=white"/>
 </span>
@@ -67,17 +117,22 @@ On this website there will be two possible accesses, one for HR who will have ac
 </span>
 <span style="border-radius: 3px; background-color: #F05032; padding: 5px;">
     <img height="30" src="https://img.shields.io/badge/-Git-F05032?style=flat-square&logo=git&logoColor=white"/>
-</span>
 
-<h2>Methodology</h2>
+
+<h2 id="Methodology"><span class="emoji">📊</span>
+Methodology</h2>
 <ul>
-  <li>Agile con Scrum</li>
+  <li>Agile with scrum</li>
+  <li>Mob, pair and solo programming</>
+  <li>Testing</li>
+  </ul>
 
 
 
 
 
-<h2>Installation</h2>
+<h2 id="Installation"><span class="emoji">:book:</span>
+Installation</h2> 
     <p>To install the project, run:</p>
     <code>npm install</code>
     <h2>Usage</h2>
