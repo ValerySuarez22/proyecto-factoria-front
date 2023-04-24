@@ -74,7 +74,7 @@ class DailyAgendaRRHH extends React.Component {
             {eventsOnSelectedDate.map(event => (
               <li key={event.id}>
                 <span className="event-dot">•</span>
-                {event.title} - {moment(event.startDate.date).format('LLLL')} a {moment(event.finishDate.date).format('LT')}</li>
+                {event.title} - {moment(event.startDate.date).format('LLLL')} a {moment(event.finishDate.date).format('LT')} con {event.name.length>0 && event.name[0].name}</li>
             ))}
           </ul>
         )}
