@@ -91,14 +91,12 @@ function Login() {
     <div className="login-container">
       <>
       {showAlert && ( // Mostrar alerta solo si showAlert es verdadero
-          <div id="custom-alert" className="alert">
             <div className="alert-content animate__animated animate__shakeX">
               <span className="close" onClick={handleAlertClose}>
                 &times;
               </span>
               <p className='alert-text'>Datos incorrectos</p>
             </div>
-          </div>
         )}
         {success ? (
           <section className="success">
