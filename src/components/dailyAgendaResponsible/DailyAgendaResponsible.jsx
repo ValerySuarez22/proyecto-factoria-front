@@ -34,19 +34,16 @@ class DailyAgendaResponsible extends React.Component {
         const events = []
         data.forEach((event) => {
         
-            if (this.props.user.email === event.recipient) {
-              events.push({
-                start: (event.startDate.date),
-                end: (event.finishDate.date),
-                title: event.title,
-                id: event.id,
-                recipient: event.recipient,
-                name: event.name,
-              })
-            
-          }
-           
-            
+          if (this.props.user.email === event.recipient) {
+            events.push({
+              start: (event.startDate.date),
+              end: (event.finishDate.date),
+              title: event.title,
+              id: event.id,
+              recipient: event.recipient,
+              name: event.name,
+            })
+          } 
         });
         this.setState({ events: events });
       })
@@ -84,7 +81,7 @@ class DailyAgendaResponsible extends React.Component {
             {eventsOnSelectedDate.map(event => (
               <li key={event.id}>
                 <span className="event-dot">•</span>
-                {event.title} - {moment(event.start).format('LLLL')} a {moment(event.end).format('LT')} con {event.name.length>0 && event.name[0].name}</li>
+                {event.title} - {moment(event.start).format('LLLL')} a {moment(event.end).format('LT')} con {event.name.length>0 && event.name[0].name} {event.lastname.length>0 && event.lastname[0].lastname}</li>
             ))}
           </ul>
         )}
