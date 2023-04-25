@@ -11,6 +11,7 @@ On this website there will be two possible accesses, one for HR who will have ac
 - [Stacks and technologies](#stacks-and-technologies)
 - [Other Tools](#other-tools)
 - [Methodology](#methodology)
+- [Screenshots](#screenshots)
 - [Installation](#installation)
 
 
@@ -134,7 +135,10 @@ Methodology</h2>
 
 
 
-
+<h2 id="screenshots"><span class="emoji">:camera:</span>Screenshots</h2>
+<img src="/src/assets/images/front3.jpeg" alt="Logo">
+<img src="/src/assets/images/front1.jpeg" alt="Logo">
+<img src="/src/assets/images/front2.jpeg" alt="Logo">
 
 <h2 id="Installation"><span class="emoji">:book:</span>
 Installation</h2> 
