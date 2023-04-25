@@ -5,7 +5,7 @@ import '../evaluations/evaluations.css'
 function Evaluations() {
   return (
     <div className='containerTeams'>
-      <Navbar/>
+      <Navbar />
       <h1>Cards</h1>
     </div>
   )

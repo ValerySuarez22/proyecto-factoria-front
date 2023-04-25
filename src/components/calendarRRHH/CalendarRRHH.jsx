@@ -13,7 +13,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 moment.updateLocale('es', {
   week: {
-    dow: 1, 
+    dow: 1,
   },
 });
 const localizer = momentLocalizer(moment);
@@ -55,7 +55,7 @@ class CalendarPageRRHH extends React.Component {
                 recipient: event.recipient,
               })
             }
-          }else {
+          } else {
             events.push({
               start: (event.startDate.date),
               end: (event.finishDate.date),
@@ -75,32 +75,32 @@ class CalendarPageRRHH extends React.Component {
     const { events } = this.state;
 
     const formatEvent = {
-      title: event.title, 
+      title: event.title,
       startDate: event.start,
       finishDate: event.end,
       recipient: event.recipient,
     }
-console.log('formatEvent', formatEvent)
+    console.log('formatEvent', formatEvent)
     axios.post('http://127.0.0.1:8000/api/calendar/new', formatEvent
-  //   {
-  //   headers: {
-  //     Authorization: `Bearer ${YOUR_AUTH_TOKEN}`,
-  //   },
-  // }
-  )
-  .then((response) => {
-    const savedEvent = response.data; console.log('savedEvent', savedEvent)
-    const { events } = this.state;
-    this.setState({ events: [...events, event] });
-    // this.setState({ events: [...events, savedEvent] });
-  })
+      //   {
+      //   headers: {
+      //     Authorization: `Bearer ${YOUR_AUTH_TOKEN}`,
+      //   },
+      // }
+    )
+      .then((response) => {
+        const savedEvent = response.data; console.log('savedEvent', savedEvent)
+        const { events } = this.state;
+        this.setState({ events: [...events, event] });
+        // this.setState({ events: [...events, savedEvent] });
+      })
 
-  .catch((error) => {
-    console.error(error);
-  });
-  
-  // const dayEvents = events.filter((ev) => moment(ev.start).isSame(event.start, 'day'));
-  // this.props.addEventToDailyAgenda(event);
+      .catch((error) => {
+        console.error(error);
+      });
+
+    // const dayEvents = events.filter((ev) => moment(ev.start).isSame(event.start, 'day'));
+    // this.props.addEventToDailyAgenda(event);
 
   }
 
@@ -127,31 +127,31 @@ console.log('formatEvent', formatEvent)
         this.setState({ events: updatedEvents, selectedEvent: null });
       })
       .catch(error => console.error(error));
-}
+  }
 
 
-test=(e) => {
-  console.log('prueba')
-}
+  test = (e) => {
+    console.log('prueba')
+  }
 
   render() {
     const { selectedEvent } = this.state;
-    const {dayCalendar, resetState, user} = this.props;
+    const { dayCalendar, resetState, user } = this.props;
     return (
       <div className='calendar-container wrapper'>
         {/* <div className='form-row'> */}
         <button className="close-btn" onClick={() => {
-          this.setState({showCalendar: false});
+          this.setState({ showCalendar: false });
           resetState();
         }}>
-        <FontAwesomeIcon icon={faTimes} />
-      </button>
-      {user.rol !== "User" && 
-      <>
-      <h4>Añadir nuevo evento</h4>
-          <AddEventFormRRHH onAddEvent={this.handleAddEvent} />
-      </> 
-      }
+          <FontAwesomeIcon icon={faTimes} />
+        </button>
+        {user.rol !== "User" &&
+          <>
+            <h4>Añadir nuevo evento</h4>
+            <AddEventFormRRHH onAddEvent={this.handleAddEvent} />
+          </>
+        }
         {/* </div> */}
         <div style={{ height: '500px', width: '90%', margin: '0 auto' }}>
           <Calendar
@@ -176,8 +176,8 @@ test=(e) => {
           {selectedEvent && (
             <div className={`event-description ${selectedEvent && 'selected'}`}>
               <p>¿Eliminar evento "{selectedEvent.title}"?</p>
-                <button className='delete-button' onClick={() => this.handleDeleteEvent(selectedEvent.id)}>Eliminar</button>
-                <button className='cancel-button' onClick={this.handleCancel}>Cancelar</button>
+              <button className='delete-button' onClick={() => this.handleDeleteEvent(selectedEvent.id)}>Eliminar</button>
+              <button className='cancel-button' onClick={this.handleCancel}>Cancelar</button>
             </div>
           )}
         </div>

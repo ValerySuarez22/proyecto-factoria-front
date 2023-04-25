@@ -79,8 +79,8 @@ const CardResponsible = ({ user, loading }) => {
                     ))}
                 </div>
             )}
-        </div> 
-    );               
+        </div>
+    );
 };
 
-            export default CardResponsible
+export default CardResponsible

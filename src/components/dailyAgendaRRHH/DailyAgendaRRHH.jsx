@@ -25,7 +25,7 @@ class DailyAgendaRRHH extends React.Component {
     const url = `http://127.0.0.1:8000/api/calendar`;
     const token = localStorage.getItem('loggedAppUser'); // obtiene el token JWT de localStorage
     axios.get(url)
-      .then(result=> {
+      .then(result => {
         this.setState({ events: result.data });
       })
       .catch(error => console.error(error));
@@ -41,7 +41,7 @@ class DailyAgendaRRHH extends React.Component {
     const { events, selectedDate } = this.state;
     let eventsOnSelectedDate = [];
     if (events.length > 0) {
-      eventsOnSelectedDate = events.filter(event => moment(new Date(event.startDate.date)).format('YYYY-MM-DD') == moment(selectedDate).format('YYYY-MM-DD'))     
+      eventsOnSelectedDate = events.filter(event => moment(new Date(event.startDate.date)).format('YYYY-MM-DD') == moment(selectedDate).format('YYYY-MM-DD'))
     }
 
 
@@ -60,9 +60,9 @@ class DailyAgendaRRHH extends React.Component {
             {eventsOnSelectedDate.map(event => (
               <li key={event.id}>
                 <span className="event-dot">•</span>
-                {event.title} - {moment(event.startDate.date).format('LLLL')} a {moment(event.finishDate.date).format('LT')} con {event.name.length >0 && event.name[0].name} {event.name.length >0 && event.name[0].lastname}
-                </li>
-              
+                {event.title} - {moment(event.startDate.date).format('LLLL')} a {moment(event.finishDate.date).format('LT')} con {event.name.length > 0 && event.name[0].name} {event.name.length > 0 && event.name[0].lastname}
+              </li>
+
             ))}
           </ul>
         )}

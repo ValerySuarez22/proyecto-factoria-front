@@ -39,22 +39,22 @@ const Router = () => {
                <Route path="/homeResponsible" element={<HomeResponsible />} />
                <Route path="/listEmployees" element={<ListEmployees />} />
                {/* <Route path="/tracking" element={<Tracking />} /> */}
-               
+
             </Routes>
          </BrowserRouter>
       )
-   } else{
+   } else {
       return (
          <BrowserRouter>
-         <Routes>
+            <Routes>
                <Route path="/" element={<Login />} />
                <Route path="/registerUser" element={<RegisterUser />} />
-         </Routes>
+            </Routes>
          </BrowserRouter>
       )
-         
-            
-               
+
+
+
    }
 };
 

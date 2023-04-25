@@ -13,7 +13,7 @@ class DailyAgendaResponsible extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if(nextProps.user.name && !this.props.user.name ) {
+    if (nextProps.user.name && !this.props.user.name) {
       this.fetchEvents();
     }
     this.setState({ selectedDate: nextProps.dayCalendar })
@@ -24,10 +24,10 @@ class DailyAgendaResponsible extends React.Component {
     const token = localStorage.getItem('jwtToken'); // obtiene el token JWT de localStorage
     fetch(url)
       .then(response => response.json())
-      .then(data => {        
+      .then(data => {
         const events = []
         data.forEach((event) => {
-        
+
           if (this.props.user.email === event.recipient) {
             events.push({
               start: (event.startDate.date),
@@ -37,7 +37,7 @@ class DailyAgendaResponsible extends React.Component {
               recipient: event.recipient,
               name: event.name,
             })
-          } 
+          }
         });
         this.setState({ events: events });
       })
@@ -57,7 +57,7 @@ class DailyAgendaResponsible extends React.Component {
       eventsOnSelectedDate = events.filter(event => moment(new Date(event.start)).format('YYYY-MM-DD') == moment(selectedDate).format('YYYY-MM-DD'))
     }
 
-    
+
     return (
       <div className='daily-agenda'>
         <h1 className="title-agenda">Agenda del día: {moment(selectedDate).format('dddd D [de] MMMM')}</h1>
@@ -73,7 +73,7 @@ class DailyAgendaResponsible extends React.Component {
             {eventsOnSelectedDate.map(event => (
               <li key={event.id}>
                 <span className="event-dot">•</span>
-                {event.title} - {moment(event.start).format('LLLL')} a {moment(event.end).format('LT')} con {event.name.length >0 && event.name[0].name} {event.name.length >0 && event.name[0].lastname}</li>
+                {event.title} - {moment(event.start).format('LLLL')} a {moment(event.end).format('LT')} con {event.name.length > 0 && event.name[0].name} {event.name.length > 0 && event.name[0].lastname}</li>
             ))}
           </ul>
         )}

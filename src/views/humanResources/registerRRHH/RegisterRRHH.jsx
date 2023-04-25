@@ -8,17 +8,17 @@ import customActions from '../../../components/actions';
 const Register = () => {
   const [user, setUser] = useState({});
 
-  useEffect(()=>{
-    Promise.resolve (customActions())
-    .then(result => {
-     setUser(result)
-    })
-   },[])
-   
+  useEffect(() => {
+    Promise.resolve(customActions())
+      .then(result => {
+        setUser(result)
+      })
+  }, [])
+
   return (
     <div className='containerRegister'>
-      <Navbar user={user}/>
-      <HighForm/>
+      <Navbar user={user} />
+      <HighForm />
     </div>
   )
 }

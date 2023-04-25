@@ -69,7 +69,7 @@ function RegisterUser() {
                 {isLoading ? (
                   <button className="btn-in" type="submit" disabled>Cargando...</button>
                 ) : (
-                <button className="btn-in">Registrarse</button>
+                  <button className="btn-in">Registrarse</button>
                 )}
               </form>
             </div>
