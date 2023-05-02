@@ -4,8 +4,8 @@
     height: 60vh;
     width: 130px;
     position: fixed;
-    top: 40%;
-    margin-left: -4%;
+    top: 50%;
+    margin-left: 7%;
     transform: translate(-50%, -50%);
     background-color: #E8550F;
     color: white;
@@ -25,9 +25,12 @@
     }
 
 .user {
-    width: 60%;
+    width: 50%;
     border-radius: 60px;
+    margin-bottom: 10px;
+    
 }
+
 .buttons {
     display: flex;
     flex-direction: column;
@@ -38,12 +41,13 @@
     color: #fff;
     border-radius: 5px;
     padding: 10px 6px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     cursor: pointer;
     text-decoration: none;
     font-family: 'poppins';
     font-size: 14px;
     text-align: center;
+    cursor: pointer;
 }
 
 
@@ -55,4 +59,7 @@
 .icon-off {
     margin-top: 15px;
     height: 20px;
+    height: 20px;
+    margin-bottom: 10px;
+    
 }

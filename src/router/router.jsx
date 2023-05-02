@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "../../src/views/humanResources/homeRRHH/Home";
-import Register from "../../src/views/humanResources/register/Register";
+import RegisterRRHH from "../../src/views/humanResources/registerRRHH/RegisterRRHH";
 import Evaluations from "../views/humanResources/evaluations/Evaluations";
 import ListWorkers from "../views/humanResources/workersPP/ListWorkers";
 import ListEmployees from "../views/responsible/list/ListEmployees";
@@ -23,7 +23,7 @@ const Router = () => {
                <Route path="/" element={<Login />} />
                <Route path="registerUser" element={<RegisterUser />} />
                <Route path="/home" element={<Home />} />
-               <Route path="/register" element={<Register />} />
+               <Route path="/registerRRHH" element={<RegisterRRHH />} />
                <Route path="/evaluations" element={<Evaluations />} />
                <Route path="/listWorkers" element={<ListWorkers />} />
             </Routes>
@@ -39,22 +39,22 @@ const Router = () => {
                <Route path="/homeResponsible" element={<HomeResponsible />} />
                <Route path="/listEmployees" element={<ListEmployees />} />
                {/* <Route path="/tracking" element={<Tracking />} /> */}
-               
+
             </Routes>
          </BrowserRouter>
       )
-   } else{
+   } else {
       return (
          <BrowserRouter>
-         <Routes>
+            <Routes>
                <Route path="/" element={<Login />} />
                <Route path="/registerUser" element={<RegisterUser />} />
-         </Routes>
+            </Routes>
          </BrowserRouter>
       )
-         
-            
-               
+
+
+
    }
 };
 

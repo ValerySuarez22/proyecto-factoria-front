@@ -31,7 +31,7 @@ class AddEventFormResponsible extends React.Component {
     event.preventDefault();
     const { title, start, end, recipient } = this.state;
     this.props.onAddEvent({ title, start, end, recipient });
-    this.setState({ title: '', start: '', end: '', recipient: ''});
+    this.setState({ title: '', start: '', end: '', recipient: '' });
   }
 
   render() {

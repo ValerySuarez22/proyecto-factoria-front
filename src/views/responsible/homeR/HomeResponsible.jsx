@@ -7,23 +7,23 @@ import SmallCalendarResponsible from '../../../components/smallCalendarResponsib
 import DailyAgendaResponsible from '../../../components/dailyAgendaResponsible/DailyAgendaResponsible';
 
 
-const HomeResponsible = () =>{
+const HomeResponsible = () => {
 
   const [user, setUser] = useState({});
-  
+
   const [isCalendarPageResponsibleVisible, setIsCalendarPageResponsibleVisible] = useState(false);
   const [isDailyAgendaResponsibleVisible, setIsDailyAgendaResponsibleVisible] = useState(true);
   const [dayCalendar, setDayCalendar] = useState(new Date());
 
-  useEffect(()=>{
-   Promise.resolve (customActions())
-   .then(result => {
-    console.log(result, 'loquesea')
-    setUser(result)
-   })
-  },[])
+  useEffect(() => {
+    Promise.resolve(customActions())
+      .then(result => {
+        console.log(result, 'loquesea')
+        setUser(result)
+      })
+  }, [])
 
-  
+
   const handleSmallCalendarClick = (valueDay) => {
     console.log('hola', valueDay)
     setDayCalendar(valueDay);
@@ -38,16 +38,16 @@ const HomeResponsible = () =>{
 
   return (
     <div className='containerHome'>
-        <NavbarR user={user} />
-        <section className={`agenda ${isDailyAgendaResponsibleVisible ? '' : 'agenda--hidden'}`}>
-          <DailyAgendaResponsible user={user} dayCalendar={dayCalendar}/>
+      <NavbarR user={user} />
+      <section className={`agenda ${isDailyAgendaResponsibleVisible ? '' : 'agenda--hidden'}`}>
+        <DailyAgendaResponsible user={user} dayCalendar={dayCalendar} />
       </section>
       <section className="calendar" >
-        {!isCalendarPageResponsibleVisible && <SmallCalendarResponsible user={user} handleSmallCalendarClick={ handleSmallCalendarClick} />}
+        {!isCalendarPageResponsibleVisible && <SmallCalendarResponsible user={user} handleSmallCalendarClick={handleSmallCalendarClick} />}
         {isCalendarPageResponsibleVisible && <CalendarPageResponsible user={user} dayCalendar={dayCalendar} resetState={resetState} />}
-    </section>
+      </section>
     </div>
-    
+
   )
 }
 

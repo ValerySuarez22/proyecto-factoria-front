@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import axios from '../api/axios';
 import jwtDecode from 'jwt-decode';
 import '../login/login.css';
+import 'animate.css';
 
 
 const LOGIN_URL = '/api/login_check';
@@ -10,91 +11,103 @@ const LOGIN_URL = '/api/login_check';
 
 function Login() {
 
-    const [username, setUsername] = useState('')
-    const [password, setPassword] = useState('')
-    const [success, setSuccess] = useState(false)
-    const [isLoading, setIsLoading] = useState(false) // Nuevo estado para controlar si se está cargando o no
+  const [username, setUsername] = useState('')
+  const [password, setPassword] = useState('')
+  const [success, setSuccess] = useState(false)
+  const [isLoading, setIsLoading] = useState(false) // Nuevo estado para controlar si se está cargando o no
+  const [showAlert, setShowAlert] = useState(false); // Nuevo estado para mostrar alerta
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        setIsLoading(true) // Marcamos que se está cargando
-        try{
-            const response = await axios.post(LOGIN_URL, 
-                JSON.stringify({username: username, password: password}),
-                    {
-                        headers:{'content-Type' : 'application/json'},
-                        withCredentials: true
-                    }
-            );
 
-            const accessToken = response.data.token;
-            const token = { accessToken: accessToken };
-            console.log(accessToken);
-            
-            const storedToken = window.localStorage.setItem(
-                'loggedAppUser', accessToken
-            );
+  const handleAlertClose = () => {
+    setShowAlert(false);
+    setUsername('')
+    setPassword('')
+  };
 
-            console.log(storedToken)
-
-            const auth_username = { username: username }
-            const stored_username = window.localStorage.setItem(
-                'name', JSON.stringify(auth_username)
-            );
-            console.log(stored_username)
-
-            const decoded_token = jwtDecode(accessToken)
-            console.log(decoded_token);
-
-            const decoded_role = decoded_token.roles
-            console.log(decoded_role)
-
-           // const userRole = { role: decoded_role }
-            const stored_roles = window.localStorage.setItem(
-                'role', decoded_role
-            )
-
-            setUsername('')
-            setPassword('')
-            setSuccess(true)
-            setIsLoading(false) // Finaliza la carga
-            
-
-            console.log('¡Milagro de Dios! ¡Estás dentro!')
-
-		setTimeout(()=>{
-      if (decoded_role == 'ROLE_USER') {
-        window.location.href = '/homeResponsible'
-      } else{
-        window.location.href = '/home'
-      } 
-      },1000)           
-
-        } catch (err) {
-          //tengo que hacer que muestre un mensaje de no autorizado
-          alert('Datos incorrectos')  
-          console.log('no funciona')
-          setIsLoading(false) // Finaliza la carga
-        }
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!username || !password) {
+      return;
     }
+    setIsLoading(true);// Marcamos que se está cargando
+    try {
+      const response = await axios.post(LOGIN_URL,
+        JSON.stringify({ username: username, password: password }),
+        {
+          headers: { 'content-Type': 'application/json' },
+          withCredentials: true
+        }
+      );
 
-    
+      const accessToken = response.data.token;
+      const token = { accessToken: accessToken };
+      console.log(accessToken);
+
+      const storedToken = window.localStorage.setItem(
+        'loggedAppUser', accessToken
+      );
+
+      console.log(storedToken)
+
+      const auth_username = { username: username }
+      const stored_username = window.localStorage.setItem(
+        'name', JSON.stringify(auth_username)
+      );
+      console.log(stored_username)
+
+      const decoded_token = jwtDecode(accessToken)
+      console.log(decoded_token);
+
+      const decoded_role = decoded_token.roles
+      console.log(decoded_role)
+
+      // const userRole = { role: decoded_role }
+      const stored_roles = window.localStorage.setItem(
+        'role', decoded_role
+      )
+
+      setUsername('')
+      setPassword('')
+      setSuccess(true)
+      setIsLoading(false) // Finaliza la carga
+
+
+      setTimeout(() => {
+        if (decoded_role == 'ROLE_USER') {
+          window.location.href = '/homeResponsible'
+        } else {
+          window.location.href = '/home'
+        }
+      }, 1000)
+
+    } catch (err) {
+      setShowAlert(true); // Mostrar alerta si hay error
+      setIsLoading(false) // Finaliza la carga
+    }
+  };
+
+
   return (
     <div className="login-container">
       <>
+        {showAlert && ( // Mostrar alerta solo si showAlert es verdadero
+          <div className="alert-content animate__animated animate__shakeX">
+            <span className="close" onClick={handleAlertClose}>
+              &times;
+            </span>
+            <p className='alert-text'>Datos incorrectos</p>
+          </div>
+        )}
         {success ? (
           <section className="success">
             <h2 className='login-tex'>¡Has iniciado sesión!</h2>
-            {/* <a href="https://elpais.com/" className="btn-login">
-              Ve al inicio
-            </a> */}
           </section>
         ) : (
           <section className='title-and-formLogin'>
             <h1 className="title-login">Plataforma de Login</h1>
             <div className="form-login">
               <form onSubmit={handleSubmit}>
-                <label htmlFor="username">Username</label>
+                <label htmlFor="usernameLogin">Correo Corporativo</label>
                 <input name="login"
                   type="text"
                   id="username"
@@ -103,7 +116,7 @@ function Login() {
                   value={username}
                   required
                 />
-                <label htmlFor="password">Contraseña</label>
+                <label htmlFor="passwordLogin">Contraseña</label>
                 <input name="login"
                   type="password"
                   id="password"
